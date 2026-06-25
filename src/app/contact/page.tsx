@@ -1,0 +1,49 @@
+import type { Metadata } from "next";
+import { RFQForm } from "@/components/common/RFQForm";
+import { WhatsAppButton } from "@/components/common/WhatsAppButton";
+import { ComplianceNotice } from "@/components/notice";
+import { companyAddress, contactEmail, contactWhatsApp, whatsappUrl } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: "Request a Quote | Respiratory Protection Products",
+  description:
+    "Tell us your application, hazard type and quantity. Get product recommendation and quotation from our team."
+};
+
+export default function ContactPage() {
+  return (
+    <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.8fr_1.2fr]">
+        <div>
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.28em] text-orange">Contact / RFQ</p>
+          <h1 className="text-balance text-4xl font-black text-white sm:text-6xl">Request a protection solution recommendation</h1>
+          <p className="mt-6 text-lg leading-8 text-slate-300">
+            Share your target product, workplace application, hazard type and market requirements. Our team can recommend a respirator, filter and packaging configuration for your RFQ.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <WhatsAppButton source="Contact page" />
+            <a
+              href={`mailto:${contactEmail}`}
+              className="inline-flex min-h-11 items-center justify-center rounded-md border border-orange/50 bg-orange/10 px-5 py-3 text-sm font-bold text-orange transition hover:-translate-y-0.5 hover:bg-orange/20"
+            >
+              Email RFQ
+            </a>
+          </div>
+          <div className="mt-8">
+            <ComplianceNotice />
+          </div>
+          <div className="mt-8 grid gap-3 rounded-md border border-white/10 bg-white/[0.04] p-5 text-sm leading-6 text-slate-300">
+            <a href={`mailto:${contactEmail}`} className="font-semibold text-orange hover:text-warning">
+              Email: {contactEmail}
+            </a>
+            <a href={whatsappUrl} className="font-semibold text-orange hover:text-warning">
+              WhatsApp: {contactWhatsApp}
+            </a>
+            <p>{companyAddress}</p>
+          </div>
+        </div>
+        <RFQForm />
+      </div>
+    </section>
+  );
+}
