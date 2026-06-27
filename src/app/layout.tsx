@@ -78,12 +78,35 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     ]
   };
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: brandName,
+    url: "https://hulidun.com",
+    description:
+      "Industrial respiratory protection and chemical safety PPE supplier for global B2B buyers.",
+    publisher: {
+      "@type": "Organization",
+      name: companyName
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://hulidun.com/products/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    inLanguage: "en"
+  };
+
   return (
     <html lang="en">
       <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Header />
         <main>{children}</main>

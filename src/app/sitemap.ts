@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { applications } from "@/data/applications";
 import { products } from "@/data/products";
+import { resources } from "@/data/resources";
 
 const baseUrl = "https://hulidun.com";
 
@@ -36,6 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.75
+    })),
+    ...resources.map((resource) => ({
+      url: `${baseUrl}/resources/${resource.slug}/`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.72
     }))
   ];
 

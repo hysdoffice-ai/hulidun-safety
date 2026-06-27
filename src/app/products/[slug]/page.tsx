@@ -52,7 +52,46 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       name: companyName
     },
     category: product.category,
-    sku: product.model
+    sku: product.model,
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Distributors, wholesalers, project buyers and OEM/ODM customers"
+    },
+    offers: {
+      "@type": "Offer",
+      url: `https://hulidun.com/products/${product.slug}/`,
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+      seller: {
+        "@type": "Organization",
+        name: companyName
+      }
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://hulidun.com/"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: "https://hulidun.com/products/"
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `${product.model} ${product.name}`,
+        item: `https://hulidun.com/products/${product.slug}/`
+      }
+    ]
   };
 
   return (
@@ -60,6 +99,10 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <section className="relative overflow-hidden bg-slate-950 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="absolute inset-0 bg-grid bg-[length:40px_40px] opacity-50" />

@@ -1,8 +1,18 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { FileText } from "lucide-react";
 import { resources } from "@/data/resources";
 import { Badge } from "@/components/common/Badge";
 import { SectionHeader } from "@/components/common/SectionHeader";
+
+export const metadata: Metadata = {
+  title: "Respirator Buyer Guides & PPE Resources",
+  description:
+    "Buyer guides for full face respirators, half masks, filter cartridges, supplied-air systems, painting protection and reusable respirator maintenance.",
+  alternates: {
+    canonical: "/resources/"
+  }
+};
 
 export default function ResourcesPage() {
   return (
@@ -31,7 +41,7 @@ export default function ResourcesPage() {
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {resources.map((resource) => (
-            <Link key={resource.id} href="/resources" className="rounded-md border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-warning/50">
+            <Link key={resource.id} href={`/resources/${resource.slug}`} className="rounded-md border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-warning/50">
               <FileText className="mb-4 h-7 w-7 text-warning" />
               <div className="mb-4 flex flex-wrap gap-2">
                 <Badge tone="yellow">{resource.category}</Badge>
