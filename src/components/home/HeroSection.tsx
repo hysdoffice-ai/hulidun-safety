@@ -16,7 +16,7 @@ import {
 import { CTAButton } from "@/components/common/CTAButton";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { WarningStrip } from "@/components/common/WarningStrip";
-import { companyPositioning, companyStrengths } from "@/data/site";
+import { companyFacts, companyPositioning, companyStrengths, tradeHighlights } from "@/data/site";
 
 const hazards = ["Chemical Vapor", "Dust", "Paint Mist", "Pesticide", "Acid Gas", "Emergency Escape"];
 const matrix = [
@@ -53,6 +53,14 @@ export function HeroSection() {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
               Full face respirators, half masks, filter cartridges, supplied-air systems and emergency protection kits for chemical, painting, mining, agriculture and rescue applications.
             </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              {companyFacts.slice(0, 4).map((fact) => (
+                <div key={fact.label} className="rounded-md border border-white/10 bg-slate-950/65 px-4 py-3">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">{fact.label}</p>
+                  <p className="mt-1 text-lg font-black text-white">{fact.value}</p>
+                </div>
+              ))}
+            </div>
             <div className="mt-8 flex flex-wrap gap-4">
               <CTAButton href="/products">Explore Products</CTAButton>
               <WhatsAppButton source="Home hero" />
@@ -123,14 +131,10 @@ export function HeroSection() {
               </div>
 
               <div className="mt-5 grid gap-3 border-t border-white/10 pt-5 sm:grid-cols-3">
-                {[
-                  ["Hazard", "Identify"],
-                  ["Filter", "Match"],
-                  ["Kit", "Configure"]
-                ].map(([label, value]) => (
-                  <div key={label} className="rounded-md border border-white/10 bg-black/20 p-3">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">{label}</p>
-                    <p className="mt-1 text-sm font-black text-slate-100">{value}</p>
+                {tradeHighlights.slice(0, 3).map((item) => (
+                  <div key={item.label} className="rounded-md border border-white/10 bg-black/20 p-3">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">{item.label}</p>
+                    <p className="mt-1 text-sm font-black text-slate-100">{item.value}</p>
                   </div>
                 ))}
               </div>

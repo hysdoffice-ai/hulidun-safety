@@ -27,6 +27,7 @@ type ProductSeed = {
   name: string;
   category: string;
   image: string;
+  detail?: string;
   slug?: string;
   featured?: boolean;
   applications?: string[];
@@ -119,20 +120,20 @@ const baseByCategory: Record<
 };
 
 const productSeeds: ProductSeed[] = [
-  { model: "FNJ05", name: "Full Face Respirator", category: "Full Face Respirators", image: "01_FNJ05.jpg", featured: true },
-  { model: "FNJ05A/FNJ06A", name: "Full Face Respirator", category: "Full Face Respirators", image: "02_FNJ05A_FNJ06A.jpg" },
-  { model: "FNJ08/MF22", name: "Full Face Respirator", category: "Full Face Respirators", image: "03_FNJ08_MF22.jpg" },
-  { model: "FNJ09/MF21", name: "Full Face Respirator", category: "Full Face Respirators", image: "04_FNJ09_MF21.jpg" },
-  { model: "MF14", name: "Silicone Full Face Respirator", category: "Full Face Respirators", image: "05_MF14.jpg", featured: true, slug: "mf14-full-face-respirator" },
-  { model: "MF14 Yellow Edge", name: "TPE Full Face Respirator", category: "Full Face Respirators", image: "06_yellow_edge.jpg" },
-  { model: "MF14 Black Edge", name: "TPE Full Face Respirator", category: "Full Face Respirators", image: "07_black_edge.jpg" },
-  { model: "MF15", name: "Dual-Connector Full Face Respirator", category: "Full Face Respirators", image: "08_MF15.jpg", featured: true },
-  { model: "MF19", name: "RD40 Full Face Respirator", category: "Full Face Respirators", image: "09_MF19.jpg", featured: true, slug: "mf19-full-face-respirator" },
-  { model: "CF-6800", name: "Full Face Respirator", category: "Full Face Respirators", image: "10_CF_6800.jpg", featured: true, slug: "cf6800-full-face-respirator" },
-  { model: "6800A", name: "Full Face Respirator", category: "Full Face Respirators", image: "11_6800A.jpg" },
-  { model: "CF01", name: "Full Face Respirator", category: "Full Face Respirators", image: "12_CF01.jpg" },
-  { model: "CF02", name: "Full Face Respirator", category: "Full Face Respirators", image: "13_CF02.jpg" },
-  { model: "TZL30", name: "Fire Escape Smoke Hood", category: "Accessories & Emergency PPE", image: "14_Item_31.jpg", featured: true },
+  { model: "FNJ05", name: "Full Face Respirator", category: "Full Face Respirators", image: "01_FNJ05.jpg", featured: true, detail: "Standard left-side connector; connector direction can be customized for project or distributor programs." },
+  { model: "FNJ05A/FNJ06A", name: "Full Face Respirator", category: "Full Face Respirators", image: "02_FNJ05A_FNJ06A.jpg", detail: "Full face respirator option for painting, chemical handling, dust protection and industrial safety." },
+  { model: "FNJ08/MF22", name: "Full Face Respirator", category: "Full Face Respirators", image: "03_FNJ08_MF22.jpg", detail: "Standard left-side connector with optional dual connectors and mesh head harness." },
+  { model: "FNJ09/MF21", name: "Full Face Respirator", category: "Full Face Respirators", image: "04_FNJ09_MF21.jpg", detail: "Standard left-side connector with optional dual connectors and mesh head harness." },
+  { model: "MF14", name: "Silicone Full Face Respirator", category: "Full Face Respirators", image: "05_MF14.jpg", featured: true, slug: "mf14-full-face-respirator", detail: "Silicone full face mask with ribbed edge for industrial respiratory protection." },
+  { model: "MF14 Yellow Edge", name: "TPE Full Face Respirator", category: "Full Face Respirators", image: "06_yellow_edge.jpg", detail: "Yellow-edge TPE full face mask for painting, chemical handling and dust protection." },
+  { model: "MF14 Black Edge", name: "TPE Full Face Respirator", category: "Full Face Respirators", image: "07_black_edge.jpg", detail: "Black-edge TPE full face mask for industrial safety and distributor product bundles." },
+  { model: "MF15", name: "Dual-Connector Full Face Respirator", category: "Full Face Respirators", image: "08_MF15.jpg", featured: true, detail: "Standard dual-connector mask with left or right connector customization options." },
+  { model: "MF19", name: "RD40 Full Face Respirator", category: "Full Face Respirators", image: "09_MF19.jpg", featured: true, slug: "mf19-full-face-respirator", detail: "RD40 threaded full face respirator with dual connector configuration options." },
+  { model: "CF-6800", name: "Full Face Respirator", category: "Full Face Respirators", image: "10_CF_6800.jpg", featured: true, slug: "cf6800-full-face-respirator", detail: "6800 style full face mask with grey or black anti-fog lens customization options." },
+  { model: "6800A", name: "Full Face Respirator", category: "Full Face Respirators", image: "11_6800A.jpg", detail: "6800A full face mask with anti-fog lens customization options." },
+  { model: "CF01", name: "Full Face Respirator", category: "Full Face Respirators", image: "12_CF01.jpg", detail: "Full face respirator option for painting, chemical handling, dust protection and industrial safety." },
+  { model: "CF02", name: "Full Face Respirator", category: "Full Face Respirators", image: "13_CF02.jpg", detail: "Standard grey full face mask with color customization options including red and project-specific colors." },
+  { model: "TZL30", name: "Fire Escape Smoke Hood", category: "Accessories & Emergency PPE", image: "14_Item_31.jpg", featured: true, detail: "Self-rescue filtering respirator for emergency escape and fire safety stock programs." },
   { model: "CF-6200", name: "Half Face Respirator", category: "Half Face Respirators", image: "15_CF_6200.jpg", featured: true, slug: "cf6200-half-face-respirator" },
   { model: "CF7502", name: "Half Face Respirator", category: "Half Face Respirators", image: "16_CF7502.jpg", featured: true },
   { model: "CF3300 + 3301", name: "Half Face Respirator with Cartridge", category: "Half Face Respirators", image: "17_CF3300_filter_cartridge3301.jpg", featured: true },
@@ -178,6 +179,15 @@ const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
+const categorySeoCopy: Record<string, string> = {
+  "Full Face Respirators": "for full-face respiratory protection in painting, chemical handling, emergency response and industrial safety programs",
+  "Half Face Respirators": "for reusable half-mask programs in painting, agriculture spraying, construction and maintenance work",
+  "Filters & Cartridges": "for respirator cartridge replenishment, filter matching and distributor safety stock programs",
+  "Supplied-Air & SCBA Systems": "for project-based respiratory protection, rescue preparation and supplied-air configuration discussions",
+  "Chemical Protective Clothing": "for chemical handling, emergency response and complete PPE kit procurement",
+  "Accessories & Emergency PPE": "for emergency escape, respirator storage, fire safety and complete PPE bundle procurement"
+};
+
 function createProduct(seed: ProductSeed): Product {
   const base = baseByCategory[seed.category];
   const modelSlug = slugify(seed.model);
@@ -190,8 +200,8 @@ function createProduct(seed: ProductSeed): Product {
     model: seed.model,
     name: seed.name,
     category: seed.category,
-    shortDescription: `${seed.name} for B2B respiratory protection, chemical safety and emergency PPE procurement.`,
-    longDescription: `${seed.model} ${seed.name} is part of the Hulidun Safety industrial PPE range from Shanxi Hongyu Times Technology Co., Ltd. It supports distributors, wholesalers, project buyers and OEM/ODM customers sourcing respiratory protection, chemical protection and emergency safety products. Product selection should be based on workplace hazards, local regulations and professional safety assessment.`,
+    shortDescription: `${seed.model} ${seed.name} ${categorySeoCopy[seed.category]}.`,
+    longDescription: `${seed.model} ${seed.name} is part of the Hulidun Safety industrial PPE range from Shanxi Hongyu Times Technology Co., Ltd. ${seed.detail ? `${seed.detail} ` : ""}It supports distributors, wholesalers, project buyers and OEM/ODM customers sourcing respiratory protection, chemical protection and emergency safety products. Product selection should be based on workplace hazards, local regulations and professional safety assessment.`,
     keyFeatures: base.keyFeatures,
     applications: seed.applications ?? base.applications,
     hazards: seed.hazards ?? base.hazards,
@@ -200,12 +210,14 @@ function createProduct(seed: ProductSeed): Product {
     specifications: [
       { label: "Model", value: seed.model },
       { label: "Product category", value: seed.category },
-      { label: "MOQ", value: "200 pcs for many respirator SKUs; confirm by model" },
+      { label: "MOQ", value: "200 pcs standard reference; confirm by exact model" },
+      { label: "Stock lead time", value: "5-7 days for available stock" },
+      { label: "Customized lead time", value: "10-15 days for logo, color box or private label orders" },
       { label: "Cooperation", value: "Distributor, wholesale, project supply and OEM/ODM" },
-      { label: "Packaging", value: "Bulk pack, color box, kit packaging or custom option" },
+      { label: "Packaging", value: "Bulk pack, color box, instruction manual, outer carton or kit packaging" },
       { label: "Technical documents", value: "Available upon request" }
     ],
-    oemOptions: ["Private label", "Custom packaging", "English manual", "Distributor catalog assets"],
+    oemOptions: ["Logo customization", "Color box", "Instruction manual", "Outer carton", "Private label", "Distributor catalog assets"],
     documents: ["Product data sheet", "Packing list", "Technical photos", "Test reports available upon request"],
     image,
     gallery: [image],

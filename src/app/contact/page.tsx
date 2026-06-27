@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { RFQForm } from "@/components/common/RFQForm";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { ComplianceNotice } from "@/components/notice";
-import { companyAddress, contactEmail, contactWhatsApp, whatsappUrl } from "@/data/site";
+import { companyAddress, contactEmail, contactPerson, contactWhatsApp, tradeHighlights, whatsappUrl } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Request a Quote | Respiratory Protection Products",
@@ -28,6 +28,12 @@ export default function ContactPage() {
             >
               Email RFQ
             </a>
+            <a
+              href="/downloads/hulidun-safety-product-catalog.pdf"
+              className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/15 bg-white/[0.04] px-5 py-3 text-sm font-bold text-slate-100 transition hover:-translate-y-0.5 hover:border-warning/50"
+            >
+              Download Catalog
+            </a>
           </div>
           <div className="mt-8">
             <ComplianceNotice />
@@ -40,6 +46,16 @@ export default function ContactPage() {
               WhatsApp: {contactWhatsApp}
             </a>
             <p>{companyAddress}</p>
+            <p>Contact person: {contactPerson}</p>
+          </div>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {tradeHighlights.map((item) => (
+              <div key={item.label} className="rounded-md border border-white/10 bg-white/[0.04] p-4">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">{item.label}</p>
+                <p className="mt-1 text-lg font-black text-white">{item.value}</p>
+                <p className="mt-2 text-xs leading-5 text-slate-400">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
         <RFQForm />

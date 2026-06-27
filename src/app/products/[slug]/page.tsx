@@ -10,7 +10,7 @@ import { ProductCTA } from "@/components/products/ProductCTA";
 import { ProductSpecTable } from "@/components/products/ProductSpecTable";
 import { ComplianceNotice } from "@/components/notice";
 import { Section } from "@/components/section";
-import { certificationNotice } from "@/data/site";
+import { brandName, certificationNotice, companyName } from "@/data/site";
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -20,7 +20,15 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const product = products.find((item) => item.slug === params.slug);
   return {
     title: product ? `${product.model} ${product.name} | Respiratory Protection Product` : "Product Detail",
-    description: product?.shortDescription
+    description: product?.shortDescription,
+    alternates: product ? { canonical: `/products/${product.slug}/` } : undefined,
+    openGraph: product
+      ? {
+          title: `${product.model} ${product.name} | ${brandName}`,
+          description: product.shortDescription,
+          images: [product.image]
+        }
+      : undefined
   };
 }
 
@@ -29,9 +37,30 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   if (!product) notFound();
 
   const related = products.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 3);
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `${product.model} ${product.name}`,
+    image: `https://hulidun.com${product.image}`,
+    description: product.shortDescription,
+    brand: {
+      "@type": "Brand",
+      name: brandName
+    },
+    manufacturer: {
+      "@type": "Organization",
+      name: companyName
+    },
+    category: product.category,
+    sku: product.model
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <section className="relative overflow-hidden bg-slate-950 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="absolute inset-0 bg-grid bg-[length:40px_40px] opacity-50" />
         <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_.8fr] lg:items-center">

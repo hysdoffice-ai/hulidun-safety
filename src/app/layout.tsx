@@ -3,6 +3,16 @@ import "./globals.css";
 import { FloatingWhatsAppButton } from "@/components/common/WhatsAppButton";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import {
+  brandLogo,
+  brandName,
+  companyAddress,
+  companyName,
+  companyPositioning,
+  contactEmail,
+  contactPerson,
+  contactWhatsApp
+} from "@/data/site";
 
 export const metadata: Metadata = {
   title: {
@@ -20,13 +30,61 @@ export const metadata: Metadata = {
     "China PPE supplier",
     "OEM ODM PPE"
   ],
-  metadataBase: new URL("https://hulidunsafety.com")
+  metadataBase: new URL("https://hulidun.com"),
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    type: "website",
+    url: "https://hulidun.com",
+    siteName: brandName,
+    title: "Hulidun Safety | Industrial Respiratory Protection & Chemical Safety PPE",
+    description:
+      "Self-owned China PPE factory supplying full face respirators, half masks, cartridges, filters, supplied-air systems and chemical protective products.",
+    images: [brandLogo]
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: companyName,
+    alternateName: brandName,
+    url: "https://hulidun.com",
+    logo: `https://hulidun.com${brandLogo}`,
+    description: companyPositioning,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: companyAddress,
+      addressCountry: "CN"
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      name: contactPerson,
+      email: contactEmail,
+      telephone: contactWhatsApp,
+      availableLanguage: ["English", "Chinese"]
+    },
+    makesOffer: [
+      "Full face respirators",
+      "Half face respirators",
+      "Respirator cartridges and filters",
+      "Supplied-air respirators",
+      "Powered air systems",
+      "Chemical protective clothing",
+      "PPE accessories"
+    ]
+  };
+
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />

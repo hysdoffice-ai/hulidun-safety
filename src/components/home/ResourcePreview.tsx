@@ -13,6 +13,22 @@ export function ResourcePreview({ resources }: ResourcePreviewProps) {
     <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeader eyebrow="Resource Center" title="Buyer education for safer product configuration" />
+        <div className="mb-6 rounded-md border border-orange/30 bg-orange/10 p-5">
+          <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <h3 className="text-xl font-black text-white">Download Hulidun Safety Product Catalog</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-300">
+                Full product family reference for respirators, cartridges, filters, chemical protective clothing and PPE accessories.
+              </p>
+            </div>
+            <a
+              href="/downloads/hulidun-safety-product-catalog.pdf"
+              className="inline-flex min-h-11 items-center justify-center rounded-md bg-orange px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-orange/90"
+            >
+              Download Catalog
+            </a>
+          </div>
+        </div>
         <div className="grid gap-5 md:grid-cols-3">
           {resources.slice(0, 3).map((resource) => (
             <Link key={resource.id} href="/resources" className="rounded-md border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-warning/50">

@@ -7,11 +7,13 @@ export const brandLogo = "/images/brand/logo.png";
 export const brandSlogan = "Protecting Every Breath in Hazardous Workplaces.";
 
 export const companyAddress =
-  "Room 904, Apartment Building No. 1, Kangning Street, Xiaodian Subdistrict, Xiaodian District, Taiyuan, Shanxi, China.";
+  "Taiyuan, Shanxi, China.";
 
 export const contactEmail = "hysd.office@gmail.com";
 
 export const contactWhatsApp = "+86 15392617720";
+
+export const contactPerson = "Vincent";
 
 export const whatsappPhone = "8615392617720";
 
@@ -28,18 +30,38 @@ export const brandRelation =
   "Hulidun Safety is a registered brand of Shanxi Hongyu Times Technology Co., Ltd.";
 
 export const companyPositioning =
-  "A China-based supplier of industrial respiratory protection and chemical safety PPE solutions.";
+  "A self-owned factory supplier of industrial respiratory protection and chemical safety PPE solutions in China.";
 
 export const companyIntro =
-  "Shanxi Hongyu Times Technology Co., Ltd. specializes in industrial respiratory protection, chemical safety protection and emergency PPE solutions. Our product range covers full face respirators, half face respirators, cartridges and filters, supplied-air and powered-air systems, protective suits, gloves, goggles, ear muffs and emergency safety supplies.";
+  "Established in 2019, Shanxi Hongyu Times Technology Co., Ltd. operates a self-owned factory in Taiyuan, Shanxi, China. Hulidun Safety supplies industrial respiratory protection, chemical safety protection and emergency PPE solutions for distributors, local industrial and mining companies, project buyers and OEM/ODM customers.";
 
 export const hulidunStatement =
   "Hulidun Safety, the company's registered PPE brand, focuses on protecting workers in respiratory and chemical safety environments.";
 
 export const companyStrengths = [
-  "Complete PPE product range for respiratory protection, chemical protection and emergency safety applications.",
-  "Stable supply of respirator cartridges and filters supports long-term distributor replenishment.",
-  "Flexible cooperation for distributors, wholesalers, project buyers and OEM/ODM customers."
+  "Self-owned 2,500 m2 factory with 120 employees and monthly capacity up to 100,000 pieces.",
+  "Complete PPE product range covering respirators, cartridges, filters, supplied-air systems and chemical protective products.",
+  "OEM/ODM support for logo, color box, instruction manual and outer carton customization."
+];
+
+export const companyFacts = [
+  { label: "Established", value: "2019" },
+  { label: "Employees", value: "120" },
+  { label: "Factory Area", value: "2,500 m2" },
+  { label: "Monthly Capacity", value: "100,000 pcs" },
+  { label: "Annual Capacity", value: "1,200,000 pcs" },
+  { label: "Factory Type", value: "Self-owned factory" }
+];
+
+export const exportMarkets = ["Southeast Asia", "Europe"];
+
+export const buyerTypes = ["Local industrial and mining companies", "Local distributors"];
+
+export const tradeHighlights = [
+  { label: "MOQ", value: "200 pcs", description: "Standard reference MOQ; final MOQ depends on model and packaging." },
+  { label: "Stock Lead Time", value: "5-7 days", description: "For products with available stock after order confirmation." },
+  { label: "Custom Lead Time", value: "10-15 days", description: "For logo, color box, private label or carton mark customization." },
+  { label: "OEM/ODM", value: "Available", description: "Logo, color box, instruction manual and outer carton customization." }
 ];
 
 export const complianceNotice =

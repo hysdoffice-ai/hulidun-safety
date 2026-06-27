@@ -2,7 +2,20 @@ import { Factory, Globe2, ShieldCheck, Target } from "lucide-react";
 import { ImageWithFallback } from "@/components/common/ImageWithFallback";
 import { Section } from "@/components/section";
 import { factoryImages } from "@/data/quality";
-import { brandRelation, brandSlogan, companyAddress, companyIntro, companyName, companyPositioning, companyStrengths, hulidunStatement } from "@/data/site";
+import {
+  brandRelation,
+  brandSlogan,
+  buyerTypes,
+  companyAddress,
+  companyFacts,
+  companyIntro,
+  companyName,
+  companyPositioning,
+  companyStrengths,
+  exportMarkets,
+  hulidunStatement,
+  tradeHighlights
+} from "@/data/site";
 
 const range = [
   "Full face respirators",
@@ -21,10 +34,10 @@ const overview = [
   { title: "Export cooperation", text: "Flexible cooperation for distributors, wholesalers, project buyers and OEM/ODM customers.", icon: Globe2 }
 ];
 const timeline = [
-  ["Year 1", "Reusable respirator product line established"],
-  ["Year 2", "Filter and canister matching programs expanded"],
-  ["Year 3", "OEM packaging and distributor kit support added"],
-  ["Year 4", "Application solution content and export support improved"]
+  ["2019", "Shanxi Hongyu Times Technology Co., Ltd. was established."],
+  ["Factory", "Self-owned production and warehouse capability built in Taiyuan, Shanxi."],
+  ["Product Range", "Respirators, cartridges, filters, protective clothing and PPE accessories expanded."],
+  ["Export", "Distributor and industrial buyer cooperation developed for Southeast Asia and Europe."]
 ];
 
 export default function AboutPage() {
@@ -41,6 +54,14 @@ export default function AboutPage() {
         </div>
       </section>
       <Section title="Company overview">
+        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          {companyFacts.map((fact) => (
+            <div key={fact.label} className="rounded-md border border-orange/20 bg-orange/10 p-4">
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-orange">{fact.label}</p>
+              <p className="mt-2 text-xl font-black text-white">{fact.value}</p>
+            </div>
+          ))}
+        </div>
         <div className="grid gap-5 lg:grid-cols-4">
           {overview.map(({ title, text, icon: Icon }) => (
             <div key={title} className="rounded-md border border-white/10 bg-white/[0.04] p-5">
@@ -63,6 +84,28 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="rounded-md border border-white/10 bg-white/[0.04] p-5">
+            <h2 className="text-lg font-bold text-white">Export Markets</h2>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {exportMarkets.map((market) => (
+                <span key={market} className="rounded-md border border-white/10 bg-navy px-3 py-2 text-sm font-semibold text-slate-200">
+                  {market}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-md border border-white/10 bg-white/[0.04] p-5">
+            <h2 className="text-lg font-bold text-white">Main Buyer Types</h2>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {buyerTypes.map((buyer) => (
+                <span key={buyer} className="rounded-md border border-white/10 bg-navy px-3 py-2 text-sm font-semibold text-slate-200">
+                  {buyer}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </Section>
       <Section title="Manufacturing capability">
         <div className="grid gap-5 md:grid-cols-3">
@@ -77,6 +120,17 @@ export default function AboutPage() {
       </Section>
       <Section title="Why choose us">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{reasons.map((item) => <div key={item} className="rounded-md border border-orange/20 bg-orange/10 p-5 text-orange">{item}</div>)}</div>
+      </Section>
+      <Section title="Ordering reference" className="bg-slate-950/60">
+        <div className="grid gap-4 md:grid-cols-4">
+          {tradeHighlights.map((item) => (
+            <div key={item.label} className="rounded-md border border-white/10 bg-navy p-5">
+              <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{item.label}</h2>
+              <p className="mt-2 text-2xl font-black text-white">{item.value}</p>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+            </div>
+          ))}
+        </div>
       </Section>
       <Section title="Company timeline" className="bg-slate-950/60">
         <div className="grid gap-4 md:grid-cols-4">

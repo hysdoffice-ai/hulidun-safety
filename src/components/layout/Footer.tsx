@@ -11,6 +11,7 @@ import {
   companyPositioning,
   complianceNotice,
   contactEmail,
+  contactPerson,
   contactWhatsApp,
   whatsappUrl
 } from "@/data/site";
@@ -30,6 +31,7 @@ const footerLinks = [
   {
     title: "Contact",
     links: [
+      { label: `Contact: ${contactPerson}`, href: "/contact" },
       { label: `Email: ${contactEmail}`, href: `mailto:${contactEmail}` },
       { label: `WhatsApp: ${contactWhatsApp}`, href: whatsappUrl },
       { label: "Request a Quote", href: "/contact" }

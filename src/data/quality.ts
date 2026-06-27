@@ -10,33 +10,33 @@ export const qualitySteps = [
   "Compliance Notice"
 ];
 
-export const qualityImage = "/images/factory/production-equipment.jpg";
+export const qualityImage = "/images/factory/hulidun-production-workshop.jpg";
 
 export const factoryImages = [
   {
-    src: "/images/factory/production.jpg",
+    src: "/images/factory/hulidun-production-workshop.jpg",
     title: "Production Workshop",
-    description: "Manufacturing area for respiratory protection components and safety products."
+    description: "Self-owned workshop in Taiyuan supporting respiratory protection and safety product manufacturing."
   },
   {
-    src: "/images/factory/production-line.jpg",
-    title: "Production Equipment",
-    description: "Workshop equipment supporting repeatable production and process control."
+    src: "/images/factory/hulidun-assembly-packing-line.jpg",
+    title: "Assembly & Packing Line",
+    description: "Assembly, labeling and packing area for respirators, filters and customized order preparation."
   },
   {
-    src: "/images/factory/injection-workshop.jpg",
-    title: "Injection & Forming Workshop",
-    description: "Production area for respirator components and related safety product parts."
+    src: "/images/factory/hulidun-injection-equipment.jpg",
+    title: "Injection & Forming Equipment",
+    description: "Equipment area supporting repeatable component production for respirator and PPE programs."
   },
   {
-    src: "/images/factory/production-equipment.jpg",
-    title: "Production Equipment Area",
-    description: "Production equipment and workshop environment for repeatable PPE component manufacturing."
+    src: "/images/factory/hulidun-specialized-equipment.jpg",
+    title: "Specialized Equipment Area",
+    description: "Specialized workshop equipment used for safety product production and process support."
   },
   {
-    src: "/images/factory/warehouse.jpg",
+    src: "/images/factory/hulidun-warehouse-ready-stock.jpg",
     title: "Warehouse & Packing",
-    description: "Finished goods, cartons and order preparation area for export supply."
+    description: "Finished goods, cartons and ready-stock area supporting distributor replenishment and export orders."
   }
 ];
 
