@@ -18,7 +18,7 @@ export default function ProductsPage() {
     itemListElement: products.slice(0, 24).map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `https://hulidun.com/products/${product.slug}/`,
+      url: `https://www.hulidun.com/products/${product.slug}/`,
       name: `${product.model} ${product.name}`
     }))
   };

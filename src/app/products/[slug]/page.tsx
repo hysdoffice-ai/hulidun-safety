@@ -41,7 +41,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     "@context": "https://schema.org",
     "@type": "Product",
     name: `${product.model} ${product.name}`,
-    image: `https://hulidun.com${product.image}`,
+    image: `https://www.hulidun.com${product.image}`,
     description: product.shortDescription,
     brand: {
       "@type": "Brand",
@@ -59,7 +59,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     },
     offers: {
       "@type": "Offer",
-      url: `https://hulidun.com/products/${product.slug}/`,
+      url: `https://www.hulidun.com/products/${product.slug}/`,
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
       seller: {
@@ -77,19 +77,19 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://hulidun.com/"
+        item: "https://www.hulidun.com/"
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Products",
-        item: "https://hulidun.com/products/"
+        item: "https://www.hulidun.com/products/"
       },
       {
         "@type": "ListItem",
         position: 3,
         name: `${product.model} ${product.name}`,
-        item: `https://hulidun.com/products/${product.slug}/`
+        item: `https://www.hulidun.com/products/${product.slug}/`
       }
     ]
   };

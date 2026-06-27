@@ -3,7 +3,7 @@ import { applications } from "@/data/applications";
 import { products } from "@/data/products";
 import { resources } from "@/data/resources";
 
-const baseUrl = "https://hulidun.com";
+const baseUrl = "https://www.hulidun.com";
 
 const staticRoutes = [
   "",

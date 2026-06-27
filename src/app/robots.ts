@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/"
     },
-    sitemap: "https://hulidun.com/sitemap.xml",
-    host: "https://hulidun.com"
+    sitemap: "https://www.hulidun.com/sitemap.xml",
+    host: "https://www.hulidun.com"
   };
 }

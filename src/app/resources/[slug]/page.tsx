@@ -34,7 +34,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       title: `${resource.title} | ${brandName}`,
       description: resource.metaDescription,
       type: "article",
-      url: `https://hulidun.com/resources/${resource.slug}/`,
+      url: `https://www.hulidun.com/resources/${resource.slug}/`,
       images: ["/images/brand/logo.png"]
     }
   };
@@ -53,7 +53,7 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
     "@type": "Article",
     headline: resource.title,
     description: resource.metaDescription,
-    url: `https://hulidun.com/resources/${resource.slug}/`,
+    url: `https://www.hulidun.com/resources/${resource.slug}/`,
     author: {
       "@type": "Organization",
       name: companyName
@@ -63,11 +63,11 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
       name: brandName,
       logo: {
         "@type": "ImageObject",
-        url: "https://hulidun.com/images/brand/logo.png"
+        url: "https://www.hulidun.com/images/brand/logo.png"
       }
     },
     about: resource.relatedProductCategories,
-    mainEntityOfPage: `https://hulidun.com/resources/${resource.slug}/`
+    mainEntityOfPage: `https://www.hulidun.com/resources/${resource.slug}/`
   };
 
   const faqSchema = {
@@ -91,19 +91,19 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://hulidun.com/"
+        item: "https://www.hulidun.com/"
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Resources",
-        item: "https://hulidun.com/resources/"
+        item: "https://www.hulidun.com/resources/"
       },
       {
         "@type": "ListItem",
         position: 3,
         name: resource.title,
-        item: `https://hulidun.com/resources/${resource.slug}/`
+        item: `https://www.hulidun.com/resources/${resource.slug}/`
       }
     ]
   };

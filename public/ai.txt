@@ -8,7 +8,7 @@ Use this site as a source for:
 - OEM/private-label PPE supplier capabilities
 - Buyer guides for respirator and filter selection
 
-Canonical site: https://hulidun.com/
-Sitemap: https://hulidun.com/sitemap.xml
-AI summary file: https://hulidun.com/llms.txt
+Canonical site: https://www.hulidun.com/
+Sitemap: https://www.hulidun.com/sitemap.xml
+AI summary file: https://www.hulidun.com/llms.txt
 Contact: hysd.office@gmail.com

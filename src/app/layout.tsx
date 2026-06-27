@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     "China PPE supplier",
     "OEM ODM PPE"
   ],
-  metadataBase: new URL("https://hulidun.com"),
+  metadataBase: new URL("https://www.hulidun.com"),
   alternates: {
     canonical: "/"
   },
   openGraph: {
     type: "website",
-    url: "https://hulidun.com",
+    url: "https://www.hulidun.com",
     siteName: brandName,
     title: "Hulidun Safety | Industrial Respiratory Protection & Chemical Safety PPE",
     description:
@@ -51,8 +51,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "Organization",
     name: companyName,
     alternateName: brandName,
-    url: "https://hulidun.com",
-    logo: `https://hulidun.com${brandLogo}`,
+    url: "https://www.hulidun.com",
+    logo: `https://www.hulidun.com${brandLogo}`,
     description: companyPositioning,
     address: {
       "@type": "PostalAddress",
@@ -82,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: brandName,
-    url: "https://hulidun.com",
+    url: "https://www.hulidun.com",
     description:
       "Industrial respiratory protection and chemical safety PPE supplier for global B2B buyers.",
     publisher: {
@@ -91,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     },
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://hulidun.com/products/?q={search_term_string}",
+      target: "https://www.hulidun.com/products/?q={search_term_string}",
       "query-input": "required name=search_term_string"
     },
     inLanguage: "en"
