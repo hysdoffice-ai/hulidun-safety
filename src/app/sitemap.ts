@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { applications } from "@/data/applications";
+import { industryLandings } from "@/data/industries";
 import { products } from "@/data/products";
 import { resources } from "@/data/resources";
 
@@ -8,6 +9,7 @@ const baseUrl = "https://www.hulidun.com";
 const staticRoutes = [
   "",
   "/products",
+  "/industries",
   "/applications",
   "/solutions",
   "/oem-private-label",
@@ -37,6 +39,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.75
+    })),
+    ...industryLandings.map((landing) => ({
+      url: `${baseUrl}/industries/${landing.slug}/`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.78
     })),
     ...resources.map((resource) => ({
       url: `${baseUrl}/resources/${resource.slug}/`,

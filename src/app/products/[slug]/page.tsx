@@ -32,11 +32,36 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
+function getProductFaqs(product: (typeof products)[number]) {
+  return [
+    {
+      question: `What is the MOQ for ${product.model} ${product.name}?`,
+      answer:
+        "The standard reference MOQ is 200 pcs. Final MOQ depends on exact model, packaging, logo customization and current stock status."
+    },
+    {
+      question: `Can ${product.model} ${product.name} be supplied with OEM packaging?`,
+      answer:
+        "Yes. Hulidun Safety supports logo customization, color box, instruction manual, outer carton and private-label packaging for qualified orders."
+    },
+    {
+      question: `Which filters are compatible with ${product.model} ${product.name}?`,
+      answer: `Compatible options may include ${product.compatibleFilters.join(", ")}. Final filter selection should be confirmed according to workplace hazards, connector type and local regulations.`
+    },
+    {
+      question: `Can Hulidun Safety provide documents for ${product.model} ${product.name}?`,
+      answer:
+        "Product data sheets, packing lists, technical photos and available test reports can be provided upon request for distributor review and project procurement."
+    }
+  ];
+}
+
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
   const product = products.find((item) => item.slug === params.slug);
   if (!product) notFound();
 
   const related = products.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 3);
+  const productFaqs = getProductFaqs(product);
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -94,6 +119,19 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     ]
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: productFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
+
   return (
     <>
       <script
@@ -103,6 +141,10 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <section className="relative overflow-hidden bg-slate-950 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="absolute inset-0 bg-grid bg-[length:40px_40px] opacity-50" />
@@ -188,6 +230,17 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           {product.documents.map((doc) => (
             <div key={doc} className="rounded-md border border-white/10 bg-navy p-5">
               {doc}
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Procurement FAQ">
+        <div className="grid gap-4 md:grid-cols-2">
+          {productFaqs.map((faq) => (
+            <div key={faq.question} className="rounded-md border border-white/10 bg-white/[0.04] p-5">
+              <h2 className="text-lg font-bold text-white">{faq.question}</h2>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{faq.answer}</p>
             </div>
           ))}
         </div>

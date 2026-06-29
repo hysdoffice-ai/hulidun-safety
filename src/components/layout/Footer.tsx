@@ -21,6 +21,7 @@ const footerLinks = [
     title: "Explore",
     links: [
       { label: "Products", href: "/products" },
+      { label: "Sourcing Guides", href: "/industries" },
       { label: "Applications", href: "/applications" },
       { label: "OEM", href: "/oem-private-label" },
       { label: "Quality", href: "/quality" },

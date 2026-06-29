@@ -9,6 +9,7 @@ import { brandLogo, brandName } from "@/data/site";
 
 const navItems: NavItem[] = [
   { label: "Products", href: "/products" },
+  { label: "Sourcing", href: "/industries" },
   { label: "Applications", href: "/applications" },
   { label: "Solutions", href: "/solutions" },
   { label: "OEM / ODM", href: "/oem-private-label" },
