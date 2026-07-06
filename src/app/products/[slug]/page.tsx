@@ -18,14 +18,33 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const product = products.find((item) => item.slug === params.slug);
+  const title = product
+    ? `${product.model} ${product.name} Manufacturer | OEM Respiratory Protection`
+    : "Product Detail";
+  const description = product
+    ? `${product.shortDescription} MOQ, lead time, OEM packaging, compatible filters and technical documents are available for distributor RFQs.`
+    : undefined;
+
   return {
-    title: product ? `${product.model} ${product.name} | Respiratory Protection Product` : "Product Detail",
-    description: product?.shortDescription,
+    title,
+    description,
     alternates: product ? { canonical: `/products/${product.slug}/` } : undefined,
+    keywords: product
+      ? [
+          `${product.model} ${product.name}`,
+          `${product.name} manufacturer`,
+          `${product.category} supplier`,
+          "China PPE manufacturer",
+          "OEM respirator supplier",
+          "industrial respiratory protection"
+        ]
+      : undefined,
     openGraph: product
       ? {
-          title: `${product.model} ${product.name} | ${brandName}`,
-          description: product.shortDescription,
+          title: `${product.model} ${product.name} Manufacturer | ${brandName}`,
+          description,
+          url: `https://www.hulidun.com/products/${product.slug}/`,
+          type: "website",
           images: [product.image]
         }
       : undefined
@@ -62,12 +81,23 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 
   const related = products.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 3);
   const productFaqs = getProductFaqs(product);
+  const quoteHref = `/contact/?model=${encodeURIComponent(product.model)}&product=${encodeURIComponent(product.name)}`;
+  const additionalProperties = product.specifications.map((spec) => ({
+    "@type": "PropertyValue",
+    name: spec.label,
+    value: spec.value
+  }));
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: `${product.model} ${product.name}`,
+    alternateName: `${product.model} ${product.category} by ${brandName}`,
     image: `https://www.hulidun.com${product.image}`,
     description: product.shortDescription,
+    model: product.model,
+    mpn: product.model,
+    sku: product.model,
+    material: product.materials.join("; "),
     brand: {
       "@type": "Brand",
       name: brandName
@@ -77,7 +107,11 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       name: companyName
     },
     category: product.category,
-    sku: product.model,
+    additionalProperty: additionalProperties,
+    isRelatedTo: product.compatibleFilters.map((filter) => ({
+      "@type": "Product",
+      name: filter
+    })),
     audience: {
       "@type": "BusinessAudience",
       audienceType: "Distributors, wholesalers, project buyers and OEM/ODM customers"
@@ -87,9 +121,21 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       url: `https://www.hulidun.com/products/${product.slug}/`,
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
+      businessFunction: "https://purl.org/goodrelations/v1#Sell",
       seller: {
         "@type": "Organization",
         name: companyName
+      },
+      eligibleQuantity: {
+        "@type": "QuantitativeValue",
+        minValue: 200,
+        unitText: "pcs"
+      },
+      deliveryLeadTime: {
+        "@type": "QuantitativeValue",
+        minValue: 5,
+        maxValue: 15,
+        unitText: "days"
       }
     }
   };
@@ -153,15 +199,19 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
             <Badge tone="orange">{product.model}</Badge>
             <h1 className="mt-5 text-balance text-4xl font-black text-white sm:text-6xl">{product.name}</h1>
             <p className="mt-6 text-lg leading-8 text-slate-300">{product.longDescription}</p>
+            <p className="mt-5 rounded-md border border-orange/25 bg-orange/10 p-4 text-sm leading-7 text-slate-200">
+              Quick answer: {product.model} {product.name} is supplied by {brandName} for {product.coreApplications.join(", ").toLowerCase()} procurement, with reference MOQ from 200 pcs, OEM packaging support and technical documents available upon request.
+            </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <WhatsAppButton source={`${product.model} ${product.name}`} />
-              <CTAButton href="/contact" variant="dark">Send Detailed RFQ</CTAButton>
+              <CTAButton href="/downloads/hulidun-safety-product-catalog.pdf" variant="outline">Download Datasheet</CTAButton>
+              <CTAButton href={quoteHref} variant="dark">Request Quote</CTAButton>
             </div>
           </div>
           <div className="rounded-md border border-white/10 bg-navy p-5 shadow-panel">
             <ImageWithFallback
               src={product.image}
-              alt={`${product.model} ${product.name}`}
+              alt={`${product.model} ${product.name} ${product.coreApplications[0] ?? "industrial application"}`}
               className="aspect-[4/3] border border-white/10"
               imgClassName="object-contain p-5"
               fallbackLabel={`${product.model} product image`}
@@ -255,7 +305,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       </Section>
 
       <Section title="Request Configuration Support" className="bg-slate-950/60">
-        <ProductCTA />
+        <ProductCTA model={product.model} productName={product.name} />
       </Section>
     </>
   );
