@@ -50,10 +50,12 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "TechArticle",
     headline: resource.title,
     description: resource.metaDescription,
     url: `https://www.hulidun.com/resources/${resource.slug}/`,
+    datePublished: "2026-07-03",
+    dateModified: "2026-07-06",
     author: {
       "@type": "Organization",
       name: companyName
@@ -67,6 +69,19 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
       }
     },
     about: resource.relatedProductCategories,
+    mentions: relatedProducts.map((product) => ({
+      "@type": "Product",
+      name: `${product.model} ${product.name}`,
+      url: `https://www.hulidun.com/products/${product.slug}/`
+    })),
+    mainEntity: resource.questions.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer
+      }
+    })),
     mainEntityOfPage: `https://www.hulidun.com/resources/${resource.slug}/`
   };
 
@@ -127,6 +142,9 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
           </div>
           <h1 className="text-balance text-4xl font-black text-white sm:text-6xl">{resource.title}</h1>
           <p className="mt-6 text-lg leading-8 text-slate-300">{resource.excerpt}</p>
+          <p className="mt-5 rounded-md border border-orange/25 bg-orange/10 p-4 text-sm leading-7 text-slate-200">
+            Direct answer: {resource.questions[0]?.answer}
+          </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <CTAButton href="/contact">Request Product Support</CTAButton>
             <CTAButton href="/products" variant="dark">View Related Products</CTAButton>
