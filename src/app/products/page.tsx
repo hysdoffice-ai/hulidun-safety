@@ -7,15 +7,38 @@ import { ComplianceNotice } from "@/components/notice";
 export const metadata: Metadata = {
   title: "Respiratory Protection Products | Gas Masks, Half Masks & Filters",
   description:
-    "Explore full face respirators, half masks, filter cartridges, supplied-air respirator systems and emergency safety products."
+    "Explore Hulidun Safety full face respirators, half masks, filter cartridges, chemical protective clothing, SCBA and emergency PPE for B2B procurement.",
+  alternates: {
+    canonical: "/products/"
+  }
 };
 
 export default function ProductsPage() {
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Respiratory Protection Products",
+    description:
+      "Hulidun Safety product catalog for full face respirators, half masks, filter cartridges, chemical protective clothing, SCBA and emergency PPE.",
+    url: "https://www.hulidun.com/products/",
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: products.length,
+      itemListElement: products.map((product, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `https://www.hulidun.com/products/${product.slug}/`,
+        name: `${product.model} ${product.name}`
+      }))
+    }
+  };
+
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Hulidun Safety respiratory protection products",
-    itemListElement: products.slice(0, 24).map((product, index) => ({
+    numberOfItems: products.length,
+    itemListElement: products.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,
       url: `https://www.hulidun.com/products/${product.slug}/`,
@@ -25,6 +48,7 @@ export default function ProductsPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
