@@ -200,7 +200,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
             <h1 className="mt-5 text-balance text-4xl font-black text-white sm:text-6xl">{product.name}</h1>
             <p className="mt-6 text-lg leading-8 text-slate-300">{product.longDescription}</p>
             <p className="mt-5 rounded-md border border-orange/25 bg-orange/10 p-4 text-sm leading-7 text-slate-200">
-              Quick answer: {product.model} {product.name} is supplied by {brandName} for {product.coreApplications.join(", ").toLowerCase()} procurement, with reference MOQ from 200 pcs, OEM packaging support and technical documents available upon request.
+              Quick answer: {product.model} {product.name} is supplied by {brandName} for {product.applications.slice(0, 3).join(", ").toLowerCase()} procurement, with reference MOQ from 200 pcs, OEM packaging support and technical documents available upon request.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <WhatsAppButton source={`${product.model} ${product.name}`} />
@@ -211,7 +211,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           <div className="rounded-md border border-white/10 bg-navy p-5 shadow-panel">
             <ImageWithFallback
               src={product.image}
-              alt={`${product.model} ${product.name} ${product.coreApplications[0] ?? "industrial application"}`}
+              alt={`${product.model} ${product.name} ${product.applications[0] ?? "industrial application"}`}
               className="aspect-[4/3] border border-white/10"
               imgClassName="object-contain p-5"
               fallbackLabel={`${product.model} product image`}
