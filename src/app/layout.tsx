@@ -7,11 +7,13 @@ import {
   brandLogo,
   brandName,
   companyAddress,
+  companyFacts,
   companyName,
   companyPositioning,
   contactEmail,
   contactPerson,
-  contactWhatsApp
+  contactWhatsApp,
+  tradeHighlights
 } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -34,6 +36,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/"
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
+  },
+  verification: {
+    google: "google20634a5ef6686e73.html"
+  },
   openGraph: {
     type: "website",
     url: "https://www.hulidun.com",
@@ -54,11 +70,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: "https://www.hulidun.com",
     logo: `https://www.hulidun.com${brandLogo}`,
     description: companyPositioning,
+    foundingDate: "2019",
     address: {
       "@type": "PostalAddress",
       addressLocality: companyAddress,
       addressCountry: "CN"
     },
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      value: 120
+    },
+    areaServed: ["Southeast Asia", "Europe", "Global B2B buyers"],
+    knowsAbout: [
+      "Industrial respiratory protection",
+      "Full face respirators",
+      "Half face respirators",
+      "Respirator filter cartridges",
+      "Chemical protective clothing",
+      "Supplied-air respirator systems",
+      "OEM and private-label PPE packaging"
+    ],
+    additionalProperty: [
+      ...companyFacts.map((fact) => ({
+        "@type": "PropertyValue",
+        name: fact.label,
+        value: fact.value
+      })),
+      ...tradeHighlights.map((item) => ({
+        "@type": "PropertyValue",
+        name: item.label,
+        value: item.value
+      }))
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",
@@ -109,7 +152,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Header />
-        <main>{children}</main>
+        <main className="pb-24 sm:pb-0">{children}</main>
         <Footer />
         <FloatingWhatsAppButton />
       </body>
