@@ -15,6 +15,7 @@ const staticRoutes = [
   "/oem-private-label",
   "/quality",
   "/resources",
+  "/answers",
   "/about",
   "/contact"
 ];
