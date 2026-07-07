@@ -26,6 +26,7 @@ const footerLinks = [
       { label: "OEM", href: "/oem-private-label" },
       { label: "Quality", href: "/quality" },
       { label: "Resources", href: "/resources" },
+      { label: "Buyer Answers", href: "/answers" },
       { label: "Contact", href: "/contact" }
     ]
   },
