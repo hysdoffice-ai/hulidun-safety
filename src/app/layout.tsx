@@ -3,6 +3,7 @@ import "./globals.css";
 import { FloatingWhatsAppButton } from "@/components/common/WhatsAppButton";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { GoogleAnalytics } from "@/components/common/GoogleAnalytics";
 import {
   brandLogo,
   brandName,
@@ -155,6 +156,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="pb-24 sm:pb-0">{children}</main>
         <Footer />
         <FloatingWhatsAppButton />
+        <GoogleAnalytics />
       </body>
     </html>
   );

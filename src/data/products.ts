@@ -134,7 +134,7 @@ const productSeeds: ProductSeed[] = [
   { model: "CF01", name: "Full Face Respirator", category: "Full Face Respirators", image: "12_CF01.jpg", detail: "Full face respirator option for painting, chemical handling, dust protection and industrial safety." },
   { model: "CF02", name: "Full Face Respirator", category: "Full Face Respirators", image: "13_CF02.jpg", detail: "Standard grey full face mask with color customization options including red and project-specific colors." },
   { model: "TZL30", name: "Fire Escape Smoke Hood", category: "Accessories & Emergency PPE", image: "14_Item_31.jpg", featured: true, detail: "Self-rescue filtering respirator for emergency escape and fire safety stock programs." },
-  { model: "CF-6200", name: "Half Face Respirator", category: "Half Face Respirators", image: "15_CF_6200.jpg", featured: true, slug: "cf6200-half-face-respirator" },
+  { model: "CF-6200", name: "Half Face Respirator", category: "Half Face Respirators", image: "15_CF_6200.jpg", featured: true, slug: "cf6200-half-face-respirator", detail: "Reusable half face respirator platform for mask-and-cartridge kits, distributor replenishment and private-label packaging programs." },
   { model: "CF7502", name: "Half Face Respirator", category: "Half Face Respirators", image: "16_CF7502.jpg", featured: true },
   { model: "CF3300 + 3301", name: "Half Face Respirator with Cartridge", category: "Half Face Respirators", image: "17_CF3300_filter_cartridge3301.jpg", featured: true },
   { model: "3200", name: "Half Face Respirator", category: "Half Face Respirators", image: "18_3200.jpg", slug: "3200-half-face-respirator" },
@@ -147,7 +147,7 @@ const productSeeds: ProductSeed[] = [
   { model: "SWAT-Style Bag", name: "Gas Mask Bag", category: "Accessories & Emergency PPE", image: "25_Item_48.jpg" },
   { model: "Breathing Air Hose", name: "Black/White Breathing Air Hose", category: "Supplied-Air & SCBA Systems", image: "26_black_white.jpg" },
   { model: "No.3 Filter Canister", name: "Filter Canister Series", category: "Filters & Cartridges", image: "27_Item_57.jpg", featured: true },
-  { model: "A2B2E2K2KP100", name: "Combined Filter Canister", category: "Filters & Cartridges", image: "28_Item_61.jpg", featured: true },
+  { model: "A2B2E2K2KP100", name: "Combined Filter Canister", category: "Filters & Cartridges", image: "28_Item_61.jpg", featured: true, detail: "Combined filter canister for compatible threaded respirator systems; hazard labeling, connector compatibility and target-market documents should be confirmed before ordering." },
   { model: "A2B2E2K2CO2KP100", name: "Full-Protection Filter Canister", category: "Filters & Cartridges", image: "29_Item_62.jpg" },
   { model: "Level 3 Filter Canister", name: "Filter Canister Series", category: "Filters & Cartridges", image: "30_Item_63.jpg" },
   { model: "Filter Cartridge", name: "No.1 / No.4 / No.7 Filter Cartridge", category: "Filters & Cartridges", image: "31_filter_cartridge.jpg", featured: true },
@@ -200,7 +200,9 @@ function createProduct(seed: ProductSeed): Product {
     model: seed.model,
     name: seed.name,
     category: seed.category,
-    shortDescription: `${seed.model} ${seed.name} ${categorySeoCopy[seed.category]}.`,
+    shortDescription: seed.detail
+      ? `${seed.detail} OEM packing and technical document support are available for B2B review.`
+      : `${seed.model} ${seed.name} ${categorySeoCopy[seed.category]}.`,
     longDescription: `${seed.model} ${seed.name} is part of the Hulidun Safety industrial PPE range from Shanxi Hongyu Times Technology Co., Ltd. ${seed.detail ? `${seed.detail} ` : ""}It supports distributors, wholesalers, project buyers and OEM/ODM customers sourcing respiratory protection, chemical protection and emergency safety products. Product selection should be based on workplace hazards, local regulations and professional safety assessment.`,
     keyFeatures: base.keyFeatures,
     applications: seed.applications ?? base.applications,

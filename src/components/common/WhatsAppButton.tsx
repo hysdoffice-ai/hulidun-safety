@@ -1,5 +1,8 @@
+"use client";
+
 import { MessageCircle } from "lucide-react";
 import { contactWhatsApp, whatsappUrl } from "@/data/site";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 type WhatsAppButtonProps = {
@@ -17,6 +20,7 @@ export function WhatsAppButton({ className, compact = false, source }: WhatsAppB
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Chat on WhatsApp ${contactWhatsApp}`}
+      onClick={() => trackEvent("whatsapp_click", { source: source ?? "inline_button" })}
       className={cn(
         "inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-sm font-black text-slate-950 shadow-lg shadow-[#25D366]/20 transition hover:-translate-y-0.5 hover:bg-[#20bd5a]",
         className
@@ -36,6 +40,7 @@ export function FloatingWhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Chat on WhatsApp ${contactWhatsApp}`}
+        onClick={() => trackEvent("whatsapp_click", { source: "floating_button" })}
         className="group flex min-h-14 items-center gap-3 rounded-md border border-white/15 bg-[#25D366] px-4 py-3 text-sm font-black text-slate-950 shadow-2xl shadow-black/30 transition hover:-translate-y-0.5 hover:bg-[#20bd5a]"
       >
         <span className="flex h-8 w-8 items-center justify-center rounded-md bg-white/90">

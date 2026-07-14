@@ -15,19 +15,19 @@ User-agent: ChatGPT-User
 Allow: /
 
 User-agent: GPTBot
-Allow: /
+Disallow: /
 
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: ClaudeBot
-Allow: /
+Disallow: /
 
 User-agent: Claude-User
 Allow: /
 
 User-agent: Google-Extended
-Allow: /
+Disallow: /
 
 Sitemap: https://www.hulidun.com/sitemap.xml
 Host: https://www.hulidun.com

@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { CheckCircle2, HelpCircle, Upload } from "lucide-react";
 import { CTAButton } from "@/components/common/CTAButton";
 import { brandName, makeWhatsAppUrl } from "@/data/site";
+import { trackEvent } from "@/lib/analytics";
 
 const inputFields: {
   name: string;
@@ -38,6 +39,11 @@ export function RFQForm() {
       `Message: ${payload.message || "-"}`
     ];
 
+    trackEvent("generate_lead", {
+      form_name: "hulidun_rfq",
+      product: String(payload.productInterested || ""),
+      country: String(payload.country || "")
+    });
     window.open(makeWhatsAppUrl(lines.join("\n")), "_blank", "noopener,noreferrer");
     setSubmitted(true);
     event.currentTarget.reset();

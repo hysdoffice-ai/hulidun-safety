@@ -3,6 +3,7 @@ import { applications } from "@/data/applications";
 import { industryLandings } from "@/data/industries";
 import { products } from "@/data/products";
 import { resources } from "@/data/resources";
+import { productCategoryLandings } from "@/data/product-categories";
 
 const baseUrl = "https://www.hulidun.com";
 
@@ -34,6 +35,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: product.featured ? 0.9 : 0.7
+    })),
+    ...productCategoryLandings.map((landing) => ({
+      url: `${baseUrl}/${landing.slug}/`,
+      changeFrequency: "monthly",
+      priority: 0.85
     })),
     ...applications.map((application) => ({
       url: `${baseUrl}/applications/${application.slug}/`,
