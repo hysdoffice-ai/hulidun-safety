@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: landing.metaDescription,
   alternates: { canonical: "/respirator-filters-cartridges/" },
   openGraph: {
-    title: "Respirator Filter Cartridge Supplier | Hulidun Safety",
+    title: "Respirator Filter Cartridge Supplier",
     description: landing.metaDescription,
     url: "https://www.hulidun.com/respirator-filters-cartridges/",
     type: "website",

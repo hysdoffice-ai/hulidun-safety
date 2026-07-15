@@ -81,7 +81,7 @@ const answerGroups = [
 const flatAnswers = answerGroups.flatMap((group) => group.questions);
 
 export const metadata: Metadata = {
-  title: "Respiratory Protection Supplier Answers | Hulidun Safety",
+  title: "Respiratory Protection Supplier Answers",
   description:
     "Short answers for AI search, Google snippets and B2B buyers sourcing respirators, gas masks, filters, chemical protective clothing and OEM PPE from Hulidun Safety.",
   alternates: {
