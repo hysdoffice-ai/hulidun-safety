@@ -180,6 +180,7 @@ export default function AnswersPage() {
           {[
             { label: "Product Catalog", href: "/products/" },
             { label: "Sourcing Guides", href: "/industries/" },
+            { label: "Industrial PAPR Project Review", href: "/industries/industrial-papr-odm-supplier/" },
             { label: "Buyer Resources", href: "/resources/" },
             { label: "Quality Documents", href: "/quality/" }
           ].map((item) => (

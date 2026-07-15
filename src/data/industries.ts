@@ -286,6 +286,48 @@ export const industryLandings: IndustryLanding[] = [
     ]
   },
   {
+    slug: "industrial-papr-odm-supplier",
+    keyword: "Industrial PAPR ODM Supplier",
+    title: "Industrial PAPR ODM Supplier Project Review Guide",
+    metaDescription:
+      "Prepare an industrial PAPR OEM or ODM inquiry with airflow, battery runtime, headtop, filter, target-market and private-label requirements for project review.",
+    eyebrow: "PAPR Project Review",
+    summary:
+      "Hulidun Safety reviews powered air-purifying respirator inquiries project by project. Buyers should define the complete system, intended hazard and target-market requirements before availability, configuration, documentation or OEM scope can be confirmed.",
+    buyerIntent: ["Industrial PAPR sourcing", "OEM/ODM project review", "Powered-air respirator inquiry", "Private-label packaging"],
+    recommendedCategories: ["Supplied-Air & SCBA Systems", "Full Face Respirators", "Filters & Cartridges"],
+    recommendedProductSlugs: [
+      "breathing-air-hose-black-white-breathing-air-hose",
+      "positive-pressure-scba-positive-pressure-air-breathing-apparatus",
+      "mf19-full-face-respirator"
+    ],
+    applications: ["Industrial coating", "Grinding and particulate work", "Chemical handling", "Long-duration respiratory tasks"],
+    hazards: ["Particles", "Paint mist", "Selected vapor when properly configured", "Heat and worker workload"],
+    procurementNotes: [
+      "Specify the required headtop or facepiece, blower airflow, battery runtime, charging system and filter class.",
+      "Share the intended hazard, workplace conditions, target market, applicable standards and required technical documents.",
+      "Branding, labels, manuals and packaging can be reviewed only after the component configuration and compliance scope are confirmed.",
+      "The products shown below are adjacent respiratory-protection references, not a claim that they form a complete PAPR kit."
+    ],
+    faqs: [
+      {
+        question: "Does Hulidun Safety list a standard off-the-shelf PAPR kit?",
+        answer:
+          "The current public catalog focuses on reusable respirators, filters, supplied-air and SCBA-related products. PAPR inquiries are reviewed project by project, and exact availability and specifications must be confirmed before ordering."
+      },
+      {
+        question: "What information is needed for an industrial PAPR inquiry?",
+        answer:
+          "Provide the hazard, intended standards, headtop or facepiece type, required airflow, battery runtime, filter class, quantity, target market and OEM packaging requirements."
+      },
+      {
+        question: "Can PAPR OEM or ODM packaging be discussed?",
+        answer:
+          "Branding, labels, manuals and packaging can be discussed after the component and compliance review. OEM packaging does not automatically provide product certification for a target market."
+      }
+    ]
+  },
+  {
     slug: "fire-escape-smoke-hood-supplier",
     keyword: "Fire Escape Smoke Hood Supplier",
     title: "Fire Escape Smoke Hood Supplier for Emergency PPE Programs",

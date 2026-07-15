@@ -39,11 +39,24 @@ export function ProductCategoryLanding({ landing }: ProductCategoryLandingProps)
       }))
     }
   };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: landing.buyerQuestions.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer
+      }
+    }))
+  };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Section eyebrow={landing.eyebrow} title={landing.title} intro={landing.description} headingLevel="h1">
         <div className="rounded-md border border-orange/30 bg-orange/10 p-5 text-base leading-7 text-slate-200">
           <span className="font-black text-white">Quick answer: </span>{landing.buyerAnswer}
