@@ -25,7 +25,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 
   return {
-    title: `${landing.keyword} | Hulidun Safety`,
+    title: landing.keyword,
     description: landing.metaDescription,
     alternates: {
       canonical: `/industries/${landing.slug}/`

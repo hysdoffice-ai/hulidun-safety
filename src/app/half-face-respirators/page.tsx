@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: landing.metaDescription,
   alternates: { canonical: "/half-face-respirators/" },
   openGraph: {
-    title: "Half Face Respirator Supplier | Hulidun Safety",
+    title: "Half Face Respirator Supplier",
     description: landing.metaDescription,
     url: "https://www.hulidun.com/half-face-respirators/",
     type: "website",
