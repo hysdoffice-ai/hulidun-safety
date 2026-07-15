@@ -115,28 +115,6 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     audience: {
       "@type": "BusinessAudience",
       audienceType: "Distributors, wholesalers, project buyers and OEM/ODM customers"
-    },
-    offers: {
-      "@type": "Offer",
-      url: `https://www.hulidun.com/products/${product.slug}/`,
-      availability: "https://schema.org/InStock",
-      itemCondition: "https://schema.org/NewCondition",
-      businessFunction: "https://purl.org/goodrelations/v1#Sell",
-      seller: {
-        "@type": "Organization",
-        name: companyName
-      },
-      eligibleQuantity: {
-        "@type": "QuantitativeValue",
-        minValue: 200,
-        unitText: "pcs"
-      },
-      deliveryLeadTime: {
-        "@type": "QuantitativeValue",
-        minValue: 5,
-        maxValue: 15,
-        unitText: "days"
-      }
     }
   };
 
