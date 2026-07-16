@@ -34,9 +34,6 @@ export const metadata: Metadata = {
     "OEM ODM PPE"
   ],
   metadataBase: new URL("https://www.hulidun.com"),
-  alternates: {
-    canonical: "/"
-  },
   robots: {
     index: true,
     follow: true,

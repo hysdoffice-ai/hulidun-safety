@@ -192,7 +192,7 @@ function createProduct(seed: ProductSeed): Product {
   const base = baseByCategory[seed.category];
   const modelSlug = slugify(seed.model);
   const productSlug = seed.slug ?? `${modelSlug}-${slugify(seed.name)}`;
-  const image = `/images/products/${seed.image}`;
+  const image = `/images/products/${seed.image.replace(/\.(?:jpe?g|png)$/i, ".webp")}`;
 
   return {
     id: `prod-${modelSlug}`,

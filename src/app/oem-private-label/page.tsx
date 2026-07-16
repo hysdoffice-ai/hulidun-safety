@@ -7,7 +7,10 @@ import { oemCapabilities } from "@/data/oem";
 export const metadata: Metadata = {
   title: "OEM Respirator Manufacturer | Private Label Gas Masks & Filters",
   description:
-    "OEM and private label respiratory protection products with custom packaging, logo printing and distributor support."
+    "OEM and private label respiratory protection products with custom packaging, logo printing and distributor support.",
+  alternates: {
+    canonical: "/oem-private-label/"
+  }
 };
 
 const icons = [Printer, Palette, Boxes, ScrollText];

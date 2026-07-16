@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import { applications } from "@/data/applications";
 import { ApplicationCard } from "@/components/applications/ApplicationCard";
 import { SectionHeader } from "@/components/common/SectionHeader";
+
+export const metadata: Metadata = {
+  title: "Respiratory Protection by Industrial Application",
+  description:
+    "Explore respirator, filter and chemical safety PPE recommendations by workplace application, hazard and procurement requirement.",
+  alternates: {
+    canonical: "/applications/"
+  }
+};
 
 export default function ApplicationsPage() {
   return (

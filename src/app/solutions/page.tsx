@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import { solutions } from "@/data/solutions";
 import { Badge } from "@/components/common/Badge";
 import { CTAButton } from "@/components/common/CTAButton";
 import { SectionHeader } from "@/components/common/SectionHeader";
+
+export const metadata: Metadata = {
+  title: "Configured Respiratory Protection & PPE Solutions",
+  description:
+    "Compare configured respirator, filter, supplied-air and emergency PPE kits for industrial buyers, distributors and project procurement.",
+  alternates: {
+    canonical: "/solutions/"
+  }
+};
 
 export default function SolutionsPage() {
   return (

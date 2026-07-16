@@ -15,7 +15,10 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const application = applications.find((item) => item.slug === params.slug);
   return {
     title: application ? `${application.name} Respiratory Protection Solution` : "Application Solution",
-    description: application?.summary
+    description: application?.summary,
+    alternates: application
+      ? { canonical: `/applications/${application.slug}/` }
+      : undefined
   };
 }
 
