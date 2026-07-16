@@ -39,7 +39,10 @@ const homepageFaqs = [
 export const metadata: Metadata = {
   title: "Industrial Respiratory Protection Manufacturer | Full Face Respirators & Gas Masks",
   description:
-    "China-based supplier of industrial respiratory protection, chemical safety PPE and emergency protection solutions for hazardous workplaces."
+    "China-based supplier of industrial respiratory protection, chemical safety PPE and emergency protection solutions for hazardous workplaces.",
+  alternates: {
+    canonical: "/"
+  }
 };
 
 export default function HomePage() {

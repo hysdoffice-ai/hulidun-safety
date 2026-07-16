@@ -193,6 +193,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               className="aspect-[4/3] border border-white/10"
               imgClassName="object-contain p-5"
               fallbackLabel={`${product.model} product image`}
+              priority
             />
             <p className="mt-3 text-xs text-slate-500">{product.image}</p>
           </div>
