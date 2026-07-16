@@ -7,7 +7,10 @@ import { companyAddress, contactEmail, contactPerson, contactWhatsApp, tradeHigh
 export const metadata: Metadata = {
   title: "Request a Quote | Respiratory Protection Products",
   description:
-    "Tell us your application, hazard type and quantity. Get product recommendation and quotation from our team."
+    "Tell us your application, hazard type and quantity. Get product recommendation and quotation from our team.",
+  alternates: {
+    canonical: "/contact/"
+  }
 };
 
 export default function ContactPage() {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Factory, Globe2, ShieldCheck, Target } from "lucide-react";
 import { ImageWithFallback } from "@/components/common/ImageWithFallback";
 import { Section } from "@/components/section";
@@ -16,6 +17,15 @@ import {
   hulidunStatement,
   tradeHighlights
 } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: "About Hulidun Safety | Respiratory Protection Manufacturer",
+  description:
+    "Learn about Shanxi Hongyu Times Technology Co., Ltd., the company behind Hulidun Safety, its factory, product range and B2B export capabilities.",
+  alternates: {
+    canonical: "/about/"
+  }
+};
 
 const range = [
   "Full face respirators",

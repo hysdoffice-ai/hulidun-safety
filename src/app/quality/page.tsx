@@ -8,7 +8,10 @@ import { documentPreviews, factoryImages, qualityImage, qualitySteps } from "@/d
 export const metadata: Metadata = {
   title: "Factory Strength, Certificates & Quality Control",
   description:
-    "Review factory workshop previews, certificate document samples, inspection, testing and quality control process for respiratory protection products."
+    "Review factory workshop previews, certificate document samples, inspection, testing and quality control process for respiratory protection products.",
+  alternates: {
+    canonical: "/quality/"
+  }
 };
 
 export default function QualityPage() {
@@ -16,7 +19,7 @@ export default function QualityPage() {
     <>
       <Section eyebrow="Factory Strength & Certificates" title="Factory Workshop, Certificates & Quality Control" intro="Review workshop previews, warehouse capacity, certificate samples and inspection checkpoints for international B2B orders.">
         <div className="mb-8 rounded-md border border-white/10 bg-gradient-to-br from-slate-700 via-slate-900 to-black p-5 shadow-panel">
-          <ImageWithFallback src={qualityImage} alt="Factory production equipment" className="aspect-[16/7] min-h-64 border border-orange/20" fallbackLabel="Factory quality control image" />
+          <ImageWithFallback src={qualityImage} alt="Factory production equipment" className="aspect-[16/7] min-h-64 border border-orange/20" fallbackLabel="Factory quality control image" priority />
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {qualitySteps.map((step, index) => (
