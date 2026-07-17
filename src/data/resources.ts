@@ -15,6 +15,13 @@ export type Resource = {
     body: string;
   }[];
   relatedProductCategories: string[];
+  publishedAt?: string;
+  updatedAt?: string;
+  sources?: {
+    title: string;
+    url: string;
+    publisher: string;
+  }[];
 };
 
 export const resources: Resource[] = [
@@ -255,5 +262,66 @@ export const resources: Resource[] = [
       }
     ],
     relatedProductCategories: ["Accessories & Emergency PPE", "Filters & Cartridges", "Half Face Respirators"]
+  },
+  {
+    id: "res-fit-testing-procurement-checklist",
+    slug: "respirator-fit-testing-procurement-checklist",
+    title: "Respirator Fit Testing: A Procurement Checklist for Safety Buyers",
+    excerpt: "A practical checklist for buying tight-fitting respirators that supports fit testing, user seal checks and workforce size selection.",
+    category: "Compliance Guide",
+    readTime: "7 min read",
+    metaDescription: "Use this respirator fit testing procurement checklist to plan model and size selection, records, user seal checks and supplier documentation for tight-fitting respirators.",
+    publishedAt: "2026-07-17",
+    updatedAt: "2026-07-17",
+    questions: [
+      {
+        question: "Is a user seal check the same as a respirator fit test?",
+        answer: "No. A fit test verifies that a specific respirator model and size can fit a wearer, while a user seal check is performed each time a tight-fitting respirator is put on. A seal check does not replace a fit test."
+      },
+      {
+        question: "When should a worker be fit tested for a tight-fitting respirator?",
+        answer: "For workplaces covered by the U.S. OSHA respiratory protection standard, fit testing is required before initial use, at least annually, and when a different facepiece type, model, style or size is used. Other markets may have different requirements."
+      },
+      {
+        question: "What should a buyer request from a respirator supplier before bulk ordering?",
+        answer: "Request available facepiece sizes, model-specific user instructions, compatible filters and parts, sample units for the fit-test process, packaging details and the technical documents needed for the destination market."
+      }
+    ],
+    sections: [
+      {
+        heading: "Build fit testing into procurement",
+        body: "A tight-fitting respirator should not be selected by catalog appearance alone. Procurement teams should coordinate with the workplace respiratory protection program so representative users can be evaluated with the exact make, model, style and size being considered. A sample stage before the bulk order can reduce the risk of purchasing one facepiece configuration that does not fit the workforce."
+      },
+      {
+        heading: "Plan a usable size and model range",
+        body: "Respirator fit varies by wearer and facepiece design. Ask the supplier which sizes are available, whether replacement parts are shared across sizes and whether each size uses the same cartridge interface. Keep model and size identifiers clear in the purchase order because changing either may require another fit test under the applicable program."
+      },
+      {
+        heading: "Separate fit testing from the daily seal check",
+        body: "Fit testing is a formal qualitative or quantitative process. A user seal check is a separate check performed whenever a tight-fitting respirator is donned, using the manufacturer's instructions or an accepted procedure. Buyer documentation and training material should describe both steps without presenting the seal check as a substitute for fit testing."
+      },
+      {
+        heading: "Complete the buyer document pack",
+        body: "Before shipment, confirm model and size lists, user instructions, cleaning and storage guidance, compatible filters, spare-part codes and available test or compliance documents. Requirements differ by country and workplace, so the employer or responsible safety professional must confirm the final respirator program and local regulatory obligations."
+      }
+    ],
+    relatedProductCategories: ["Full Face Respirators", "Half Face Respirators", "Filters & Cartridges"],
+    sources: [
+      {
+        title: "Fit Testing",
+        url: "https://www.cdc.gov/niosh/ppe/respirators/fit-testing.html",
+        publisher: "CDC/NIOSH"
+      },
+      {
+        title: "Respiratory Protection Standard — 29 CFR 1910.134",
+        url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134",
+        publisher: "U.S. OSHA"
+      },
+      {
+        title: "User Seal Check Procedures — Appendix B-1",
+        url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134AppB1",
+        publisher: "U.S. OSHA"
+      }
+    ]
   }
 ];

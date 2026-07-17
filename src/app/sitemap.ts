@@ -6,7 +6,7 @@ import { resources } from "@/data/resources";
 import { productCategoryLandings } from "@/data/product-categories";
 
 const baseUrl = "https://www.hulidun.com";
-const latestContentUpdate = new Date("2026-07-16T00:00:00+08:00");
+const latestContentUpdate = new Date("2026-07-17T00:00:00+08:00");
 
 const staticRoutes = [
   "",
