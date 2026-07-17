@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { RFQForm } from "@/components/common/RFQForm";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { ComplianceNotice } from "@/components/notice";
-import { companyAddress, contactEmail, contactPerson, contactWhatsApp, tradeHighlights, whatsappUrl } from "@/data/site";
+import { brandName, companyAddress, companyName, contactEmail, contactPerson, contactWhatsApp, tradeHighlights, whatsappUrl } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Request a Quote | Respiratory Protection Products",
@@ -14,10 +14,39 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: `Contact ${brandName}`,
+    url: "https://www.hulidun.com/contact/",
+    description: metadata.description,
+    mainEntity: {
+      "@type": "Organization",
+      name: companyName,
+      email: contactEmail,
+      telephone: contactWhatsApp,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: companyAddress,
+        addressCountry: "CN"
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        name: contactPerson,
+        email: contactEmail,
+        telephone: contactWhatsApp,
+        availableLanguage: ["English", "Chinese"]
+      }
+    }
+  };
+
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.8fr_1.2fr]">
-        <div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }} />
+      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.8fr_1.2fr]">
+          <div>
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.28em] text-orange">Contact / RFQ</p>
           <h1 className="text-balance text-4xl font-black text-white sm:text-6xl">Request a protection solution recommendation</h1>
           <p className="mt-6 text-lg leading-8 text-slate-300">
@@ -60,9 +89,10 @@ export default function ContactPage() {
               </div>
             ))}
           </div>
+          </div>
+          <RFQForm />
         </div>
-        <RFQForm />
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

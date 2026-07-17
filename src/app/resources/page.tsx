@@ -8,7 +8,7 @@ import { SectionHeader } from "@/components/common/SectionHeader";
 export const metadata: Metadata = {
   title: "Respirator Buyer Guides & PPE Resources",
   description:
-    "Buyer guides for full face respirators, half masks, filter cartridges, supplied-air systems, painting protection and reusable respirator maintenance.",
+    "Buyer guides for respirator fit testing, full face and half masks, filter cartridges, supplied-air systems, painting protection and reusable respirator maintenance.",
   alternates: {
     canonical: "/resources/"
   }
@@ -21,7 +21,7 @@ export default function ResourcesPage() {
         <SectionHeader
           eyebrow="Resources"
           title="Respiratory protection resource center"
-          description="Educational articles for overseas buyers comparing respirator types, filter choices, workplace applications and reusable product maintenance."
+          description="Official-source-reviewed articles for overseas buyers comparing fit testing, respirator types, filter choices, workplace applications and reusable product maintenance."
         />
         <div className="mb-8 rounded-md border border-orange/30 bg-orange/10 p-5">
           <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">

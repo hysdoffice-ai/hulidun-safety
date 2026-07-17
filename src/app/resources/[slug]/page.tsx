@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, FileText } from "lucide-react";
+import { ArrowLeft, CalendarDays, FileText, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/common/Badge";
 import { CTAButton } from "@/components/common/CTAButton";
 import { Section } from "@/components/section";
@@ -9,6 +9,30 @@ import { products } from "@/data/products";
 import { resources } from "@/data/resources";
 import { brandName, companyName } from "@/data/site";
 import { ProductCard } from "@/components/products/ProductCard";
+
+const defaultPublishedAt = "2026-07-03";
+const defaultUpdatedAt = "2026-07-17";
+const defaultEditorialSources = [
+  {
+    title: "Respirator Selection and Use",
+    url: "https://www.cdc.gov/niosh/ppe/respirators/selection.html",
+    publisher: "CDC/NIOSH"
+  },
+  {
+    title: "Respiratory Protection Standard — 29 CFR 1910.134",
+    url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134",
+    publisher: "U.S. OSHA"
+  }
+];
+
+function formatEditorialDate(value: string) {
+  return new Intl.DateTimeFormat("en", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC"
+  }).format(new Date(`${value}T00:00:00Z`));
+}
 
 export function generateStaticParams() {
   return resources.map((resource) => ({ slug: resource.slug }));
@@ -35,8 +59,12 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       description: resource.metaDescription,
       type: "article",
       url: `https://www.hulidun.com/resources/${resource.slug}/`,
-      images: ["/images/brand/logo.png"]
-    }
+      images: ["/images/brand/logo.png"],
+      publishedTime: resource.publishedAt ?? defaultPublishedAt,
+      modifiedTime: resource.updatedAt ?? defaultUpdatedAt,
+      authors: [companyName]
+    },
+    authors: [{ name: `${brandName} Technical Team` }]
   };
 }
 
@@ -47,6 +75,9 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
   const relatedProducts = products
     .filter((product) => resource.relatedProductCategories.includes(product.category))
     .slice(0, 3);
+  const publishedAt = resource.publishedAt ?? defaultPublishedAt;
+  const updatedAt = resource.updatedAt ?? defaultUpdatedAt;
+  const editorialSources = resource.sources ?? defaultEditorialSources;
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -54,11 +85,17 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
     headline: resource.title,
     description: resource.metaDescription,
     url: `https://www.hulidun.com/resources/${resource.slug}/`,
-    datePublished: "2026-07-03",
-    dateModified: "2026-07-06",
+    datePublished: publishedAt,
+    dateModified: updatedAt,
     author: {
       "@type": "Organization",
-      name: companyName
+      name: `${brandName} Technical Team`,
+      url: "https://www.hulidun.com/about/"
+    },
+    editor: {
+      "@type": "Organization",
+      name: companyName,
+      url: "https://www.hulidun.com/about/"
     },
     publisher: {
       "@type": "Organization",
@@ -69,6 +106,7 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
       }
     },
     about: resource.relatedProductCategories,
+    citation: editorialSources.map((source) => source.url),
     mentions: relatedProducts.map((product) => ({
       "@type": "Product",
       name: `${product.model} ${product.name}`,
@@ -142,6 +180,16 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
           </div>
           <h1 className="text-balance text-4xl font-black text-white sm:text-6xl">{resource.title}</h1>
           <p className="mt-6 text-lg leading-8 text-slate-300">{resource.excerpt}</p>
+          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300">
+            <span className="inline-flex items-center gap-2">
+              <ShieldCheck className="h-4 w-4 text-warning" />
+              Reviewed by {brandName} Technical Team
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <CalendarDays className="h-4 w-4 text-warning" />
+              Updated {formatEditorialDate(updatedAt)}
+            </span>
+          </div>
           <p className="mt-5 rounded-md border border-orange/25 bg-orange/10 p-4 text-sm leading-7 text-slate-200">
             Direct answer: {resource.questions[0]?.answer}
           </p>
@@ -188,6 +236,27 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+      </Section>
+
+      <Section title="Editorial References" eyebrow="Authoritative sources" className="bg-slate-950/60">
+        <p className="mb-5 max-w-3xl text-sm leading-7 text-slate-300">
+          This buyer guide was reviewed against the following public safety references. Final product selection must follow the workplace hazard assessment, manufacturer instructions and rules in the destination market.
+        </p>
+        <div className="grid gap-3 md:grid-cols-2">
+          {editorialSources.map((source) => (
+            <a
+              key={source.url}
+              href={source.url}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-md border border-white/10 bg-white/[0.04] p-4 transition hover:border-warning/50"
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-warning">{source.publisher}</p>
+              <p className="mt-2 font-bold text-white">{source.title}</p>
+            </a>
+          ))}
+        </div>
+        <p className="mt-5 text-xs text-slate-500">First published {formatEditorialDate(publishedAt)}.</p>
       </Section>
     </>
   );
