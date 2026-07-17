@@ -26,8 +26,33 @@ export default function ApplicationDetailPage({ params }: { params: { slug: stri
   const application = applications.find((item) => item.slug === params.slug);
   if (!application) notFound();
 
+  const pageUrl = `https://www.hulidun.com/applications/${application.slug}/`;
+  const applicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: `${application.name} Respiratory Protection Solution`,
+    description: application.summary,
+    url: pageUrl,
+    inLanguage: "en",
+    about: application.typicalHazards.map((hazard) => ({
+      "@type": "Thing",
+      name: hazard
+    }))
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.hulidun.com/" },
+      { "@type": "ListItem", position: 2, name: "Applications", item: "https://www.hulidun.com/applications/" },
+      { "@type": "ListItem", position: 3, name: application.name, item: pageUrl }
+    ]
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(applicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="bg-slate-950 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <Factory className="mb-6 h-12 w-12 text-orange" />
