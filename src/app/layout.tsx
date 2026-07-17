@@ -108,15 +108,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       telephone: contactWhatsApp,
       availableLanguage: ["English", "Chinese"]
     },
-    makesOffer: [
-      "Full face respirators",
-      "Half face respirators",
-      "Respirator cartridges and filters",
-      "Supplied-air respirators",
-      "Powered air systems",
-      "Chemical protective clothing",
-      "PPE accessories"
-    ]
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Industrial Respiratory Protection and Chemical Safety PPE",
+      itemListElement: [
+        "Full face respirators",
+        "Half face respirators",
+        "Respirator cartridges and filters",
+        "Supplied-air respirators",
+        "Powered air systems",
+        "Chemical protective clothing",
+        "PPE accessories"
+      ].map((name) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Product",
+          name
+        }
+      }))
+    }
   };
 
   const websiteSchema = {
@@ -129,11 +139,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     publisher: {
       "@type": "Organization",
       name: companyName
-    },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://www.hulidun.com/products/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
     },
     inLanguage: "en"
   };
