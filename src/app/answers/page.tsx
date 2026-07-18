@@ -83,7 +83,7 @@ const flatAnswers = answerGroups.flatMap((group) => group.questions);
 export const metadata: Metadata = {
   title: "Respiratory Protection Supplier Answers",
   description:
-    "Short answers for AI search, Google snippets and B2B buyers sourcing respirators, gas masks, filters, chemical protective clothing and OEM PPE from Hulidun Safety.",
+    "Verified company, product, MOQ, lead-time and OEM answers for B2B buyers sourcing respirators, gas masks, filters and chemical protective PPE.",
   alternates: {
     canonical: "/answers/"
   }
@@ -108,6 +108,7 @@ export default function AnswersPage() {
     "@type": "WebPage",
     name: "Respiratory Protection Supplier Answers",
     url: "https://www.hulidun.com/answers/",
+    dateModified: "2026-07-18",
     about: [
       "respiratory protection manufacturer",
       "full face respirator supplier",
@@ -119,7 +120,9 @@ export default function AnswersPage() {
       "@type": "Organization",
       name: companyName,
       alternateName: brandName
-    }
+    },
+    publisher: { "@id": "https://www.hulidun.com/#organization", name: companyName },
+    isPartOf: { "@id": "https://www.hulidun.com/#website" }
   };
 
   return (
@@ -130,7 +133,7 @@ export default function AnswersPage() {
         <div className="mx-auto max-w-7xl">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.28em] text-orange">Direct Answers</p>
           <h1 className="max-w-4xl text-balance text-4xl font-black text-white sm:text-6xl">
-            Respiratory Protection Supplier Answers for Buyers and AI Search
+            Respiratory Protection Supplier Answers for B2B Buyers
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
             Concise procurement answers about {brandName}, product scope, MOQ, lead time, OEM packaging and RFQ requirements for distributors, wholesalers and industrial project buyers.
