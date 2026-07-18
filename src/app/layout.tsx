@@ -63,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://www.hulidun.com/#organization",
     name: companyName,
     alternateName: brandName,
     url: "https://www.hulidun.com",
@@ -107,37 +108,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       email: contactEmail,
       telephone: contactWhatsApp,
       availableLanguage: ["English", "Chinese"]
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Industrial Respiratory Protection and Chemical Safety PPE",
-      itemListElement: [
-        "Full face respirators",
-        "Half face respirators",
-        "Respirator cartridges and filters",
-        "Supplied-air respirators",
-        "Powered air systems",
-        "Chemical protective clothing",
-        "PPE accessories"
-      ].map((name) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Product",
-          name
-        }
-      }))
     }
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://www.hulidun.com/#website",
     name: brandName,
     url: "https://www.hulidun.com",
     description:
       "Industrial respiratory protection and chemical safety PPE supplier for global B2B buyers.",
     publisher: {
       "@type": "Organization",
+      "@id": "https://www.hulidun.com/#organization",
       name: companyName
     },
     inLanguage: "en"
