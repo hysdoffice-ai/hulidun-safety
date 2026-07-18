@@ -92,9 +92,12 @@ export default function IndustryLandingPage({ params }: { params: { slug: string
     headline: landing.title,
     description: landing.metaDescription,
     mainEntityOfPage: pageUrl,
+    datePublished: "2026-07-17",
+    dateModified: "2026-07-18",
     author: {
       "@type": "Organization",
-      name: companyName
+      name: `${brandName} Technical Team`,
+      url: "https://www.hulidun.com/about/"
     },
     publisher: {
       "@type": "Organization",

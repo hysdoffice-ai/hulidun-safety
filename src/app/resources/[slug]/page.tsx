@@ -108,7 +108,7 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
     about: resource.relatedProductCategories,
     citation: editorialSources.map((source) => source.url),
     mentions: relatedProducts.map((product) => ({
-      "@type": "Product",
+      "@type": "Thing",
       name: `${product.model} ${product.name}`,
       url: `https://www.hulidun.com/products/${product.slug}/`
     })),

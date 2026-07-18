@@ -82,40 +82,38 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   const related = products.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 3);
   const productFaqs = getProductFaqs(product);
   const quoteHref = `/contact/?model=${encodeURIComponent(product.model)}&product=${encodeURIComponent(product.name)}`;
-  const additionalProperties = product.specifications.map((spec) => ({
-    "@type": "PropertyValue",
-    name: spec.label,
-    value: spec.value
-  }));
-  const productSchema = {
+  const productUrl = `https://www.hulidun.com/products/${product.slug}/`;
+  const productPageSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "ItemPage",
+    "@id": `${productUrl}#webpage`,
+    url: productUrl,
     name: `${product.model} ${product.name}`,
-    alternateName: `${product.model} ${product.category} by ${brandName}`,
-    image: `https://www.hulidun.com${product.image}`,
     description: product.shortDescription,
-    model: product.model,
-    mpn: product.model,
-    sku: product.model,
-    material: product.materials.join("; "),
-    brand: {
-      "@type": "Brand",
-      name: brandName
+    dateModified: "2026-07-18",
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `https://www.hulidun.com${product.image}`,
+      caption: `${product.model} ${product.name}`
     },
-    manufacturer: {
-      "@type": "Organization",
-      name: companyName
+    about: {
+      "@type": "Thing",
+      "@id": `${productUrl}#item`,
+      name: `${product.model} ${product.name}`,
+      description: product.longDescription,
+      image: `https://www.hulidun.com${product.image}`,
+      identifier: {
+        "@type": "PropertyValue",
+        propertyID: "Model",
+        value: product.model
+      }
     },
-    category: product.category,
-    additionalProperty: additionalProperties,
-    isRelatedTo: product.compatibleFilters.map((filter) => ({
-      "@type": "Product",
-      name: filter
-    })),
     audience: {
       "@type": "BusinessAudience",
       audienceType: "Distributors, wholesalers, project buyers and OEM/ODM customers"
-    }
+    },
+    isPartOf: { "@id": "https://www.hulidun.com/#website" },
+    publisher: { "@id": "https://www.hulidun.com/#organization", name: companyName }
   };
 
   const breadcrumbSchema = {
@@ -160,7 +158,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productPageSchema) }}
       />
       <script
         type="application/ld+json"
@@ -175,14 +173,14 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
         <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_.8fr] lg:items-center">
           <div>
             <Badge tone="orange">{product.model}</Badge>
-            <h1 className="mt-5 text-balance text-4xl font-black text-white sm:text-6xl">{product.name}</h1>
+            <h1 className="mt-5 text-balance text-4xl font-black text-white sm:text-6xl">{product.model} {product.name}</h1>
             <p className="mt-6 text-lg leading-8 text-slate-300">{product.longDescription}</p>
             <p className="mt-5 rounded-md border border-orange/25 bg-orange/10 p-4 text-sm leading-7 text-slate-200">
               Quick answer: {product.model} {product.name} is supplied by {brandName} for {product.applications.slice(0, 3).join(", ").toLowerCase()} procurement, with reference MOQ from 200 pcs, OEM packaging support and technical documents available upon request.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <WhatsAppButton source={`${product.model} ${product.name}`} />
-              <CTAButton href="/downloads/hulidun-safety-product-catalog.pdf" variant="outline">Download Datasheet</CTAButton>
+              <CTAButton href="/downloads/hulidun-safety-product-catalog.pdf" variant="outline">Download Product Catalog</CTAButton>
               <CTAButton href={quoteHref} variant="dark">Request Quote</CTAButton>
             </div>
           </div>
@@ -195,7 +193,6 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               fallbackLabel={`${product.model} product image`}
               priority
             />
-            <p className="mt-3 text-xs text-slate-500">{product.image}</p>
           </div>
         </div>
       </section>
