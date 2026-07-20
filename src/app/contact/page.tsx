@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { RFQForm } from "@/components/common/RFQForm";
+import { TrackedLink } from "@/components/common/TrackedLink";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { ComplianceNotice } from "@/components/notice";
 import { brandName, companyAddress, companyName, contactEmail, contactPerson, contactWhatsApp, tradeHighlights, whatsappUrl } from "@/data/site";
@@ -54,18 +55,22 @@ export default function ContactPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <WhatsAppButton source="Contact page" />
-            <a
+            <TrackedLink
               href={`mailto:${contactEmail}`}
+              eventName="email_click"
+              eventParams={{ source: "contact_page_primary" }}
               className="inline-flex min-h-11 items-center justify-center rounded-md border border-orange/50 bg-orange/10 px-5 py-3 text-sm font-bold text-orange transition hover:-translate-y-0.5 hover:bg-orange/20"
             >
               Email RFQ
-            </a>
-            <a
+            </TrackedLink>
+            <TrackedLink
               href="/downloads/hulidun-safety-product-catalog.pdf"
+              eventName="file_download"
+              eventParams={{ file_name: "hulidun-safety-product-catalog.pdf", source: "contact_page" }}
               className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/15 bg-white/[0.04] px-5 py-3 text-sm font-bold text-slate-100 transition hover:-translate-y-0.5 hover:border-warning/50"
             >
               Download Catalog
-            </a>
+            </TrackedLink>
           </div>
           <div className="mt-8">
             <ComplianceNotice />

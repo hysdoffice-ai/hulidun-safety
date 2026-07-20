@@ -17,6 +17,8 @@ export type Product = {
   }[];
   oemOptions: string[];
   documents: string[];
+  procurementChecks: string[];
+  updatedAt: string;
   image: string;
   gallery: string[];
   featured: boolean;
@@ -33,6 +35,9 @@ type ProductSeed = {
   applications?: string[];
   hazards?: string[];
   compatibleFilters?: string[];
+  procurementChecks?: string[];
+  materials?: string[];
+  updatedAt?: string;
 };
 
 const baseByCategory: Record<
@@ -120,21 +125,59 @@ const baseByCategory: Record<
 };
 
 const productSeeds: ProductSeed[] = [
-  { model: "FNJ05", name: "Full Face Respirator", category: "Full Face Respirators", image: "01_FNJ05.jpg", featured: true, detail: "Standard left-side connector; connector direction can be customized for project or distributor programs." },
+  {
+    model: "FNJ05", name: "Full Face Respirator", category: "Full Face Respirators", image: "01_FNJ05.jpg", featured: true,
+    updatedAt: "2026-07-20",
+    detail: "Standard left-side connector; connector direction can be customized for project or distributor programs.",
+    procurementChecks: [
+      "Confirm whether the project requires the standard left-side connector or a customized connector direction.",
+      "Send the intended hazard and filter requirement so connector and canister compatibility can be reviewed before sampling.",
+      "Request an exact-model sample and available technical documents before approving a bulk distributor order."
+    ]
+  },
   { model: "FNJ05A/FNJ06A", name: "Full Face Respirator", category: "Full Face Respirators", image: "02_FNJ05A_FNJ06A.jpg", detail: "Full face respirator option for painting, chemical handling, dust protection and industrial safety." },
   { model: "FNJ08/MF22", name: "Full Face Respirator", category: "Full Face Respirators", image: "03_FNJ08_MF22.jpg", detail: "Standard left-side connector with optional dual connectors and mesh head harness." },
   { model: "FNJ09/MF21", name: "Full Face Respirator", category: "Full Face Respirators", image: "04_FNJ09_MF21.jpg", detail: "Standard left-side connector with optional dual connectors and mesh head harness." },
-  { model: "MF14", name: "Silicone Full Face Respirator", category: "Full Face Respirators", image: "05_MF14.jpg", featured: true, slug: "mf14-full-face-respirator", detail: "Silicone full face mask with ribbed edge for industrial respiratory protection." },
+  {
+    model: "MF14", name: "Silicone Full Face Respirator", category: "Full Face Respirators", image: "05_MF14.jpg", featured: true, slug: "mf14-full-face-respirator",
+    updatedAt: "2026-07-20",
+    detail: "Silicone full face mask with ribbed edge for industrial respiratory protection.",
+    materials: ["Facepiece material: Silicone", "Lens material: Confirm for the quoted configuration", "Harness material: Confirm for the quoted configuration"],
+    procurementChecks: [
+      "Confirm the required facepiece material, connector configuration and target filter before requesting a quote.",
+      "Evaluate a production-representative sample through the buyer's fit-testing and workplace approval process.",
+      "Specify target-market labeling, instructions and document requirements before private-label artwork is approved."
+    ]
+  },
   { model: "MF14 Yellow Edge", name: "TPE Full Face Respirator", category: "Full Face Respirators", image: "06_yellow_edge.jpg", detail: "Yellow-edge TPE full face mask for painting, chemical handling and dust protection." },
   { model: "MF14 Black Edge", name: "TPE Full Face Respirator", category: "Full Face Respirators", image: "07_black_edge.jpg", detail: "Black-edge TPE full face mask for industrial safety and distributor product bundles." },
   { model: "MF15", name: "Dual-Connector Full Face Respirator", category: "Full Face Respirators", image: "08_MF15.jpg", featured: true, detail: "Standard dual-connector mask with left or right connector customization options." },
-  { model: "MF19", name: "RD40 Full Face Respirator", category: "Full Face Respirators", image: "09_MF19.jpg", featured: true, slug: "mf19-full-face-respirator", detail: "RD40 threaded full face respirator with dual connector configuration options." },
+  {
+    model: "MF19", name: "RD40 Full Face Respirator", category: "Full Face Respirators", image: "09_MF19.jpg", featured: true, slug: "mf19-full-face-respirator",
+    updatedAt: "2026-07-20",
+    detail: "RD40 threaded full face respirator with dual connector configuration options.",
+    compatibleFilters: ["Compatible RD40 threaded canister", "Hazard-specific multi-gas canister", "Particle-capable canister when documented for the application", "Project-specific supplied-air configuration subject to review"],
+    procurementChecks: [
+      "Confirm the thread specification on both the quoted mask and canister; an RD40-style description alone is not a compatibility approval.",
+      "State whether the project needs a single- or dual-connector configuration before sampling.",
+      "Request filter documentation for the exact hazard, target market and quoted canister model."
+    ]
+  },
   { model: "CF-6800", name: "Full Face Respirator", category: "Full Face Respirators", image: "10_CF_6800.jpg", featured: true, slug: "cf6800-full-face-respirator", detail: "6800 style full face mask with grey or black anti-fog lens customization options." },
   { model: "6800A", name: "Full Face Respirator", category: "Full Face Respirators", image: "11_6800A.jpg", detail: "6800A full face mask with anti-fog lens customization options." },
   { model: "CF01", name: "Full Face Respirator", category: "Full Face Respirators", image: "12_CF01.jpg", detail: "Full face respirator option for painting, chemical handling, dust protection and industrial safety." },
   { model: "CF02", name: "Full Face Respirator", category: "Full Face Respirators", image: "13_CF02.jpg", detail: "Standard grey full face mask with color customization options including red and project-specific colors." },
   { model: "TZL30", name: "Fire Escape Smoke Hood", category: "Accessories & Emergency PPE", image: "14_Item_31.jpg", featured: true, detail: "Self-rescue filtering respirator for emergency escape and fire safety stock programs." },
-  { model: "CF-6200", name: "Half Face Respirator", category: "Half Face Respirators", image: "15_CF_6200.jpg", featured: true, slug: "cf6200-half-face-respirator", detail: "Reusable half face respirator platform for mask-and-cartridge kits, distributor replenishment and private-label packaging programs." },
+  {
+    model: "CF-6200", name: "Half Face Respirator", category: "Half Face Respirators", image: "15_CF_6200.jpg", featured: true, slug: "cf6200-half-face-respirator",
+    updatedAt: "2026-07-20",
+    detail: "Reusable half face respirator platform for mask-and-cartridge kits, distributor replenishment and private-label packaging programs.",
+    procurementChecks: [
+      "Define whether the order is for facepieces only or a complete kit with cartridges, pre-filters and retainers.",
+      "Confirm cartridge interface, replacement-filter availability and carton quantities before creating a replenishment program.",
+      "Use samples of the exact model and size in the buyer's fit-testing process before bulk workplace deployment."
+    ]
+  },
   { model: "CF7502", name: "Half Face Respirator", category: "Half Face Respirators", image: "16_CF7502.jpg", featured: true },
   { model: "CF3300 + 3301", name: "Half Face Respirator with Cartridge", category: "Half Face Respirators", image: "17_CF3300_filter_cartridge3301.jpg", featured: true },
   { model: "3200", name: "Half Face Respirator", category: "Half Face Respirators", image: "18_3200.jpg", slug: "3200-half-face-respirator" },
@@ -147,7 +190,17 @@ const productSeeds: ProductSeed[] = [
   { model: "SWAT-Style Bag", name: "Gas Mask Bag", category: "Accessories & Emergency PPE", image: "25_Item_48.jpg" },
   { model: "Breathing Air Hose", name: "Black/White Breathing Air Hose", category: "Supplied-Air & SCBA Systems", image: "26_black_white.jpg" },
   { model: "No.3 Filter Canister", name: "Filter Canister Series", category: "Filters & Cartridges", image: "27_Item_57.jpg", featured: true },
-  { model: "A2B2E2K2KP100", name: "Combined Filter Canister", category: "Filters & Cartridges", image: "28_Item_61.jpg", featured: true, detail: "Combined filter canister for compatible threaded respirator systems; hazard labeling, connector compatibility and target-market documents should be confirmed before ordering." },
+  {
+    model: "A2B2E2K2KP100", name: "Combined Filter Canister", category: "Filters & Cartridges", image: "28_Item_61.jpg", featured: true,
+    updatedAt: "2026-07-20",
+    detail: "Combined filter canister for compatible threaded respirator systems; hazard labeling, connector compatibility and target-market documents should be confirmed before ordering.",
+    hazards: ["Organic vapor classification subject to quoted documentation", "Inorganic gas classification subject to quoted documentation", "Acid gas classification subject to quoted documentation", "Ammonia classification subject to quoted documentation", "Particle filtration classification subject to quoted documentation"],
+    procurementChecks: [
+      "Provide the exact substances, concentrations, exposure duration and workplace conditions for professional filter selection.",
+      "Confirm the thread, facepiece compatibility, filter classification, shelf life and storage conditions on the exact quotation.",
+      "Do not infer target-market approval from the A2B2E2K2KP100 model name; request applicable reports and labeling for review."
+    ]
+  },
   { model: "A2B2E2K2CO2KP100", name: "Full-Protection Filter Canister", category: "Filters & Cartridges", image: "29_Item_62.jpg" },
   { model: "Level 3 Filter Canister", name: "Filter Canister Series", category: "Filters & Cartridges", image: "30_Item_63.jpg" },
   { model: "Filter Cartridge", name: "No.1 / No.4 / No.7 Filter Cartridge", category: "Filters & Cartridges", image: "31_filter_cartridge.jpg", featured: true },
@@ -208,7 +261,7 @@ function createProduct(seed: ProductSeed): Product {
     applications: seed.applications ?? base.applications,
     hazards: seed.hazards ?? base.hazards,
     compatibleFilters: seed.compatibleFilters ?? base.compatibleFilters,
-    materials: base.materials,
+    materials: seed.materials ?? base.materials,
     specifications: [
       { label: "Model", value: seed.model },
       { label: "Product category", value: seed.category },
@@ -221,6 +274,12 @@ function createProduct(seed: ProductSeed): Product {
     ],
     oemOptions: ["Logo customization", "Color box", "Instruction manual", "Outer carton", "Private label", "Distributor catalog assets"],
     documents: ["Product data sheet", "Packing list", "Technical photos", "Test reports available upon request"],
+    procurementChecks: seed.procurementChecks ?? [
+      "Confirm the exact model, intended application, quantity and destination market.",
+      "Request compatibility information and available technical documents for the quoted configuration.",
+      "Approve a representative sample, packaging details and carton marks before bulk production."
+    ],
+    updatedAt: seed.updatedAt ?? "2026-07-18",
     image,
     gallery: [image],
     featured: seed.featured ?? false

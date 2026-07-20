@@ -25,7 +25,14 @@ export function ProductCTA({
         </div>
         <div className="flex flex-wrap gap-3">
           <WhatsAppButton source={model ? `${model} ${productName ?? ""}` : "Product configuration CTA"} />
-          <CTAButton href="/downloads/hulidun-safety-product-catalog.pdf" variant="outline">Download Product Catalog</CTAButton>
+          <CTAButton
+            href="/downloads/hulidun-safety-product-catalog.pdf"
+            variant="outline"
+            trackingEvent="file_download"
+            trackingParams={{ file_name: "hulidun-safety-product-catalog.pdf", source: model ? `product_cta_${model}` : "product_cta" }}
+          >
+            Download Product Catalog
+          </CTAButton>
           <CTAButton href={quoteHref} variant="dark">Request Quote</CTAButton>
         </div>
       </div>

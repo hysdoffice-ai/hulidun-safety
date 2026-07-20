@@ -90,7 +90,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     url: productUrl,
     name: `${product.model} ${product.name}`,
     description: product.shortDescription,
-    dateModified: "2026-07-18",
+    dateModified: product.updatedAt,
     primaryImageOfPage: {
       "@type": "ImageObject",
       url: `https://www.hulidun.com${product.image}`,
@@ -180,7 +180,14 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <WhatsAppButton source={`${product.model} ${product.name}`} />
-              <CTAButton href="/downloads/hulidun-safety-product-catalog.pdf" variant="outline">Download Product Catalog</CTAButton>
+              <CTAButton
+                href="/downloads/hulidun-safety-product-catalog.pdf"
+                variant="outline"
+                trackingEvent="file_download"
+                trackingParams={{ file_name: "hulidun-safety-product-catalog.pdf", source: `product_${product.slug}` }}
+              >
+                Download Product Catalog
+              </CTAButton>
               <CTAButton href={quoteHref} variant="dark">Request Quote</CTAButton>
             </div>
           </div>
@@ -221,7 +228,23 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
         <ProductSpecTable specifications={product.specifications} />
       </Section>
 
-      <Section title="Compatible Filters" className="bg-slate-950/60">
+      <Section
+        title="Buyer Procurement Checklist"
+        eyebrow="Before You Order"
+        intro={`Use these ${product.model}-specific checks to prepare a clearer sample request and quotation.`}
+        className="bg-slate-950/60"
+      >
+        <div className="grid gap-4 md:grid-cols-3">
+          {product.procurementChecks.map((item, index) => (
+            <article key={item} className="rounded-md border border-orange/20 bg-orange/[0.06] p-5">
+              <p className="text-xs font-bold uppercase tracking-widest text-orange">Check {index + 1}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-200">{item}</p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Compatible Filters">
         <CompatibleFilters filters={product.compatibleFilters} />
         <div className="mt-8">
           <ComplianceNotice />

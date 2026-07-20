@@ -27,6 +27,7 @@ const footerLinks = [
       { label: "Quality", href: "/quality" },
       { label: "Resources", href: "/resources" },
       { label: "Buyer Answers", href: "/answers" },
+      { label: "Editorial Policy", href: "/editorial-policy" },
       { label: "Contact", href: "/contact" }
     ]
   },
