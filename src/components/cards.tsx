@@ -18,10 +18,10 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
       </div>
       <div className="mt-6 flex flex-wrap gap-3">
-        <Link href={`/products/${product.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-warning">
+        <Link href={`/products/${product.slug}/`} className="inline-flex items-center gap-2 text-sm font-semibold text-warning">
           View Details <ArrowRight className="h-4 w-4" />
         </Link>
-        <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-semibold text-orange">
+        <Link href="/contact/" className="inline-flex items-center gap-2 text-sm font-semibold text-orange">
           Request a Quote
         </Link>
       </div>

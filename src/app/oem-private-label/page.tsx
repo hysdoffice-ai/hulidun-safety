@@ -23,7 +23,7 @@ export default function OemPage() {
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.28em] text-orange">OEM / ODM</p>
           <h1 className="text-balance text-4xl font-black text-white sm:text-6xl">OEM & Private Label Respiratory Protection Products</h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">Support for importers, distributors and safety brands that need private label respirators, filter packaging, English manuals and mixed product starter programs.</p>
-          <div className="mt-8"><ButtonLink href="/contact">Discuss OEM Project</ButtonLink></div>
+          <div className="mt-8"><ButtonLink href="/contact/">Discuss OEM Project</ButtonLink></div>
         </div>
       </section>
       <Section title="Private label capability map">

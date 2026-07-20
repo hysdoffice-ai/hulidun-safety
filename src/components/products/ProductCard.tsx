@@ -33,10 +33,10 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </div>
       <div className="mt-6 flex flex-wrap gap-4">
-        <Link href={`/products/${product.slug}`} className="inline-flex items-center gap-2 text-sm font-bold text-warning">
+        <Link href={`/products/${product.slug}/`} className="inline-flex items-center gap-2 text-sm font-bold text-warning">
           View Details <ArrowRight className="h-4 w-4" />
         </Link>
-        <Link href="/contact" className="text-sm font-bold text-orange">
+        <Link href="/contact/" className="text-sm font-bold text-orange">
           Request a Quote
         </Link>
       </div>

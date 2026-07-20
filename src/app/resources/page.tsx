@@ -44,7 +44,7 @@ export default function ResourcesPage() {
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {resources.map((resource) => (
-            <Link key={resource.id} href={`/resources/${resource.slug}`} className="rounded-md border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-warning/50">
+            <Link key={resource.id} href={`/resources/${resource.slug}/`} className="rounded-md border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-warning/50">
               <FileText className="mb-4 h-7 w-7 text-warning" />
               <div className="mb-4 flex flex-wrap gap-2">
                 <Badge tone="yellow">{resource.category}</Badge>

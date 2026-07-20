@@ -49,7 +49,7 @@ export default function SolutionsPage() {
                 <span className="font-semibold text-slate-100">Recommended buyers:</span> {solution.buyerTypes.join(", ")}
               </p>
               <div className="mt-6">
-                <CTAButton href="/contact" variant="outline">
+                <CTAButton href="/contact/" variant="outline">
                   {solution.cta}
                 </CTAButton>
               </div>

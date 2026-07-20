@@ -8,14 +8,14 @@ import { MobileNav, type NavItem } from "@/components/layout/MobileNav";
 import { brandLogo, brandName } from "@/data/site";
 
 const navItems: NavItem[] = [
-  { label: "Products", href: "/products" },
-  { label: "Sourcing", href: "/industries" },
-  { label: "Applications", href: "/applications" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "OEM / ODM", href: "/oem-private-label" },
-  { label: "Quality", href: "/quality" },
-  { label: "Resources", href: "/resources" },
-  { label: "Contact", href: "/contact" }
+  { label: "Products", href: "/products/" },
+  { label: "Sourcing", href: "/industries/" },
+  { label: "Applications", href: "/applications/" },
+  { label: "Solutions", href: "/solutions/" },
+  { label: "OEM / ODM", href: "/oem-private-label/" },
+  { label: "Quality", href: "/quality/" },
+  { label: "Resources", href: "/resources/" },
+  { label: "Contact", href: "/contact/" }
 ];
 
 export function Header() {

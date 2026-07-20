@@ -170,7 +170,7 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
       <section className="relative overflow-hidden bg-slate-950 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="absolute inset-0 bg-grid bg-[length:40px_40px] opacity-50" />
         <div className="relative mx-auto max-w-4xl">
-          <Link href="/resources" className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-warning">
+          <Link href="/resources/" className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-warning">
             <ArrowLeft className="h-4 w-4" />
             Back to resources
           </Link>
@@ -194,8 +194,8 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
             Direct answer: {resource.questions[0]?.answer}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <CTAButton href="/contact">Request Product Support</CTAButton>
-            <CTAButton href="/products" variant="dark">View Related Products</CTAButton>
+            <CTAButton href="/contact/">Request Product Support</CTAButton>
+            <CTAButton href="/products/" variant="dark">View Related Products</CTAButton>
           </div>
         </div>
       </section>

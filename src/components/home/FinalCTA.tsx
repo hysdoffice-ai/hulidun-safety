@@ -11,7 +11,7 @@ export function FinalCTA() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.28em] text-orange">RFQ Support</p>
             <h2 className="text-balance text-3xl font-black text-white">Tell us your application. We recommend the right protection solution.</h2>
           </div>
-          <CTAButton href="/contact">Request a Quote</CTAButton>
+          <CTAButton href="/contact/">Request a Quote</CTAButton>
         </div>
       </div>
     </section>

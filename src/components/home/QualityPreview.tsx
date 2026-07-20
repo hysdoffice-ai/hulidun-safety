@@ -48,7 +48,7 @@ export function QualityPreview() {
                 </div>
               ))}
             </div>
-            <Link href="/quality" className="mt-4 inline-flex min-h-11 items-center justify-center rounded-md bg-orange px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-orange/90">
+            <Link href="/quality/" className="mt-4 inline-flex min-h-11 items-center justify-center rounded-md bg-orange px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-orange/90">
               View Factory & Certificates
             </Link>
           </div>

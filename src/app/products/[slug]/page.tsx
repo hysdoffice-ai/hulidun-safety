@@ -188,7 +188,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               >
                 Download Product Catalog
               </CTAButton>
-              <CTAButton href={quoteHref} variant="dark">Request Quote</CTAButton>
+              <CTAButton href={quoteHref} rel="nofollow" variant="dark">Request Quote</CTAButton>
             </div>
           </div>
           <div className="rounded-md border border-white/10 bg-navy p-5 shadow-panel">

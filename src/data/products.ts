@@ -135,9 +135,36 @@ const productSeeds: ProductSeed[] = [
       "Request an exact-model sample and available technical documents before approving a bulk distributor order."
     ]
   },
-  { model: "FNJ05A/FNJ06A", name: "Full Face Respirator", category: "Full Face Respirators", image: "02_FNJ05A_FNJ06A.jpg", detail: "Full face respirator option for painting, chemical handling, dust protection and industrial safety." },
-  { model: "FNJ08/MF22", name: "Full Face Respirator", category: "Full Face Respirators", image: "03_FNJ08_MF22.jpg", detail: "Standard left-side connector with optional dual connectors and mesh head harness." },
-  { model: "FNJ09/MF21", name: "Full Face Respirator", category: "Full Face Respirators", image: "04_FNJ09_MF21.jpg", detail: "Standard left-side connector with optional dual connectors and mesh head harness." },
+  {
+    model: "FNJ05A/FNJ06A", name: "Full Face Respirator", category: "Full Face Respirators", image: "02_FNJ05A_FNJ06A.jpg",
+    updatedAt: "2026-07-20",
+    detail: "FNJ05A/FNJ06A paired-model full face respirator family for painting, chemical handling and industrial safety quotations.",
+    procurementChecks: [
+      "State whether the quotation is for FNJ05A or FNJ06A so the exact facepiece and connector configuration can be confirmed.",
+      "Provide the intended hazard and filter requirement before selecting cartridges or canisters for a sample kit.",
+      "Approve an exact-model sample, labeling and available technical documents before bulk production."
+    ]
+  },
+  {
+    model: "FNJ08/MF22", name: "Full Face Respirator", category: "Full Face Respirators", image: "03_FNJ08_MF22.jpg",
+    updatedAt: "2026-07-20",
+    detail: "FNJ08/MF22 paired-model platform with a standard left-side connector and optional dual-connector or mesh-harness configurations.",
+    procurementChecks: [
+      "Identify FNJ08 or MF22 on the RFQ and confirm whether a single- or dual-connector configuration is required.",
+      "Confirm whether the quoted sample should use a standard or mesh head harness.",
+      "Review the exact filter interface and target-market documents rather than approving by family name alone."
+    ]
+  },
+  {
+    model: "FNJ09/MF21", name: "Full Face Respirator", category: "Full Face Respirators", image: "04_FNJ09_MF21.jpg",
+    updatedAt: "2026-07-20",
+    detail: "FNJ09/MF21 paired-model full face respirator range offered for project-specific connector and head-harness quotations.",
+    procurementChecks: [
+      "Identify FNJ09 or MF21 on the RFQ so the supplier can quote the correct model rather than the combined family reference.",
+      "Specify connector side, connector quantity and head-harness requirement before requesting a production sample.",
+      "Verify compatibility using the exact quoted mask and filter documentation before workplace approval."
+    ]
+  },
   {
     model: "MF14", name: "Silicone Full Face Respirator", category: "Full Face Respirators", image: "05_MF14.jpg", featured: true, slug: "mf14-full-face-respirator",
     updatedAt: "2026-07-20",
@@ -165,7 +192,16 @@ const productSeeds: ProductSeed[] = [
   },
   { model: "CF-6800", name: "Full Face Respirator", category: "Full Face Respirators", image: "10_CF_6800.jpg", featured: true, slug: "cf6800-full-face-respirator", detail: "6800 style full face mask with grey or black anti-fog lens customization options." },
   { model: "6800A", name: "Full Face Respirator", category: "Full Face Respirators", image: "11_6800A.jpg", detail: "6800A full face mask with anti-fog lens customization options." },
-  { model: "CF01", name: "Full Face Respirator", category: "Full Face Respirators", image: "12_CF01.jpg", detail: "Full face respirator option for painting, chemical handling, dust protection and industrial safety." },
+  {
+    model: "CF01", name: "Full Face Respirator", category: "Full Face Respirators", image: "12_CF01.jpg",
+    updatedAt: "2026-07-20",
+    detail: "CF01 single-model full face respirator for buyer evaluation in painting, chemical handling and industrial safety programs.",
+    procurementChecks: [
+      "Reference CF01 explicitly on the RFQ and request the connector and facepiece configuration included in the quotation.",
+      "Send the intended hazard and filter requirement for compatibility review before sampling.",
+      "Use the exact CF01 sample and available documents in the buyer's fit-testing and approval process."
+    ]
+  },
   { model: "CF02", name: "Full Face Respirator", category: "Full Face Respirators", image: "13_CF02.jpg", detail: "Standard grey full face mask with color customization options including red and project-specific colors." },
   { model: "TZL30", name: "Fire Escape Smoke Hood", category: "Accessories & Emergency PPE", image: "14_Item_31.jpg", featured: true, detail: "Self-rescue filtering respirator for emergency escape and fire safety stock programs." },
   {
