@@ -28,8 +28,8 @@ export function AnimatedHero() {
             Full face respirators, half masks, filter cartridges, supplied-air systems and emergency protection kits for chemical, painting, mining, agriculture and rescue applications.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <ButtonLink href="/products">Explore Products</ButtonLink>
-            <ButtonLink href="/contact" variant="secondary">Get Product Recommendation</ButtonLink>
+            <ButtonLink href="/products/">Explore Products</ButtonLink>
+            <ButtonLink href="/contact/" variant="secondary">Get Product Recommendation</ButtonLink>
           </div>
           <div className="mt-10 grid gap-3 sm:grid-cols-5">
             {heroHazards.map((hazard, index) => (

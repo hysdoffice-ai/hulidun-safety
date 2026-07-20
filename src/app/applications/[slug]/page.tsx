@@ -59,7 +59,7 @@ export default function ApplicationDetailPage({ params }: { params: { slug: stri
           <h1 className="text-balance text-4xl font-black text-white sm:text-6xl">{application.name}</h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">{application.summary}</p>
           <div className="mt-8">
-            <CTAButton href="/contact">Request Application Recommendation</CTAButton>
+            <CTAButton href="/contact/">Request Application Recommendation</CTAButton>
           </div>
         </div>
       </section>

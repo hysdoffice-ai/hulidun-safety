@@ -9,7 +9,7 @@ type ApplicationCardProps = {
 
 export function ApplicationCard({ application }: ApplicationCardProps) {
   return (
-    <Link href={`/applications/${application.slug}`} className="group rounded-md border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:-translate-y-1 hover:border-orange/50">
+    <Link href={`/applications/${application.slug}/`} className="group rounded-md border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:-translate-y-1 hover:border-orange/50">
       <Factory className="mb-5 h-8 w-8 text-orange" />
       <h3 className="text-xl font-black text-white">{application.name}</h3>
       <p className="mt-3 text-sm leading-6 text-slate-300">{application.summary}</p>

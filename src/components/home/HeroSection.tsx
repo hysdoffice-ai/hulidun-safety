@@ -62,7 +62,7 @@ export function HeroSection() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
-              <CTAButton href="/products">Explore Products</CTAButton>
+              <CTAButton href="/products/">Explore Products</CTAButton>
               <WhatsAppButton source="Home hero" />
             </div>
 

@@ -124,7 +124,7 @@ export default function IndustryLandingPage({ params }: { params: { slug: string
             <p className="mt-6 text-lg leading-8 text-slate-300">{landing.summary}</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <WhatsAppButton source={landing.keyword} />
-              <CTAButton href="/contact" variant="dark">Request Quote</CTAButton>
+              <CTAButton href="/contact/" variant="dark">Request Quote</CTAButton>
             </div>
           </div>
           <div className="rounded-md border border-white/10 bg-navy p-5 shadow-panel">

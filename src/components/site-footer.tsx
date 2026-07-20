@@ -14,18 +14,18 @@ export function SiteFooter() {
         <div>
           <h3 className="mb-3 text-sm font-bold uppercase tracking-widest text-slate-300">Company</h3>
           <div className="grid gap-2 text-sm text-slate-400">
-            <Link href="/about">About Us</Link>
-            <Link href="/quality">Quality</Link>
-            <Link href="/oem-private-label">OEM / ODM</Link>
+            <Link href="/about/">About Us</Link>
+            <Link href="/quality/">Quality</Link>
+            <Link href="/oem-private-label/">OEM / ODM</Link>
           </div>
         </div>
         <div>
           <h3 className="mb-3 text-sm font-bold uppercase tracking-widest text-slate-300">Buyer Path</h3>
           <div className="grid gap-2 text-sm text-slate-400">
-            <Link href="/products">Products</Link>
-            <Link href="/applications">Applications</Link>
-            <Link href="/solutions">Solutions</Link>
-            <Link href="/contact">Request a Quote</Link>
+            <Link href="/products/">Products</Link>
+            <Link href="/applications/">Applications</Link>
+            <Link href="/solutions/">Solutions</Link>
+            <Link href="/contact/">Request a Quote</Link>
           </div>
         </div>
       </div>

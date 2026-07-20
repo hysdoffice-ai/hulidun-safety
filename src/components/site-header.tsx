@@ -37,7 +37,7 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link href="/contact" className="hidden rounded-md bg-warning px-4 py-2 text-sm font-bold text-graphite lg:inline-flex">
+        <Link href="/contact/" className="hidden rounded-md bg-warning px-4 py-2 text-sm font-bold text-graphite lg:inline-flex">
           RFQ
         </Link>
         <button

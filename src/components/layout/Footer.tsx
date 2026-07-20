@@ -20,24 +20,24 @@ const footerLinks = [
   {
     title: "Explore",
     links: [
-      { label: "Products", href: "/products" },
-      { label: "Sourcing Guides", href: "/industries" },
-      { label: "Applications", href: "/applications" },
-      { label: "OEM", href: "/oem-private-label" },
-      { label: "Quality", href: "/quality" },
-      { label: "Resources", href: "/resources" },
-      { label: "Buyer Answers", href: "/answers" },
-      { label: "Editorial Policy", href: "/editorial-policy" },
-      { label: "Contact", href: "/contact" }
+      { label: "Products", href: "/products/" },
+      { label: "Sourcing Guides", href: "/industries/" },
+      { label: "Applications", href: "/applications/" },
+      { label: "OEM", href: "/oem-private-label/" },
+      { label: "Quality", href: "/quality/" },
+      { label: "Resources", href: "/resources/" },
+      { label: "Buyer Answers", href: "/answers/" },
+      { label: "Editorial Policy", href: "/editorial-policy/" },
+      { label: "Contact", href: "/contact/" }
     ]
   },
   {
     title: "Contact",
     links: [
-      { label: `Contact: ${contactPerson}`, href: "/contact" },
+      { label: `Contact: ${contactPerson}`, href: "/contact/" },
       { label: `Email: ${contactEmail}`, href: `mailto:${contactEmail}` },
       { label: `WhatsApp: ${contactWhatsApp}`, href: whatsappUrl },
-      { label: "Request a Quote", href: "/contact" }
+      { label: "Request a Quote", href: "/contact/" }
     ]
   }
 ];

@@ -46,14 +46,14 @@ export default function IndustriesPage() {
                   Send your application, hazard type, quantity and target market. Hulidun Safety will suggest suitable respirators, filters and packaging options.
                 </p>
               </div>
-              <CTAButton href="/contact" variant="dark">Send RFQ</CTAButton>
+              <CTAButton href="/contact/" variant="dark">Send RFQ</CTAButton>
             </div>
           </div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {industryLandings.map((landing) => (
               <Link
                 key={landing.slug}
-                href={`/industries/${landing.slug}`}
+                href={`/industries/${landing.slug}/`}
                 className="rounded-md border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-orange/50"
               >
                 <div className="mb-5 flex items-center justify-between gap-3">

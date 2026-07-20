@@ -33,7 +33,7 @@ export function ProductCTA({
           >
             Download Product Catalog
           </CTAButton>
-          <CTAButton href={quoteHref} variant="dark">Request Quote</CTAButton>
+          <CTAButton href={quoteHref} rel={model ? "nofollow" : undefined} variant="dark">Request Quote</CTAButton>
         </div>
       </div>
     </div>
