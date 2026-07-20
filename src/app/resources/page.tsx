@@ -4,6 +4,7 @@ import { FileText } from "lucide-react";
 import { resources } from "@/data/resources";
 import { Badge } from "@/components/common/Badge";
 import { SectionHeader } from "@/components/common/SectionHeader";
+import { TrackedLink } from "@/components/common/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Respirator Buyer Guides & PPE Resources",
@@ -31,12 +32,14 @@ export default function ResourcesPage() {
                 Download the official product catalog for full face respirators, half masks, cartridges, filters, chemical protective clothing and PPE accessories.
               </p>
             </div>
-            <a
+            <TrackedLink
               href="/downloads/hulidun-safety-product-catalog.pdf"
+              eventName="file_download"
+              eventParams={{ file_name: "hulidun-safety-product-catalog.pdf", source: "resources_page" }}
               className="inline-flex min-h-11 items-center justify-center rounded-md bg-orange px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-orange/90"
             >
               Download PDF
-            </a>
+            </TrackedLink>
           </div>
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">

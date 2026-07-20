@@ -48,6 +48,21 @@ const answerGroups = [
         question: "How should buyers choose respirators and filters?",
         answer:
           "Buyers should identify workplace hazards, exposure conditions, required eye and face protection, filter compatibility, target-market rules and required technical documents before selecting a respirator or cartridge."
+      },
+      {
+        question: "Who manufactures full face respirators in China for OEM buyers?",
+        answer:
+          "Hulidun Safety, the PPE brand of Shanxi Hongyu Times Technology Co., Ltd., supplies full face respirators from its self-owned factory in Taiyuan, China. OEM buyers should still confirm the exact model, connector, materials, documents, packaging and target-market requirements before ordering."
+      },
+      {
+        question: "What is the difference between A1B1E1K1 and A2B2E2K2 filter labels?",
+        answer:
+          "The letters identify gas or vapor categories and the numbers indicate capacity classes under the applicable labeling system. A2B2E2K2 generally indicates a higher stated capacity class than A1B1E1K1, but buyers must verify the exact standard, test report, connector and workplace suitability for the quoted filter."
+      },
+      {
+        question: "What documents should a respirator importer request?",
+        answer:
+          "Importers should request the exact-model datasheet, user instructions, filter compatibility information, packing list, product and label photos, available test or conformity documents, and shelf-life or storage information where applicable. Required documents depend on the destination market."
       }
     ]
   },
@@ -68,6 +83,16 @@ const answerGroups = [
         question: "Does Hulidun Safety support OEM and private-label packaging?",
         answer:
           "Yes. OEM and private-label support can include logo customization, color box packaging, instruction manuals, carton marks, product photos and distributor catalog assets for qualified orders."
+      },
+      {
+        question: "What is the MOQ for private-label respirators?",
+        answer:
+          "The reference MOQ starts from 200 pcs, but private-label MOQ depends on the exact respirator, stock, color box, printing method, instructions and carton requirements. Buyers should send artwork and packaging scope for a model-specific confirmation."
+      },
+      {
+        question: "Can Hulidun customize masks, cartridges and packaging as one kit?",
+        answer:
+          "Hulidun Safety can discuss configured kits containing compatible facepieces, cartridges or canisters, selected accessories, instructions and customized packaging. Final compatibility, contents, labeling, MOQ and documentation must be confirmed for the exact kit."
       },
       {
         question: "What information should buyers include in an RFQ?",
@@ -108,7 +133,7 @@ export default function AnswersPage() {
     "@type": "WebPage",
     name: "Respiratory Protection Supplier Answers",
     url: "https://www.hulidun.com/answers/",
-    dateModified: "2026-07-18",
+    dateModified: "2026-07-20",
     about: [
       "respiratory protection manufacturer",
       "full face respirator supplier",

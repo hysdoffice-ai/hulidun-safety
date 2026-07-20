@@ -2,7 +2,7 @@ export const companyName = "Shanxi Hongyu Times Technology Co., Ltd.";
 
 export const brandName = "Hulidun Safety";
 
-export const brandLogo = "/images/brand/logo.webp";
+export const brandLogo = "/images/brand/logo.png";
 
 export const brandSlogan = "Protecting Every Breath in Hazardous Workplaces.";
 

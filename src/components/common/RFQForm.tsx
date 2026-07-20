@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { CheckCircle2, HelpCircle, Upload } from "lucide-react";
+import { CheckCircle2, HelpCircle, ImageIcon } from "lucide-react";
 import { CTAButton } from "@/components/common/CTAButton";
 import { brandName, makeWhatsAppUrl } from "@/data/site";
 import { trackEvent } from "@/lib/analytics";
@@ -73,13 +73,13 @@ export function RFQForm() {
               <option value="Not sure yet">Not sure yet</option>
             </select>
           </label>
-          <label className="grid gap-2 text-sm font-semibold text-slate-200">
-            Upload Reference Picture
+          <div className="grid gap-2 text-sm font-semibold text-slate-200">
+            Reference Picture
             <div className="flex min-h-12 items-center gap-3 rounded-md border border-dashed border-white/15 bg-navy px-4 text-slate-400">
-              <Upload className="h-5 w-5" />
-              Front-end placeholder
+              <ImageIcon className="h-5 w-5" />
+              Send product or packaging references in the WhatsApp chat after submission.
             </div>
-          </label>
+          </div>
         </div>
         <label className="mt-5 grid gap-2 text-sm font-semibold text-slate-200">
           Message
