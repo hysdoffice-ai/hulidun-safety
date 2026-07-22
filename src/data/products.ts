@@ -240,8 +240,26 @@ const productSeeds: ProductSeed[] = [
   { model: "A2B2E2K2CO2KP100", name: "Full-Protection Filter Canister", category: "Filters & Cartridges", image: "29_Item_62.jpg" },
   { model: "Level 3 Filter Canister", name: "Filter Canister Series", category: "Filters & Cartridges", image: "30_Item_63.jpg" },
   { model: "Filter Cartridge", name: "No.1 / No.4 / No.7 Filter Cartridge", category: "Filters & Cartridges", image: "31_filter_cartridge.jpg", featured: true },
-  { model: "A1B1E1K1", name: "Filter Cartridge", category: "Filters & Cartridges", image: "32_Item_69.jpg" },
-  { model: "60926", name: "Filter Cartridge", category: "Filters & Cartridges", image: "33_60926_filter_cartridge_aluminum_plastic_vacuum_packaging.jpg" },
+  {
+    model: "A1B1E1K1", name: "Filter Cartridge", category: "Filters & Cartridges", image: "32_Item_69.jpg",
+    updatedAt: "2026-07-22",
+    detail: "A1B1E1K1-labeled filter cartridge for compatible respirator configurations, subject to exact-model documentation and destination-market review.",
+    procurementChecks: [
+      "Confirm the substances, concentrations and workplace conditions before using the A1B1E1K1 label as a selection input.",
+      "Request the exact cartridge interface, compatible facepiece models, shelf life, storage conditions and available test documents.",
+      "Require the workplace respiratory protection program to establish a documented cartridge replacement schedule for actual conditions of use."
+    ]
+  },
+  {
+    model: "60926", name: "Filter Cartridge", category: "Filters & Cartridges", image: "33_60926_filter_cartridge_aluminum_plastic_vacuum_packaging.jpg",
+    updatedAt: "2026-07-22",
+    detail: "60926-labeled replacement cartridge option for compatible reusable respirator kits and distributor replenishment programs.",
+    procurementChecks: [
+      "Do not assume compatibility from the 60926 model reference alone; confirm the exact facepiece interface and quoted cartridge configuration.",
+      "Request applicable hazard labeling, shelf life, storage instructions, lot identification and destination-market documents before approval.",
+      "Plan replacement using an ESLI or an objective-data-based change schedule established for the workplace conditions."
+    ]
+  },
   { model: "2091/2097", name: "Pink Particulate Filter Pad", category: "Filters & Cartridges", image: "34_2091_pink_filter_pad.jpg", featured: true },
   { model: "FFF02", name: "Chemical Protective Suit", category: "Chemical Protective Clothing", image: "35_FFF02.jpg", featured: true },
   { model: "Type 82", name: "Chemical Protective Suit", category: "Chemical Protective Clothing", image: "36_82.jpg" },
