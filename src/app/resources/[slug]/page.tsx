@@ -73,7 +73,11 @@ export default function ResourceDetailPage({ params }: { params: { slug: string 
   if (!resource) notFound();
 
   const relatedProducts = products
-    .filter((product) => resource.relatedProductCategories.includes(product.category))
+    .filter((product) =>
+      resource.relatedProductSlugs?.length
+        ? resource.relatedProductSlugs.includes(product.slug)
+        : resource.relatedProductCategories.includes(product.category)
+    )
     .slice(0, 3);
   const publishedAt = resource.publishedAt ?? defaultPublishedAt;
   const updatedAt = resource.updatedAt ?? defaultUpdatedAt;

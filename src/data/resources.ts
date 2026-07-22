@@ -15,6 +15,7 @@ export type Resource = {
     body: string;
   }[];
   relatedProductCategories: string[];
+  relatedProductSlugs?: string[];
   publishedAt?: string;
   updatedAt?: string;
   sources?: {
@@ -321,6 +322,89 @@ export const resources: Resource[] = [
         title: "User Seal Check Procedures — Appendix B-1",
         url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134AppB1",
         publisher: "U.S. OSHA"
+      }
+    ]
+  },
+  {
+    id: "res-cartridge-change-schedule-procurement",
+    slug: "respirator-cartridge-change-schedule-procurement-guide",
+    title: "Respirator Cartridge Change Schedules: A Procurement Guide",
+    excerpt: "What safety buyers should request so gas and vapor cartridge replacement is based on objective data instead of odor or guesswork.",
+    category: "Filter Selection",
+    readTime: "8 min read",
+    metaDescription: "Respirator cartridge change schedule guide for safety buyers covering ESLI, service life data, storage, documentation and replacement planning.",
+    publishedAt: "2026-07-22",
+    updatedAt: "2026-07-22",
+    questions: [
+      {
+        question: "What is a respirator cartridge change schedule?",
+        answer: "A cartridge change schedule is a documented plan that states when gas- or vapor-removing cartridges or canisters must be replaced before the end of their service life. It should be based on an approved end-of-service-life indicator or objective information relevant to the exact respirator, contaminant and conditions of use."
+      },
+      {
+        question: "Can workers replace respirator cartridges only when they smell a contaminant?",
+        answer: "No. Odor, taste or irritation should not be the sole basis for replacement. For U.S. workplaces covered by OSHA, cartridges without a suitable end-of-service-life indicator require a change schedule supported by objective information or data."
+      },
+      {
+        question: "What information should a buyer request from a cartridge supplier?",
+        answer: "Request the exact cartridge and compatible facepiece model, approval or test documentation applicable to the destination market, shelf life, storage conditions, user instructions, lot identification and any manufacturer service-life or change-schedule guidance available for that product."
+      },
+      {
+        question: "Can one replacement interval be used for every workplace?",
+        answer: "No. Service life can vary with the contaminant, concentration, humidity, temperature, breathing rate, work duration and cartridge design. The employer or respiratory protection program administrator must establish the schedule for actual conditions of use."
+      }
+    ],
+    sections: [
+      {
+        heading: "Treat the change schedule as part of the buying specification",
+        body: "A procurement team should not buy a facepiece and cartridge as isolated catalog items. The request for quotation should identify the intended contaminant, expected concentration or assessment data, temperature and humidity range, work pattern, target market and exact facepiece interface. These inputs allow the responsible safety professional to evaluate whether an air-purifying respirator is appropriate and what supporting service-life information is needed."
+      },
+      {
+        heading: "Ask whether an ESLI applies to the exact contaminant",
+        body: "Some gas- and vapor-removing cartridges or canisters may use an end-of-service-life indicator, commonly abbreviated ESLI. An ESLI is not a universal indicator for every hazard. Buyers should request written confirmation that the indicator is applicable to the exact contaminant and cartridge configuration, together with the manufacturer instructions that explain how it is used."
+      },
+      {
+        heading: "Build the schedule from objective information",
+        body: "Where no suitable ESLI is available, OSHA requires covered employers to implement a change schedule supported by objective information or data that ensures replacement before the end of service life. Useful inputs can include manufacturer recommendations, validated service-life software, test data and the workplace exposure assessment. The written respiratory protection program should record the information used and the basis for the interval."
+      },
+      {
+        heading: "Separate service life from shelf life",
+        body: "Shelf life describes how long an unopened product may remain suitable under specified storage conditions. Service life concerns the period of use after the cartridge is placed into service under actual exposure conditions. Buyers should request both, confirm packaging and storage requirements, and use lot or date identification that supports inventory rotation."
+      },
+      {
+        heading: "Do not use air-purifying cartridges where they are not appropriate",
+        body: "Air-purifying respirators remove contaminants from surrounding air but do not supply oxygen. NIOSH states that they must not be used in oxygen-deficient or immediately dangerous to life or health atmospheres. Final selection, change scheduling, training and use must remain within a complete workplace respiratory protection program and the product manufacturer's instructions."
+      },
+      {
+        heading: "Buyer document checklist before shipment",
+        body: "Confirm the facepiece and cartridge model pairing, filter or canister label, destination-market documentation, user instructions, shelf life, storage conditions, lot identification, packaging integrity and available service-life guidance. Keep the approved sample and purchase specification aligned so a later substitution does not silently change the information used for the workplace schedule."
+      }
+    ],
+    relatedProductCategories: ["Filters & Cartridges", "Full Face Respirators", "Half Face Respirators"],
+    relatedProductSlugs: [
+      "a2b2e2k2kp100-combined-filter-canister",
+      "60926-filter-cartridge",
+      "a1b1e1k1-filter-cartridge"
+    ],
+    sources: [
+      {
+        title: "Respiratory Protection Standard — 29 CFR 1910.134",
+        url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134",
+        publisher: "U.S. OSHA"
+      },
+      {
+        title: "Respirator Selection and Use",
+        url: "https://www.cdc.gov/niosh/ppe/respirators/selection.html",
+        publisher: "CDC/NIOSH"
+      },
+      {
+        title: "A Guide to Air-Purifying Respirators",
+        url: "https://www.cdc.gov/niosh/docs/2018-176/",
+        publisher: "CDC/NIOSH"
+      },
+      {
+        title: "Air-Purifying Respirator Cartridge and Canister Service Life",
+        url: "https://www.cdc.gov/niosh/blogs/2018/vday-respirator.html",
+        publisher: "CDC/NIOSH"
       }
     ]
   }

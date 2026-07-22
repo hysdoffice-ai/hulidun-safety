@@ -10,6 +10,12 @@ type ResourcePreviewProps = {
 };
 
 export function ResourcePreview({ resources }: ResourcePreviewProps) {
+  const latestResources = [...resources]
+    .sort((a, b) =>
+      (b.updatedAt ?? b.publishedAt ?? "2026-07-17").localeCompare(a.updatedAt ?? a.publishedAt ?? "2026-07-17")
+    )
+    .slice(0, 3);
+
   return (
     <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
@@ -33,7 +39,7 @@ export function ResourcePreview({ resources }: ResourcePreviewProps) {
           </div>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
-          {resources.slice(0, 3).map((resource) => (
+          {latestResources.map((resource) => (
             <Link key={resource.id} href={`/resources/${resource.slug}/`} className="rounded-md border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-warning/50">
               <FileText className="mb-4 h-7 w-7 text-warning" />
               <div className="mb-4 flex flex-wrap gap-2">
