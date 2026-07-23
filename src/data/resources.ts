@@ -407,5 +407,88 @@ export const resources: Resource[] = [
         publisher: "CDC/NIOSH"
       }
     ]
+  },
+  {
+    id: "res-biopharmaceutical-filter-selection",
+    slug: "biopharmaceutical-respirator-filter-selection-guide",
+    title: "Biopharmaceutical Respirator Filter Selection Guide",
+    excerpt: "A hazard-first procurement guide for evaluating particulate filters, chemical cartridges and respirator configurations in biopharmaceutical work.",
+    category: "Industry Guide",
+    readTime: "8 min read",
+    metaDescription: "Biopharmaceutical respirator filter selection guide covering powders, process aerosols, gases, vapors, fit testing and buyer documentation.",
+    publishedAt: "2026-07-23",
+    updatedAt: "2026-07-23",
+    questions: [
+      {
+        question: "How should a biopharmaceutical facility select a respirator filter?",
+        answer: "Start with a documented workplace hazard assessment that identifies each airborne contaminant, its physical form, expected exposure and work conditions. Then select a complete respirator configuration whose filter, facepiece and assigned protection level are appropriate for those findings and the applicable rules."
+      },
+      {
+        question: "Does a particulate filter protect against solvent or disinfectant vapors?",
+        answer: "No. A particulate filter is designed for aerosols and particles; it does not by itself remove harmful gases or vapors. Where both particulate and gas or vapor hazards are present, the responsible safety professional must evaluate an approved combination or another suitable respirator type."
+      },
+      {
+        question: "Are biological aerosols filtered differently from other workplace particles?",
+        answer: "NIOSH explains that particle capture depends on physical characteristics such as particle size, shape and density rather than whether a particle is living or infectious. The complete respirator still must be properly selected, fitted and used within the workplace respiratory protection program."
+      },
+      {
+        question: "What should a biopharmaceutical buyer request before approving a respirator order?",
+        answer: "Request exact facepiece and filter model numbers, compatibility evidence, destination-market documents, user instructions, available sizes, samples for fit testing, shelf-life and storage information, lot identification and replacement-part availability."
+      }
+    ],
+    sections: [
+      {
+        heading: "Map the process before choosing a filter",
+        body: "Biopharmaceutical work can involve different airborne hazards at weighing, charging, blending, sampling, cleaning, maintenance or spill-response stages. The assessment should identify active ingredient or excipient powders, process aerosols and any cleaning or disinfectant gases or vapors separately. A supplier model name or filter color is not a substitute for contaminant identification and exposure assessment."
+      },
+      {
+        heading: "Separate particulate hazards from gases and vapors",
+        body: "Particulate filters remove airborne particles; gas- and vapor-removing cartridges rely on media selected for specific contaminants. A particulate-only filter should not be specified for a solvent or disinfectant vapor. Where multiple hazard forms may coexist, the buyer should provide the exact substances and conditions so the respiratory protection program administrator can evaluate a suitable combination or atmosphere-supplying option."
+      },
+      {
+        heading: "Select the complete respirator, not an isolated filter",
+        body: "Filter selection also depends on facepiece compatibility, required protection level, work duration and user factors. Under the U.S. OSHA standard, the employer evaluates respiratory hazards and selects a NIOSH-certified respirator used within its certification conditions. Other markets have their own approval systems, so buyers should request evidence for the exact facepiece-and-filter configuration and destination market."
+      },
+      {
+        heading: "Plan fit testing and workforce trials",
+        body: "Tight-fitting reusable respirators require a proper seal to perform as intended. Procurement teams should obtain exact-model samples and available sizes for the employer's medical evaluation and fit-testing process before bulk deployment. A user seal check is then performed each time the respirator is donned; it does not replace formal fit testing."
+      },
+      {
+        heading: "Use containment and engineering controls first",
+        body: "Respiratory protection is part of a wider exposure-control strategy, not a replacement for effective containment, ventilation or work practices. The selected respirator must also remain within its use limitations. Air-purifying respirators do not supply oxygen and are not appropriate for oxygen-deficient or immediately dangerous to life or health atmospheres."
+      },
+      {
+        heading: "Build a traceable procurement file",
+        body: "Before approving a purchase order, record the hazard-assessment inputs, exact facepiece and filter codes, applicable approval or test documents, user instructions, fit-test sample plan, shelf life, storage conditions, lot identification and replacement schedule. Confirm that later substitutions do not change the interface, filtration class or documentation used for workplace approval."
+      }
+    ],
+    relatedProductCategories: ["Filters & Cartridges", "Half Face Respirators", "Full Face Respirators"],
+    relatedProductSlugs: [
+      "2091-2097-pink-particulate-filter-pad",
+      "cf7502-half-face-respirator",
+      "mf14-full-face-respirator"
+    ],
+    sources: [
+      {
+        title: "Respirator Selection and Use",
+        url: "https://www.cdc.gov/niosh/ppe/respirators/selection.html",
+        publisher: "CDC/NIOSH"
+      },
+      {
+        title: "Respiratory Protection Standard — 29 CFR 1910.134",
+        url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134",
+        publisher: "U.S. OSHA"
+      },
+      {
+        title: "Do We Need to Challenge Respirator Filters With Biological Aerosols?",
+        url: "https://www.cdc.gov/niosh/bulletin/2014/respirator-filter-testing.html",
+        publisher: "CDC/NIOSH"
+      },
+      {
+        title: "Respirator Types and Use",
+        url: "https://www.cdc.gov/niosh/ppe/respirators/",
+        publisher: "CDC/NIOSH"
+      }
+    ]
   }
 ];

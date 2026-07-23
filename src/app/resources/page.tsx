@@ -9,7 +9,7 @@ import { TrackedLink } from "@/components/common/TrackedLink";
 export const metadata: Metadata = {
   title: "Respirator Buyer Guides & PPE Resources",
   description:
-    "Official-source-reviewed buyer guides for respirator fit testing, cartridge change schedules, filter selection, supplied-air systems and reusable respirator maintenance.",
+    "Official-source-reviewed buyer guides for biopharmaceutical filter selection, respirator fit testing, cartridge change schedules and reusable respirator programs.",
   alternates: {
     canonical: "/resources/"
   }
@@ -26,7 +26,7 @@ export default function ResourcesPage() {
         <SectionHeader
           eyebrow="Resources"
           title="Respiratory protection resource center"
-          description="Official-source-reviewed articles for overseas buyers comparing fit testing, respirator types, filter choices, workplace applications and reusable product maintenance."
+          description="Official-source-reviewed articles for overseas buyers comparing biopharmaceutical filter selection, fit testing, respirator types, workplace applications and reusable product maintenance."
         />
         <div className="mb-8 rounded-md border border-orange/30 bg-orange/10 p-5">
           <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">

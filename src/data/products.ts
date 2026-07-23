@@ -214,7 +214,16 @@ const productSeeds: ProductSeed[] = [
       "Use samples of the exact model and size in the buyer's fit-testing process before bulk workplace deployment."
     ]
   },
-  { model: "CF7502", name: "Half Face Respirator", category: "Half Face Respirators", image: "16_CF7502.jpg", featured: true },
+  {
+    model: "CF7502", name: "Half Face Respirator", category: "Half Face Respirators", image: "16_CF7502.jpg", featured: true,
+    updatedAt: "2026-07-23",
+    detail: "Reusable half facepiece option for industrial sampling, powder-handling and maintenance programs that require an exact filter-and-facepiece compatibility review.",
+    procurementChecks: [
+      "Identify each airborne contaminant, physical form and expected exposure before selecting a filter for the CF7502 quotation.",
+      "Request the exact facepiece, filter interface, available sizes, user instructions and destination-market documents as one configuration.",
+      "Approve production-representative samples through the employer's medical evaluation and fit-testing process before workplace deployment."
+    ]
+  },
   { model: "CF3300 + 3301", name: "Half Face Respirator with Cartridge", category: "Half Face Respirators", image: "17_CF3300_filter_cartridge3301.jpg", featured: true },
   { model: "3200", name: "Half Face Respirator", category: "Half Face Respirators", image: "18_3200.jpg", slug: "3200-half-face-respirator" },
   { model: "Woodland Bag", name: "Woodland Camouflage Respirator Bag", category: "Accessories & Emergency PPE", image: "19_Item_42.jpg" },
@@ -260,7 +269,17 @@ const productSeeds: ProductSeed[] = [
       "Plan replacement using an ESLI or an objective-data-based change schedule established for the workplace conditions."
     ]
   },
-  { model: "2091/2097", name: "Pink Particulate Filter Pad", category: "Filters & Cartridges", image: "34_2091_pink_filter_pad.jpg", featured: true },
+  {
+    model: "2091/2097", name: "Pink Particulate Filter Pad", category: "Filters & Cartridges", image: "34_2091_pink_filter_pad.jpg", featured: true,
+    updatedAt: "2026-07-23",
+    detail: "2091/2097-labeled particulate filter pad option for compatible reusable respirator configurations and documented replenishment programs.",
+    hazards: ["Workplace particles subject to filter documentation", "Process aerosols subject to hazard assessment", "Dust and powder applications subject to exposure review", "Not a stand-alone gas or vapor filter"],
+    procurementChecks: [
+      "Confirm the exact filter designation, filtration documentation and compatible facepiece interface; do not approve by color or model shorthand alone.",
+      "Treat gases and vapors separately because a particulate filter does not by itself remove harmful gas- or vapor-phase contaminants.",
+      "Request shelf life, storage conditions, lot identification, user instructions and destination-market documents for the quoted product."
+    ]
+  },
   { model: "FFF02", name: "Chemical Protective Suit", category: "Chemical Protective Clothing", image: "35_FFF02.jpg", featured: true },
   { model: "Type 82", name: "Chemical Protective Suit", category: "Chemical Protective Clothing", image: "36_82.jpg" },
   { model: "FFY03", name: "Chemical Protective Suit", category: "Chemical Protective Clothing", image: "37_FFY03.jpg", featured: true },
