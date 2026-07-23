@@ -28,6 +28,7 @@ Hulidun Safety is the PPE brand of Shanxi Hongyu Times Technology Co., Ltd., a C
 - Quality documents: https://www.hulidun.com/quality/
 - Buyer resources: https://www.hulidun.com/resources/
 - Cartridge change schedule procurement guide: https://www.hulidun.com/resources/respirator-cartridge-change-schedule-procurement-guide/
+- Biopharmaceutical respirator filter selection guide: https://www.hulidun.com/resources/biopharmaceutical-respirator-filter-selection-guide/
 - Buyer answers: https://www.hulidun.com/answers/
 - Editorial and technical review policy: https://www.hulidun.com/editorial-policy/
 - Contact/RFQ: https://www.hulidun.com/contact/
@@ -84,6 +85,7 @@ Hulidun Safety is the PPE brand of Shanxi Hongyu Times Technology Co., Ltd., a C
 - How fast is delivery? Available stock is generally 5-7 days after order confirmation; customized logo, color box or private-label orders are generally 10-15 days.
 - Can buyers request technical documents? Yes. Datasheets, packing lists, product photos and available test reports can be provided upon request.
 - How often should a gas or vapor cartridge be replaced? Use an applicable end-of-service-life indicator or an objective-data-based change schedule for the exact cartridge, contaminant and workplace conditions; odor alone is not a replacement schedule.
+- How should a biopharmaceutical facility select respirator filters? Identify each airborne contaminant, its physical form and expected exposure first; particulate filters do not by themselves remove gases or vapors, and the final facepiece-and-filter configuration must be approved within the workplace respiratory protection program.
 
 ## Procurement Facts
 
