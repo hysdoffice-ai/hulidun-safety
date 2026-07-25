@@ -9,8 +9,9 @@ const baseUrl = "https://www.hulidun.com";
 const defaultContentUpdate = "2026-07-18";
 
 const staticRouteUpdates: Record<string, string> = {
-  "": "2026-07-23",
+  "": "2026-07-25",
   "/products": "2026-07-23",
+  "/industries": "2026-07-25",
   "/resources": "2026-07-23",
   "/answers": "2026-07-20",
   "/editorial-policy": "2026-07-20"
@@ -59,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...industryLandings.map((landing) => ({
       url: `${baseUrl}/industries/${landing.slug}/`,
-      lastModified: new Date(`${defaultContentUpdate}T00:00:00+08:00`),
+      lastModified: new Date(`${landing.updatedAt ?? defaultContentUpdate}T00:00:00+08:00`),
       changeFrequency: "monthly",
       priority: 0.78
     })),
