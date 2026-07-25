@@ -9,6 +9,7 @@ import { ProductCTA } from "@/components/products/ProductCTA";
 import { Section } from "@/components/section";
 import { industryLandings } from "@/data/industries";
 import { products } from "@/data/products";
+import { resources } from "@/data/resources";
 import { brandName, companyName, complianceNotice } from "@/data/site";
 
 export function generateStaticParams() {
@@ -25,7 +26,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 
   return {
-    title: landing.keyword,
+    title: landing.seoTitle ?? landing.keyword,
     description: landing.metaDescription,
     alternates: {
       canonical: `/industries/${landing.slug}/`
@@ -45,6 +46,9 @@ export default function IndustryLandingPage({ params }: { params: { slug: string
   const recommendedProducts = landing.recommendedProductSlugs
     .map((slug) => products.find((product) => product.slug === slug))
     .filter((product): product is (typeof products)[number] => Boolean(product));
+  const relatedResources = (landing.relatedResourceSlugs ?? [])
+    .map((slug) => resources.find((resource) => resource.slug === slug))
+    .filter((resource): resource is (typeof resources)[number] => Boolean(resource));
 
   const pageUrl = `https://www.hulidun.com/industries/${landing.slug}/`;
 
@@ -92,8 +96,8 @@ export default function IndustryLandingPage({ params }: { params: { slug: string
     headline: landing.title,
     description: landing.metaDescription,
     mainEntityOfPage: pageUrl,
-    datePublished: "2026-07-17",
-    dateModified: "2026-07-18",
+    datePublished: landing.publishedAt ?? "2026-07-17",
+    dateModified: landing.updatedAt ?? "2026-07-18",
     author: {
       "@type": "Organization",
       name: `${brandName} Technical Team`,
@@ -106,7 +110,8 @@ export default function IndustryLandingPage({ params }: { params: { slug: string
         "@type": "ImageObject",
         url: "https://www.hulidun.com/images/brand/logo.png"
       }
-    }
+    },
+    citation: landing.sources?.map((source) => source.url)
   };
 
   return (
@@ -122,6 +127,11 @@ export default function IndustryLandingPage({ params }: { params: { slug: string
             <Badge tone="orange">{landing.eyebrow}</Badge>
             <h1 className="mt-5 text-balance text-4xl font-black text-white sm:text-6xl">{landing.title}</h1>
             <p className="mt-6 text-lg leading-8 text-slate-300">{landing.summary}</p>
+            {landing.directAnswer ? (
+              <p className="mt-5 rounded-md border border-orange/25 bg-orange/10 p-4 text-sm leading-7 text-slate-200">
+                Direct answer: {landing.directAnswer}
+              </p>
+            ) : null}
             <div className="mt-8 flex flex-wrap gap-4">
               <WhatsAppButton source={landing.keyword} />
               <CTAButton href="/contact/" variant="dark">Request Quote</CTAButton>
@@ -139,13 +149,31 @@ export default function IndustryLandingPage({ params }: { params: { slug: string
         </div>
       </section>
 
-      <Section title="Recommended Product Scope" eyebrow="Sourcing Match">
+      <Section title={landing.productSectionTitle ?? "Recommended Product Scope"} eyebrow="Sourcing Match">
+        {landing.productSectionNote ? (
+          <p className="mb-6 max-w-4xl rounded-md border border-warning/25 bg-warning/10 p-4 text-sm leading-7 text-slate-200">
+            {landing.productSectionNote}
+          </p>
+        ) : null}
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {recommendedProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </Section>
+
+      {landing.sections?.length ? (
+        <Section title="Industrial PAPR Buyer Review" eyebrow="System specification" className="bg-slate-950/60">
+          <div className="grid gap-5">
+            {landing.sections.map((section) => (
+              <article key={section.heading} className="rounded-md border border-white/10 bg-navy p-6">
+                <h2 className="text-2xl font-black text-white">{section.heading}</h2>
+                <p className="mt-4 text-base leading-8 text-slate-300">{section.body}</p>
+              </article>
+            ))}
+          </div>
+        </Section>
+      ) : null}
 
       <Section title="Applications and Hazards" className="bg-slate-950/60">
         <div className="grid gap-5 lg:grid-cols-2">
@@ -192,6 +220,39 @@ export default function IndustryLandingPage({ params }: { params: { slug: string
           ))}
         </div>
       </Section>
+
+      {relatedResources.length ? (
+        <Section title="Related Technical Guides" eyebrow="Continue the buyer review">
+          <div className="grid gap-4 md:grid-cols-3">
+            {relatedResources.map((resource) => (
+              <a
+                key={resource.slug}
+                href={`/resources/${resource.slug}/`}
+                className="rounded-md border border-white/10 bg-navy p-5 transition hover:border-orange/50"
+              >
+                <h2 className="text-lg font-bold text-white">{resource.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-slate-300">{resource.excerpt}</p>
+              </a>
+            ))}
+          </div>
+        </Section>
+      ) : null}
+
+      {landing.sources?.length ? (
+        <Section title="Technical References" eyebrow="Official sources" className="bg-slate-950/60">
+          <p className="mb-5 max-w-4xl text-sm leading-7 text-slate-300">
+            This project-review guide was checked against the following public respiratory protection references. Final selection must follow the workplace hazard assessment, the approved system instructions and destination-market requirements.
+          </p>
+          <div className="grid gap-3 md:grid-cols-2">
+            {landing.sources.map((source) => (
+              <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="rounded-md border border-white/10 bg-white/[0.04] p-4 transition hover:border-warning/50">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-warning">{source.publisher}</p>
+                <p className="mt-2 font-bold text-white">{source.title}</p>
+              </a>
+            ))}
+          </div>
+        </Section>
+      ) : null}
 
       <Section title="Request a Buyer Quote">
         <ProductCTA

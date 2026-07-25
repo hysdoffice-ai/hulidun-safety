@@ -1,6 +1,7 @@
 export type IndustryLanding = {
   slug: string;
   keyword: string;
+  seoTitle?: string;
   title: string;
   metaDescription: string;
   eyebrow: string;
@@ -11,6 +12,21 @@ export type IndustryLanding = {
   applications: string[];
   hazards: string[];
   procurementNotes: string[];
+  directAnswer?: string;
+  productSectionTitle?: string;
+  productSectionNote?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  sections?: {
+    heading: string;
+    body: string;
+  }[];
+  relatedResourceSlugs?: string[];
+  sources?: {
+    title: string;
+    url: string;
+    publisher: string;
+  }[];
   faqs: {
     question: string;
     answer: string;
@@ -288,12 +304,20 @@ export const industryLandings: IndustryLanding[] = [
   {
     slug: "industrial-papr-odm-supplier",
     keyword: "Industrial PAPR ODM Supplier",
-    title: "Industrial PAPR ODM Supplier Project Review Guide",
+    seoTitle: "Industrial PAPR ODM Supplier | Buyer RFQ Checklist",
+    title: "Industrial PAPR ODM Supplier: Buyer RFQ Checklist",
     metaDescription:
-      "Prepare an industrial PAPR OEM or ODM inquiry with airflow, battery runtime, headtop, filter, target-market and private-label requirements for project review.",
+      "Industrial PAPR ODM supplier checklist covering headtop, airflow, battery runtime, filter, approvals, spare parts and private-label requirements.",
     eyebrow: "PAPR Project Review",
     summary:
       "Hulidun Safety reviews powered air-purifying respirator inquiries project by project. Buyers should define the complete system, intended hazard and target-market requirements before availability, configuration, documentation or OEM scope can be confirmed.",
+    directAnswer:
+      "For an industrial PAPR ODM inquiry, specify the hazard and exposure assessment, headtop or facepiece, required protection level, approved filter or cartridge, blower airflow, battery runtime, alarms, charger, cleaning method, spare parts, target market and documentation. Treat the blower, breathing tube, headtop, filter and battery as one approved system rather than interchangeable standalone parts.",
+    productSectionTitle: "Adjacent Respiratory System References",
+    productSectionNote:
+      "These products help buyers discuss interfaces, respiratory system categories and project requirements. They are not presented as a complete PAPR kit or as interchangeable PAPR components.",
+    publishedAt: "2026-07-15",
+    updatedAt: "2026-07-25",
     buyerIntent: ["Industrial PAPR sourcing", "OEM/ODM project review", "Powered-air respirator inquiry", "Private-label packaging"],
     recommendedCategories: ["Supplied-Air & SCBA Systems", "Full Face Respirators", "Filters & Cartridges"],
     recommendedProductSlugs: [
@@ -308,6 +332,55 @@ export const industryLandings: IndustryLanding[] = [
       "Share the intended hazard, workplace conditions, target market, applicable standards and required technical documents.",
       "Branding, labels, manuals and packaging can be reviewed only after the component configuration and compliance scope are confirmed.",
       "The products shown below are adjacent respiratory-protection references, not a claim that they form a complete PAPR kit."
+    ],
+    sections: [
+      {
+        heading: "Define the complete PAPR system",
+        body: "A powered air-purifying respirator is a system: a battery-powered blower draws ambient air through the approved filter, cartridge or canister and delivers cleaned air to the breathing zone through a compatible headtop or facepiece. An ODM request should identify every component, connection and accessory in the proposed configuration. Approving a blower or hood separately does not establish system compatibility or approval."
+      },
+      {
+        heading: "Match the filter to the assessed hazard",
+        body: "NIOSH explains that PAPRs may be configured for particles, gases, vapors or combinations when equipped with the appropriate approved air-purifying element. The buyer should provide the contaminant, physical form, concentration or exposure estimate, work duration and environmental conditions. A particulate filter is not automatically suitable for gas or vapor hazards, and an air-purifying system does not supply oxygen."
+      },
+      {
+        heading: "Specify airflow, battery and warning requirements",
+        body: "The RFQ should state the required airflow range, low-flow warning, battery chemistry, expected runtime, charging time, charger voltage, battery storage conditions and replacement-battery plan. NIOSH notes that PAPR performance depends on battery condition, so user instructions and the respiratory protection program should address charging, storage, inspection and service life."
+      },
+      {
+        heading: "Choose the headtop and fit-testing approach",
+        body: "PAPRs can use tight-fitting or loose-fitting inlet coverings. NIOSH states that tight-fitting PAPRs require fit testing, while loose-fitting PAPRs do not. The employer must still select the complete respirator for the workplace hazard and required protection level. Buyers should define face, eye and head coverage, compatibility with other PPE, cleaning needs and the user population before sampling."
+      },
+      {
+        heading: "Separate private label from product approval",
+        body: "Logo, labels, manuals and packaging can be reviewed only after the exact system configuration and destination-market requirements are known. Private-label artwork does not transfer or create a respirator approval. Before production, request the approval holder, model family, component list, approval labels, user instructions, test documents, change-control process and confirmation of which claims may legally appear on the product and packaging."
+      }
+    ],
+    relatedResourceSlugs: [
+      "biopharmaceutical-respirator-filter-selection-guide",
+      "respirator-cartridge-change-schedule-procurement-guide",
+      "respirator-fit-testing-procurement-checklist"
+    ],
+    sources: [
+      {
+        title: "Powered Air-Purifying Respirators",
+        url: "https://www.cdc.gov/niosh/ppe/respirators/papr.html",
+        publisher: "CDC/NIOSH"
+      },
+      {
+        title: "Respiratory Protection Standard — 29 CFR 1910.134",
+        url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134",
+        publisher: "U.S. OSHA"
+      },
+      {
+        title: "PAPR Battery Performance Guidance",
+        url: "https://www.cdc.gov/niosh/docs/2013-146/default.html",
+        publisher: "CDC/NIOSH"
+      },
+      {
+        title: "Respirator Selection and Use",
+        url: "https://www.cdc.gov/niosh/ppe/respirators/selection.html",
+        publisher: "CDC/NIOSH"
+      }
     ],
     faqs: [
       {
@@ -324,6 +397,16 @@ export const industryLandings: IndustryLanding[] = [
         question: "Can PAPR OEM or ODM packaging be discussed?",
         answer:
           "Branding, labels, manuals and packaging can be discussed after the component and compliance review. OEM packaging does not automatically provide product certification for a target market."
+      },
+      {
+        question: "Does every PAPR require fit testing?",
+        answer:
+          "No. NIOSH states that tight-fitting PAPRs require fit testing, while loose-fitting PAPRs do not. The employer must still select and use the complete respirator within the applicable respiratory protection program."
+      },
+      {
+        question: "Can PAPR components from different systems be combined?",
+        answer:
+          "Do not assume components are interchangeable. Buyers should verify the exact approved system and manufacturer instructions before combining a blower, battery, breathing tube, headtop or filter."
       }
     ]
   },

@@ -9,7 +9,7 @@ import { industryLandings } from "@/data/industries";
 export const metadata: Metadata = {
   title: "Industrial Respirator Sourcing Pages | Manufacturer Buyer Guides",
   description:
-    "High-intent sourcing pages for full face respirators, gas masks, filter cartridges, chemical respirators, painting respirators and emergency PPE.",
+    "High-intent sourcing guides for industrial PAPR ODM projects, full face respirators, gas masks, filter cartridges, chemical respirators and emergency PPE.",
   alternates: {
     canonical: "/industries/"
   }
@@ -36,7 +36,7 @@ export default function IndustriesPage() {
           <SectionHeader
             eyebrow="Buyer Intent"
             title="Industrial respirator sourcing pages"
-            description="Focused sourcing pages for buyers searching by product type, workplace hazard and procurement scenario."
+            description="Focused sourcing pages for buyers comparing industrial PAPR ODM projects, respirator types, workplace hazards and procurement scenarios."
           />
           <div className="mb-8 rounded-md border border-orange/30 bg-orange/10 p-5">
             <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
