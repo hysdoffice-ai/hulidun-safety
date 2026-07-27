@@ -22,11 +22,11 @@ export function WhatsAppButton({ className, compact = false, source }: WhatsAppB
       aria-label={`Chat on WhatsApp ${contactWhatsApp}`}
       onClick={() => trackEvent("whatsapp_click", { source: source ?? "inline_button" })}
       className={cn(
-        "inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-sm font-black text-slate-950 shadow-lg shadow-[#25D366]/20 transition hover:-translate-y-0.5 hover:bg-[#20bd5a]",
+        "inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-center text-sm font-black text-slate-950 shadow-lg shadow-[#25D366]/20 transition hover:-translate-y-0.5 hover:bg-[#20bd5a] max-[420px]:w-full",
         className
       )}
     >
-      <MessageCircle className="h-4 w-4" />
+      <MessageCircle className="h-4 w-4 shrink-0" />
       {compact ? "WhatsApp" : "Chat on WhatsApp"}
     </a>
   );
