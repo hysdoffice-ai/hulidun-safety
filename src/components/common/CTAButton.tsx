@@ -18,7 +18,7 @@ type CTAButtonProps = {
 
 export function CTAButton({ href, children, className, variant = "primary", type = "button", trackingEvent, trackingParams, rel }: CTAButtonProps) {
   const classes = cn(
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold transition hover:-translate-y-0.5",
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-center text-sm font-bold transition hover:-translate-y-0.5 max-[420px]:w-full",
     variant === "primary" && "bg-orange text-white shadow-lg shadow-orange/20 hover:bg-orange/90",
     variant === "outline" && "border border-orange/50 bg-orange/10 text-orange hover:bg-orange/20",
     variant === "dark" && "border border-white/10 bg-slate-950 text-slate-100 hover:border-orange/50",
@@ -34,7 +34,7 @@ export function CTAButton({ href, children, className, variant = "primary", type
         onClick={() => trackingEvent && trackEvent(trackingEvent, trackingParams)}
       >
         {children}
-        <ArrowRight className="h-4 w-4" />
+        <ArrowRight className="h-4 w-4 shrink-0" />
       </Link>
     );
   }
@@ -42,7 +42,7 @@ export function CTAButton({ href, children, className, variant = "primary", type
   return (
     <button type={type} className={classes}>
       {children}
-      <ArrowRight className="h-4 w-4" />
+      <ArrowRight className="h-4 w-4 shrink-0" />
     </button>
   );
 }
