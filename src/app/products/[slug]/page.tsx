@@ -97,11 +97,21 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       caption: `${product.model} ${product.name}`
     },
     about: {
-      "@type": "Thing",
-      "@id": `${productUrl}#item`,
+      "@type": "Product",
+      "@id": `${productUrl}#product`,
       name: `${product.model} ${product.name}`,
       description: product.longDescription,
       image: `https://www.hulidun.com${product.image}`,
+      sku: product.model,
+      model: product.model,
+      category: product.category,
+      brand: {
+        "@type": "Brand",
+        name: brandName
+      },
+      manufacturer: {
+        "@id": "https://www.hulidun.com/#organization"
+      },
       identifier: {
         "@type": "PropertyValue",
         propertyID: "Model",
