@@ -45,9 +45,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1
     }
   },
-  verification: {
-    google: "google20634a5ef6686e73.html"
-  },
   openGraph: {
     type: "website",
     url: "https://www.hulidun.com",
