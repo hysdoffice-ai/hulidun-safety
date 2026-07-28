@@ -490,5 +490,91 @@ export const resources: Resource[] = [
         publisher: "CDC/NIOSH"
       }
     ]
+  },
+  {
+    id: "res-choose-full-face-respirator-manufacturer-china",
+    slug: "how-to-choose-full-face-respirator-manufacturer-china",
+    title: "How to Choose a Full Face Respirator Manufacturer in China",
+    excerpt: "A due-diligence checklist for distributors comparing factories, exact-model documents, filter compatibility, samples, OEM packaging and delivery terms.",
+    category: "Sourcing Guide",
+    readTime: "9 min read",
+    metaDescription: "Choose a full face respirator manufacturer in China using this buyer checklist for factory verification, samples, documents, filters, OEM packaging and quality control.",
+    publishedAt: "2026-07-28",
+    updatedAt: "2026-07-28",
+    questions: [
+      {
+        question: "How do buyers choose a full face respirator manufacturer in China?",
+        answer: "Compare the supplier's legal company identity, factory evidence, exact-model specifications, facepiece and filter compatibility, sample quality, destination-market documents, quality controls, replacement-part supply, OEM scope and written commercial terms before approving a bulk order."
+      },
+      {
+        question: "What documents should a respirator importer request from a manufacturer?",
+        answer: "Request the exact-model datasheet, user instructions, compatible filter list, product and label photos, packing details, shelf-life or storage information where applicable, and available test or conformity documents whose model and scope match the quoted product."
+      },
+      {
+        question: "Should buyers approve a respirator order from photos alone?",
+        answer: "No. Photos cannot confirm fit, materials, valve operation, connector tolerances, filter compatibility, labeling or documentation. Obtain exact-model samples and complete the destination-market and workplace review before a bulk purchase."
+      },
+      {
+        question: "What should be included in an OEM full face respirator RFQ?",
+        answer: "Include the model or required configuration, quantity, target market, application and hazards, connector and filter requirements, materials, sizes, documents, logo and packaging scope, sample plan, delivery destination and required date."
+      }
+    ],
+    sections: [
+      {
+        heading: "Verify the legal company and the manufacturing site",
+        body: "Ask the supplier to state the legal company name used for quotations, invoices and export documents, then compare it with the brand name and factory information shown on the website. Request current workshop, assembly, inspection and warehouse evidence. Clarify which processes are performed in-house and which parts or finished products are sourced from other manufacturers."
+      },
+      {
+        heading: "Define the exact product before comparing prices",
+        body: "A useful comparison names the facepiece model, material, lens, head harness, exhalation and inhalation valves, connector type, compatible filters, included accessories and packaging. Similar-looking respirators may use different materials, interfaces or documentation. Ask every shortlisted supplier to quote the same configuration so price differences can be evaluated fairly."
+      },
+      {
+        heading: "Match documents to the exact model and market",
+        body: "A certificate image or general test report is not enough by itself. Check the issuing body, document status, product name, model number, manufacturer, standard and covered configuration. Requirements differ by destination market and workplace, so the importer or responsible safety professional should verify whether the supplied evidence is applicable before making compliance claims."
+      },
+      {
+        heading: "Test samples and the complete respirator system",
+        body: "Order exact-model samples with the proposed filters, retainers and accessories. Review seal condition, straps, valves, lens clarity, connector fit, markings, instructions and packaging. Workplace users may also require medical evaluation and fit testing under the applicable respiratory protection program. A supplier sample review does not replace that employer responsibility."
+      },
+      {
+        heading: "Confirm filter compatibility and replenishment supply",
+        body: "Record the connector and every compatible cartridge, canister, particulate filter, pre-filter and retainer code. Ask whether replacement items will remain available and whether future lots preserve the approved interface. The workplace hazard assessment—not color, appearance or a generic gas-mask label—must determine the final filter selection."
+      },
+      {
+        heading: "Lock down OEM packaging and quality checkpoints",
+        body: "For private-label orders, approve artwork for the product marking, label, color box, instructions and outer carton before production. Define incoming-material, assembly, leak or functional, appearance and packing checks appropriate to the product. Agree on inspection records, sample retention, lot identification and how nonconforming goods will be handled."
+      },
+      {
+        heading: "Put the commercial scope in writing",
+        body: "The purchase agreement should identify the exact model and configuration, quantity, unit and carton packing, approved artwork version, documents, sample standard, inspection method, lead time, shipping term, destination, payment milestones and change-control process. Do not rely on chat descriptions when they conflict with the final specification or pro forma invoice."
+      },
+      {
+        heading: "Use a structured RFQ to compare suppliers",
+        body: "Send every candidate the same RFQ: target market, workplace application and hazards, facepiece and connector requirements, filters, quantity, sample needs, documentation, logo and packaging scope, destination and required date. A complete RFQ reduces vague quotations and makes supplier responsiveness, technical clarity and total landed scope easier to compare."
+      }
+    ],
+    relatedProductCategories: ["Full Face Respirators", "Filters & Cartridges"],
+    relatedProductSlugs: [
+      "fnj05-full-face-respirator",
+      "mf14-full-face-respirator",
+      "mf19-full-face-respirator"
+    ],
+    sources: [
+      {
+        title: "Respirator Selection and Use",
+        url: "https://www.cdc.gov/niosh/ppe/respirators/selection.html",
+        publisher: "CDC/NIOSH"
+      },
+      {
+        title: "Respiratory Protection Standard — 29 CFR 1910.134",
+        url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134",
+        publisher: "U.S. OSHA"
+      },
+      {
+        title: "Small Entity Compliance Guide for the Respiratory Protection Standard",
+        url: "https://www.osha.gov/publications/3384small-entity-for-respiratory-protection-standard-rev",
+        publisher: "U.S. OSHA"
+      }
+    ]
   }
 ];
