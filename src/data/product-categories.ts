@@ -7,6 +7,11 @@ export type ProductCategoryLanding = {
   metaDescription: string;
   buyerAnswer: string;
   selectionSteps: string[];
+  comparisonRows: {
+    criterion: string;
+    buyerCheck: string;
+    rfqInput: string;
+  }[];
   buyerQuestions: { question: string; answer: string }[];
 };
 
@@ -27,6 +32,33 @@ export const productCategoryLandings: ProductCategoryLanding[] = [
       "Confirm the mask connector and compatible cartridge, canister or supplied-air configuration.",
       "Request model-specific materials, packing details and available technical documents.",
       "Confirm quantity, target market, logo, color box and instruction-manual requirements."
+    ],
+    comparisonRows: [
+      {
+        criterion: "Facepiece material",
+        buyerCheck: "Confirm silicone, TPE or the exact quoted material rather than relying on appearance.",
+        rfqInput: "Required material and expected use duration"
+      },
+      {
+        criterion: "Filter interface",
+        buyerCheck: "Match the facepiece connector to the exact cartridge, canister or supplied-air component.",
+        rfqInput: "Connector type, filter model and hazard"
+      },
+      {
+        criterion: "Lens and harness",
+        buyerCheck: "Review lens material, field of view, head-harness design and available replacement parts.",
+        rfqInput: "Lens, harness and spare-part requirements"
+      },
+      {
+        criterion: "Market documents",
+        buyerCheck: "Verify that available reports and instructions identify the quoted model and configuration.",
+        rfqInput: "Destination market and required documents"
+      },
+      {
+        criterion: "OEM packaging",
+        buyerCheck: "Approve product marking, label, manual, color box and carton artwork before production.",
+        rfqInput: "Logo files, languages, pack contents and carton marks"
+      }
     ],
     buyerQuestions: [
       {
@@ -58,6 +90,33 @@ export const productCategoryLandings: ProductCategoryLanding[] = [
       "Review cleaning, replacement-part and storage requirements for the buyer program.",
       "Confirm mask-only, mask-and-filter kit or private-label packing requirements."
     ],
+    comparisonRows: [
+      {
+        criterion: "Facepiece and size",
+        buyerCheck: "Confirm the quoted facepiece material, available sizes and seal design.",
+        rfqInput: "Material, sizes and workforce sample quantity"
+      },
+      {
+        criterion: "Eye protection",
+        buyerCheck: "Determine whether separate goggles or a face shield are required for the task.",
+        rfqInput: "Splash, impact and eye-irritation conditions"
+      },
+      {
+        criterion: "Cartridge interface",
+        buyerCheck: "Verify the exact mask, cartridge, pre-filter and retainer as one compatible system.",
+        rfqInput: "Hazard, cartridge code and kit contents"
+      },
+      {
+        criterion: "Fit testing",
+        buyerCheck: "Use production-representative samples in the employer's applicable fit-testing process.",
+        rfqInput: "Required sizes and sample delivery destination"
+      },
+      {
+        criterion: "Replenishment",
+        buyerCheck: "Confirm replacement-filter availability, shelf life, storage and carton quantities.",
+        rfqInput: "Annual demand and preferred replenishment pack"
+      }
+    ],
     buyerQuestions: [
       {
         question: "When do buyers choose a half face respirator instead of a full face model?",
@@ -87,6 +146,33 @@ export const productCategoryLandings: ProductCategoryLanding[] = [
       "Confirm the exact facepiece model and connector interface before sampling or bulk orders.",
       "Review labeling, shelf-life, storage and replacement-program requirements.",
       "Confirm pair pack, vacuum pack, retail box or bulk replenishment packaging."
+    ],
+    comparisonRows: [
+      {
+        criterion: "Contaminant class",
+        buyerCheck: "Identify particles, gases, vapors or combined hazards before comparing filter labels.",
+        rfqInput: "Substance, physical form and expected exposure"
+      },
+      {
+        criterion: "Facepiece compatibility",
+        buyerCheck: "Confirm the connector on the exact filter and facepiece; model shorthand is not enough.",
+        rfqInput: "Existing mask model, connector and photos"
+      },
+      {
+        criterion: "Capacity and limits",
+        buyerCheck: "Review the documented filter class, use limitations and target-market requirements.",
+        rfqInput: "Required class, standard and destination market"
+      },
+      {
+        criterion: "Change schedule",
+        buyerCheck: "Plan replacement using an ESLI or objective data for the actual workplace conditions.",
+        rfqInput: "Work duration, concentration, humidity and temperature"
+      },
+      {
+        criterion: "Storage and packing",
+        buyerCheck: "Confirm shelf life, sealed packaging, lot identification and storage instructions.",
+        rfqInput: "Pack format, annual volume and delivery schedule"
+      }
     ],
     buyerQuestions: [
       {
