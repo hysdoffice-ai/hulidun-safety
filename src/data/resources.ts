@@ -576,5 +576,91 @@ export const resources: Resource[] = [
         publisher: "U.S. OSHA"
       }
     ]
+  },
+  {
+    id: "res-full-face-respirator-oem-checklist",
+    slug: "full-face-respirator-oem-moq-packaging-documents-sample-checklist",
+    title: "Full Face Respirator OEM: MOQ, Packaging, Documents and Sample Checklist",
+    excerpt: "A practical RFQ framework for private-label buyers defining the exact respirator, filters, MOQ, artwork, documents, samples and production approval.",
+    category: "OEM Buyer Guide",
+    readTime: "9 min read",
+    metaDescription: "Full face respirator OEM buyer checklist covering MOQ, private-label packaging, exact-model documents, samples, filters, artwork and production approval.",
+    publishedAt: "2026-07-29",
+    updatedAt: "2026-07-29",
+    questions: [
+      {
+        question: "What is the reference MOQ for a private-label full face respirator order?",
+        answer: "Hulidun Safety uses 200 pcs as a standard reference MOQ, but the final quantity depends on the exact facepiece, filter or kit contents, printing method, color box, instructions, carton requirements and stock status. Buyers should request one written MOQ for the complete approved configuration."
+      },
+      {
+        question: "What can be customized for a full face respirator OEM order?",
+        answer: "Depending on the model and quantity, the scope can include product or label branding, color box, instruction manual, outer carton marks and distributor catalog assets. Every marking and packaging component should be approved against the exact product and destination-market requirements."
+      },
+      {
+        question: "Which documents should an OEM respirator buyer request?",
+        answer: "Request the exact-model datasheet, user instructions, compatible filter list, packing specification, product and label photos, storage information, and available test or conformity documents. Confirm that each document names or clearly covers the quoted model and configuration."
+      },
+      {
+        question: "What should be checked on a full face respirator sample?",
+        answer: "Check the exact model, facepiece and lens materials, harness, valves, connector, compatible filters, markings, instructions, unit packaging and carton. Workplace approval may also require medical evaluation and fit testing under the employer's applicable respiratory protection program."
+      }
+    ],
+    sections: [
+      {
+        heading: "Define one exact OEM configuration",
+        body: "Start the RFQ with the exact facepiece model, material, lens and harness requirements, connector type, filter or canister codes, accessories, sizes and pack contents. State whether the order is mask-only or a complete kit. This prevents the sample, quotation, artwork and final production from referring to different configurations."
+      },
+      {
+        heading: "Calculate MOQ for the complete pack",
+        body: "The respirator body, printed label, color box, multilingual instructions and outer carton may each have different production constraints. Ask for the finished-kit MOQ and identify any component whose printing minimum is higher. Hulidun Safety's standard reference is 200 pcs, while final MOQ remains model- and packaging-specific."
+      },
+      {
+        heading: "Prepare an artwork approval list",
+        body: "Create a controlled list for every branded surface: product or label marking, unit label, color box, instruction manual, inner pack and outer carton. Record artwork version, language, barcode or importer information where applicable, colors, dimensions and placement. Do not authorize mass printing until the exact product information and destination-market responsibilities have been reviewed."
+      },
+      {
+        heading: "Match documents to the quoted product",
+        body: "Request the datasheet, compatible filter list, user instructions, packing specification and available test or conformity evidence. Compare manufacturer, product name, model, standard, configuration and document status. A report for a similar-looking model should not be represented as evidence for the quoted product."
+      },
+      {
+        heading: "Approve production-representative samples",
+        body: "The sample should use the proposed facepiece, connector, filters, markings, instructions and packaging. Record observations for seal condition, straps, valves, lens clarity, filter fit, label accuracy and carton protection. The buyer's workplace review and any required fit testing remain separate from the supplier's commercial sample approval."
+      },
+      {
+        heading: "Set quality and change-control checkpoints",
+        body: "Agree which incoming materials, assembly functions, appearance points, markings and pack contents will be checked. Define the approved sample, inspection record, lot identification, retained sample and nonconformance process. Require written approval before changing a material, component, connector, filter source, artwork or document used for the order."
+      },
+      {
+        heading: "Confirm lead time and replenishment",
+        body: "Available-stock orders are generally referenced at 5–7 days after confirmation, while logo, color box or private-label orders are generally referenced at 10–15 days. Final timing depends on the approved scope. Ask separately about recurring filter and spare-part availability so a distributor program can support customers after the first shipment."
+      },
+      {
+        heading: "Send a complete OEM RFQ",
+        body: "Include company and destination, target market, application and hazards, exact model or required configuration, quantity, filters and accessories, sizes, documents, artwork languages, packaging, sample quantity, inspection expectation, delivery destination and requested date. A single structured RFQ makes price, scope and lead-time comparisons more reliable."
+      }
+    ],
+    relatedProductCategories: ["Full Face Respirators", "Filters & Cartridges"],
+    relatedProductSlugs: [
+      "fnj05-full-face-respirator",
+      "mf14-full-face-respirator",
+      "mf19-full-face-respirator"
+    ],
+    sources: [
+      {
+        title: "Respirator Selection and Use",
+        url: "https://www.cdc.gov/niosh/ppe/respirators/selection.html",
+        publisher: "CDC/NIOSH"
+      },
+      {
+        title: "Respiratory Protection Standard — 29 CFR 1910.134",
+        url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134",
+        publisher: "U.S. OSHA"
+      },
+      {
+        title: "Small Entity Compliance Guide for the Respiratory Protection Standard",
+        url: "https://www.osha.gov/publications/3384small-entity-for-respiratory-protection-standard-rev",
+        publisher: "U.S. OSHA"
+      }
+    ]
   }
 ];

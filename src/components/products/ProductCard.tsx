@@ -36,7 +36,11 @@ export function ProductCard({ product }: ProductCardProps) {
         <Link href={`/products/${product.slug}/`} className="inline-flex items-center gap-2 text-sm font-bold text-warning">
           View Details <ArrowRight className="h-4 w-4" />
         </Link>
-        <Link href="/contact/" className="text-sm font-bold text-orange">
+        <Link
+          href={`/contact/?model=${encodeURIComponent(product.model)}&product=${encodeURIComponent(product.name)}`}
+          rel="nofollow"
+          className="text-sm font-bold text-orange"
+        >
           Request a Quote
         </Link>
       </div>

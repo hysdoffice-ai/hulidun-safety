@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { CheckCircle2, HelpCircle, ImageIcon } from "lucide-react";
 import { CTAButton } from "@/components/common/CTAButton";
 import { brandName, makeWhatsAppUrl } from "@/data/site";
@@ -26,6 +26,18 @@ const inputFields: {
 
 export function RFQForm() {
   const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const product = params.get("product");
+    const model = params.get("model");
+    const productInput = formRef.current?.elements.namedItem("productInterested");
+
+    if (productInput instanceof HTMLInputElement && (model || product)) {
+      productInput.value = [model, product].filter(Boolean).join(" ");
+    }
+  }, []);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -51,7 +63,7 @@ export function RFQForm() {
 
   return (
     <div className="grid gap-5 xl:grid-cols-[1fr_280px]">
-      <form onSubmit={handleSubmit} className="rounded-md border border-white/10 bg-slate-950/75 p-5 shadow-panel backdrop-blur sm:p-8">
+      <form ref={formRef} onSubmit={handleSubmit} className="rounded-md border border-white/10 bg-slate-950/75 p-5 shadow-panel backdrop-blur sm:p-8">
         <div className="grid gap-5 md:grid-cols-2">
           {inputFields.map((field) => (
             <label key={field.name} className="grid gap-2 text-sm font-semibold text-slate-200">

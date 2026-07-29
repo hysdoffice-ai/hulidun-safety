@@ -1,4 +1,5 @@
-import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { ProductCard } from "@/components/products/ProductCard";
 import { ProductCTA } from "@/components/products/ProductCTA";
 import { ComplianceNotice } from "@/components/notice";
@@ -78,6 +79,33 @@ export function ProductCategoryLanding({ landing }: ProductCategoryLandingProps)
           ))}
         </div>
       </Section>
+      <Section
+        eyebrow="Specification Comparison"
+        title="Information to verify before requesting a quote"
+        intro="Use the same comparison fields for every shortlisted supplier so samples, documents and commercial terms can be evaluated consistently."
+        className="bg-slate-950/60"
+      >
+        <div className="overflow-x-auto rounded-md border border-white/10">
+          <table className="w-full min-w-[760px] border-collapse text-left text-sm">
+            <thead className="bg-orange/10 text-white">
+              <tr>
+                <th className="border-b border-white/10 px-5 py-4 font-black">Criterion</th>
+                <th className="border-b border-white/10 px-5 py-4 font-black">What the buyer should verify</th>
+                <th className="border-b border-white/10 px-5 py-4 font-black">Information to include in the RFQ</th>
+              </tr>
+            </thead>
+            <tbody>
+              {landing.comparisonRows.map((row) => (
+                <tr key={row.criterion} className="border-b border-white/10 last:border-0">
+                  <th className="px-5 py-4 align-top font-bold text-orange">{row.criterion}</th>
+                  <td className="px-5 py-4 align-top leading-6 text-slate-300">{row.buyerCheck}</td>
+                  <td className="px-5 py-4 align-top leading-6 text-slate-300">{row.rfqInput}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Section>
       <Section eyebrow="Buyer Questions" title="Procurement answers" className="bg-slate-950/60">
         <div className="grid gap-4 md:grid-cols-2">
           {landing.buyerQuestions.map((item) => (
@@ -85,6 +113,34 @@ export function ProductCategoryLanding({ landing }: ProductCategoryLandingProps)
               <h2 className="text-lg font-black text-white">{item.question}</h2>
               <p className="mt-3 text-sm leading-6 text-slate-300">{item.answer}</p>
             </article>
+          ))}
+        </div>
+      </Section>
+      <Section eyebrow="Buyer Resources" title="Continue the procurement review">
+        <div className="grid gap-4 md:grid-cols-2">
+          {[
+            {
+              href: "/resources/how-to-choose-full-face-respirator-manufacturer-china/",
+              title: "Manufacturer Due-Diligence Checklist",
+              text: "Verify the legal company, factory, exact-model documents, samples and written commercial scope."
+            },
+            {
+              href: "/resources/full-face-respirator-oem-moq-packaging-documents-sample-checklist/",
+              title: "OEM, MOQ and Sample Checklist",
+              text: "Prepare a complete private-label RFQ covering product marking, packaging, documents and sample approval."
+            }
+          ].map((resource) => (
+            <Link
+              key={resource.href}
+              href={resource.href}
+              className="group rounded-md border border-white/10 bg-white/[0.04] p-5 transition hover:border-orange/50"
+            >
+              <h2 className="text-lg font-black text-white">{resource.title}</h2>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{resource.text}</p>
+              <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-orange">
+                Read buyer guide <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+              </span>
+            </Link>
           ))}
         </div>
       </Section>

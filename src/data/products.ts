@@ -127,7 +127,7 @@ const baseByCategory: Record<
 const productSeeds: ProductSeed[] = [
   {
     model: "FNJ05", name: "Full Face Respirator", category: "Full Face Respirators", image: "01_FNJ05.jpg", featured: true,
-    updatedAt: "2026-07-20",
+    updatedAt: "2026-07-29",
     detail: "Standard left-side connector; connector direction can be customized for project or distributor programs.",
     procurementChecks: [
       "Confirm whether the project requires the standard left-side connector or a customized connector direction.",
@@ -167,8 +167,8 @@ const productSeeds: ProductSeed[] = [
   },
   {
     model: "MF14", name: "Silicone Full Face Respirator", category: "Full Face Respirators", image: "05_MF14.jpg", featured: true, slug: "mf14-full-face-respirator",
-    updatedAt: "2026-07-20",
-    detail: "Silicone full face mask with ribbed edge for industrial respiratory protection.",
+    updatedAt: "2026-07-29",
+    detail: "Silicone full face mask with ribbed sealing edge for industrial sampling, distributor programs and private-label respirator quotations.",
     materials: ["Facepiece material: Silicone", "Lens material: Confirm for the quoted configuration", "Harness material: Confirm for the quoted configuration"],
     procurementChecks: [
       "Confirm the required facepiece material, connector configuration and target filter before requesting a quote.",
@@ -181,7 +181,7 @@ const productSeeds: ProductSeed[] = [
   { model: "MF15", name: "Dual-Connector Full Face Respirator", category: "Full Face Respirators", image: "08_MF15.jpg", featured: true, detail: "Standard dual-connector mask with left or right connector customization options." },
   {
     model: "MF19", name: "RD40 Full Face Respirator", category: "Full Face Respirators", image: "09_MF19.jpg", featured: true, slug: "mf19-full-face-respirator",
-    updatedAt: "2026-07-20",
+    updatedAt: "2026-07-29",
     detail: "RD40 threaded full face respirator with dual connector configuration options.",
     compatibleFilters: ["Compatible RD40 threaded canister", "Hazard-specific multi-gas canister", "Particle-capable canister when documented for the application", "Project-specific supplied-air configuration subject to review"],
     procurementChecks: [
@@ -206,7 +206,7 @@ const productSeeds: ProductSeed[] = [
   { model: "TZL30", name: "Fire Escape Smoke Hood", category: "Accessories & Emergency PPE", image: "14_Item_31.jpg", featured: true, detail: "Self-rescue filtering respirator for emergency escape and fire safety stock programs." },
   {
     model: "CF-6200", name: "Half Face Respirator", category: "Half Face Respirators", image: "15_CF_6200.jpg", featured: true, slug: "cf6200-half-face-respirator",
-    updatedAt: "2026-07-20",
+    updatedAt: "2026-07-29",
     detail: "Reusable half face respirator platform for mask-and-cartridge kits, distributor replenishment and private-label packaging programs.",
     procurementChecks: [
       "Define whether the order is for facepieces only or a complete kit with cartridges, pre-filters and retainers.",
@@ -237,7 +237,7 @@ const productSeeds: ProductSeed[] = [
   { model: "No.3 Filter Canister", name: "Filter Canister Series", category: "Filters & Cartridges", image: "27_Item_57.jpg", featured: true },
   {
     model: "A2B2E2K2KP100", name: "Combined Filter Canister", category: "Filters & Cartridges", image: "28_Item_61.jpg", featured: true,
-    updatedAt: "2026-07-20",
+    updatedAt: "2026-07-29",
     detail: "Combined filter canister for compatible threaded respirator systems; hazard labeling, connector compatibility and target-market documents should be confirmed before ordering.",
     hazards: ["Organic vapor classification subject to quoted documentation", "Inorganic gas classification subject to quoted documentation", "Acid gas classification subject to quoted documentation", "Ammonia classification subject to quoted documentation", "Particle filtration classification subject to quoted documentation"],
     procurementChecks: [
