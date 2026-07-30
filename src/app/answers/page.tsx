@@ -133,7 +133,7 @@ export default function AnswersPage() {
     "@type": "WebPage",
     name: "Respiratory Protection Supplier Answers",
     url: "https://www.hulidun.com/answers/",
-    dateModified: "2026-07-20",
+    dateModified: "2026-07-30",
     about: [
       "respiratory protection manufacturer",
       "full face respirator supplier",
