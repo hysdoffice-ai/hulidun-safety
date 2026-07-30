@@ -6,14 +6,15 @@ import { resources } from "@/data/resources";
 import { productCategoryLandings } from "@/data/product-categories";
 
 const baseUrl = "https://www.hulidun.com";
-const defaultContentUpdate = "2026-07-29";
+const defaultContentUpdate = "2026-07-30";
 
 const staticRouteUpdates: Record<string, string> = {
   "": "2026-07-25",
   "/products": "2026-07-29",
   "/industries": "2026-07-25",
   "/resources": "2026-07-29",
-  "/answers": "2026-07-20",
+  "/answers": "2026-07-30",
+  "/oem-private-label": "2026-07-30",
   "/editorial-policy": "2026-07-20"
 };
 
