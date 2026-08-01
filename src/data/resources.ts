@@ -662,5 +662,91 @@ export const resources: Resource[] = [
         publisher: "U.S. OSHA"
       }
     ]
+  },
+  {
+    id: "res-choose-half-face-respirator-manufacturer-china",
+    slug: "how-to-choose-half-face-respirator-manufacturer-china",
+    title: "How to Choose a Half Face Respirator Manufacturer in China",
+    excerpt: "A sourcing checklist for distributors comparing reusable half masks, cartridge compatibility, sizes, samples, documents, OEM packaging and replenishment supply.",
+    category: "Sourcing Guide",
+    readTime: "9 min read",
+    metaDescription: "Choose a half face respirator manufacturer in China using this buyer checklist for mask materials, sizes, cartridges, samples, documents, OEM and quality control.",
+    publishedAt: "2026-08-01",
+    updatedAt: "2026-08-01",
+    questions: [
+      {
+        question: "How should buyers choose a half face respirator manufacturer in China?",
+        answer: "Verify the legal company and manufacturing site, compare the same exact facepiece and cartridge configuration, review materials and available sizes, match documents to the quoted model, test production-representative samples, confirm replacement-filter supply and put OEM and quality requirements in writing."
+      },
+      {
+        question: "What should be included in a half mask sample order?",
+        answer: "Request the exact facepiece model and size, proposed cartridges or filters, pre-filters and retainers, user instructions, unit packaging and available model-specific documents. The employer's applicable medical evaluation and fit-testing process remains necessary before workplace use."
+      },
+      {
+        question: "Why is cartridge compatibility important when sourcing half masks?",
+        answer: "A reusable half mask is only one part of the respirator system. Buyers need the exact connector, approved or specified compatible filters, hazard-specific selection information and dependable replacement supply so the sampled configuration and later replenishment orders remain consistent."
+      },
+      {
+        question: "What should an OEM half face respirator RFQ include?",
+        answer: "Include the exact model or required material and size range, target market, application and hazards, cartridges and accessories, order quantity, documents, logo and packaging scope, sample plan, inspection requirements, destination and requested delivery date."
+      }
+    ],
+    sections: [
+      {
+        heading: "Verify the supplier and production responsibility",
+        body: "Record the legal company name used on the quotation, invoice and export documents, then compare it with the brand and factory information. Ask which facepiece, valve, strap, connector, cartridge and packaging processes are performed or controlled by the supplier. Factory evidence should relate to the quoted product rather than an unrelated PPE category."
+      },
+      {
+        heading: "Compare one exact facepiece configuration",
+        body: "Define the model, facepiece material, available sizes, head harness, valves, connector, included components and packaging before comparing prices. Similar-looking half masks may differ in elastomer, fit range, cartridge interface or documentation. Every shortlisted supplier should quote the same pack contents."
+      },
+      {
+        heading: "Build the cartridge and accessory matrix",
+        body: "List the proposed gas or vapor cartridges, particulate filters, pre-filters, retainers and replacement parts for the exact facepiece. Record product codes and connector information. The workplace hazard assessment and applicable rules—not color or appearance—must determine the final filter selection."
+      },
+      {
+        heading: "Check sizes, samples and fit-testing support",
+        body: "Ask which sizes are available and obtain production-representative samples with the intended filters and accessories. Review facepiece condition, straps, valves, connector fit, markings, instructions and packaging. Supplier sample approval does not replace the employer's medical evaluation, fit testing, user training and respiratory protection program responsibilities."
+      },
+      {
+        heading: "Match technical documents to the quoted model",
+        body: "Request the exact-model datasheet, user instructions, compatible-filter information, packing specification, product and label photos, storage details and available test or conformity evidence. Compare the manufacturer, model, configuration, standard and document status before making destination-market claims."
+      },
+      {
+        heading: "Confirm replacement supply before the first order",
+        body: "A distributor program needs more than the initial facepiece shipment. Ask for cartridge, filter, retainer, valve and other replaceable-part availability, carton quantities and expected replenishment lead times. Record whether future lots will preserve the sampled connector and approved configuration."
+      },
+      {
+        heading: "Approve OEM artwork and quality checkpoints",
+        body: "For private-label projects, control the product or label marking, unit label, color box, user instructions and carton marks as separate artwork items. Agree on the approved sample, functional and appearance checks, pack-content inspection, lot identification, sample retention and written change control before bulk production."
+      },
+      {
+        heading: "Use a complete RFQ for supplier comparison",
+        body: "Send every supplier the same target market, application and hazard context, model or material requirements, sizes, filters, accessories, quantity, documents, branding, packaging, sample quantity, inspection plan, destination and required date. Compare the complete system and replenishment scope rather than the facepiece price alone."
+      }
+    ],
+    relatedProductCategories: ["Half Face Respirators", "Filters & Cartridges"],
+    relatedProductSlugs: [
+      "cf6200-half-face-respirator",
+      "cf7502-half-face-respirator",
+      "3200-half-face-respirator"
+    ],
+    sources: [
+      {
+        title: "Respirator Selection and Use",
+        url: "https://www.cdc.gov/niosh/ppe/respirators/selection.html",
+        publisher: "CDC/NIOSH"
+      },
+      {
+        title: "Respiratory Protection Standard — 29 CFR 1910.134",
+        url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134",
+        publisher: "U.S. OSHA"
+      },
+      {
+        title: "Small Entity Compliance Guide for the Respiratory Protection Standard",
+        url: "https://www.osha.gov/publications/3384small-entity-for-respiratory-protection-standard-rev",
+        publisher: "U.S. OSHA"
+      }
+    ]
   }
 ];

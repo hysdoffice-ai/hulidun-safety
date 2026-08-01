@@ -216,7 +216,7 @@ const productSeeds: ProductSeed[] = [
   },
   {
     model: "CF7502", name: "Half Face Respirator", category: "Half Face Respirators", image: "16_CF7502.jpg", featured: true,
-    updatedAt: "2026-07-23",
+    updatedAt: "2026-08-01",
     detail: "Reusable half facepiece option for industrial sampling, powder-handling and maintenance programs that require an exact filter-and-facepiece compatibility review.",
     procurementChecks: [
       "Identify each airborne contaminant, physical form and expected exposure before selecting a filter for the CF7502 quotation.",
@@ -225,7 +225,16 @@ const productSeeds: ProductSeed[] = [
     ]
   },
   { model: "CF3300 + 3301", name: "Half Face Respirator with Cartridge", category: "Half Face Respirators", image: "17_CF3300_filter_cartridge3301.jpg", featured: true },
-  { model: "3200", name: "Half Face Respirator", category: "Half Face Respirators", image: "18_3200.jpg", slug: "3200-half-face-respirator" },
+  {
+    model: "3200", name: "Half Face Respirator", category: "Half Face Respirators", image: "18_3200.jpg", slug: "3200-half-face-respirator",
+    updatedAt: "2026-08-01",
+    detail: "Compact reusable half facepiece for distributor starter kits and industrial programs requiring model-specific filter, size and sample review.",
+    procurementChecks: [
+      "Confirm the exact facepiece material, size offering, connector and compatible cartridge or filter codes.",
+      "Specify whether the RFQ covers the facepiece alone or a kit with filters, retainers and user instructions.",
+      "Use production-representative samples in the buyer's applicable medical evaluation and fit-testing process."
+    ]
+  },
   { model: "Woodland Bag", name: "Woodland Camouflage Respirator Bag", category: "Accessories & Emergency PPE", image: "19_Item_42.jpg" },
   { model: "Green Bag", name: "Green Respirator Bag", category: "Accessories & Emergency PPE", image: "20_Item_43.jpg" },
   { model: "Ink-Pattern Bag", name: "Ink-Pattern Respirator Bag", category: "Accessories & Emergency PPE", image: "21_Item_44.jpg" },
