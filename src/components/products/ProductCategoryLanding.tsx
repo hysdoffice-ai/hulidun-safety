@@ -13,6 +13,44 @@ type ProductCategoryLandingProps = {
 
 export function ProductCategoryLanding({ landing }: ProductCategoryLandingProps) {
   const categoryProducts = products.filter((product) => product.category === landing.category);
+  const buyerResources = landing.category === "Half Face Respirators"
+    ? [
+        {
+          href: "/resources/how-to-choose-half-face-respirator-manufacturer-china/",
+          title: "Half Mask Manufacturer Checklist",
+          text: "Compare materials, sizes, cartridges, samples, documents and replenishment supply."
+        },
+        {
+          href: "/resources/respirator-fit-testing-procurement-checklist/",
+          title: "Fit Testing Procurement Checklist",
+          text: "Plan sample sizes, workplace approval and fit-testing responsibilities before deployment."
+        }
+      ]
+    : landing.category === "Filters & Cartridges"
+      ? [
+          {
+            href: "/resources/how-to-select-respirator-filter-cartridges/",
+            title: "Filter Cartridge Selection Guide",
+            text: "Match the filter family to the identified contaminant, facepiece and connector."
+          },
+          {
+            href: "/resources/respirator-cartridge-change-schedule-procurement-guide/",
+            title: "Cartridge Change Schedule Guide",
+            text: "Prepare objective replacement planning, storage and replenishment information."
+          }
+        ]
+      : [
+          {
+            href: "/resources/how-to-choose-full-face-respirator-manufacturer-china/",
+            title: "Manufacturer Due-Diligence Checklist",
+            text: "Verify the legal company, factory, exact-model documents, samples and written commercial scope."
+          },
+          {
+            href: "/resources/full-face-respirator-oem-moq-packaging-documents-sample-checklist/",
+            title: "OEM, MOQ and Sample Checklist",
+            text: "Prepare a complete private-label RFQ covering product marking, packaging, documents and sample approval."
+          }
+        ];
   const baseUrl = `https://www.hulidun.com/${landing.slug}/`;
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -118,18 +156,7 @@ export function ProductCategoryLanding({ landing }: ProductCategoryLandingProps)
       </Section>
       <Section eyebrow="Buyer Resources" title="Continue the procurement review">
         <div className="grid gap-4 md:grid-cols-2">
-          {[
-            {
-              href: "/resources/how-to-choose-full-face-respirator-manufacturer-china/",
-              title: "Manufacturer Due-Diligence Checklist",
-              text: "Verify the legal company, factory, exact-model documents, samples and written commercial scope."
-            },
-            {
-              href: "/resources/full-face-respirator-oem-moq-packaging-documents-sample-checklist/",
-              title: "OEM, MOQ and Sample Checklist",
-              text: "Prepare a complete private-label RFQ covering product marking, packaging, documents and sample approval."
-            }
-          ].map((resource) => (
+          {buyerResources.map((resource) => (
             <Link
               key={resource.href}
               href={resource.href}
