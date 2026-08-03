@@ -63,6 +63,11 @@ const answerGroups = [
         question: "What documents should a respirator importer request?",
         answer:
           "Importers should request the exact-model datasheet, user instructions, filter compatibility information, packing list, product and label photos, available test or conformity documents, and shelf-life or storage information where applicable. Required documents depend on the destination market."
+      },
+      {
+        question: "What should a respirator filter cartridge OEM RFQ include?",
+        answer:
+          "State the exact facepiece and connector, identified contaminants and workplace conditions, requested cartridge or canister classification, quantity, target market, shelf-life requirement, documents, labeling, packaging, samples, destination and replenishment forecast."
       }
     ]
   },
@@ -133,7 +138,7 @@ export default function AnswersPage() {
     "@type": "WebPage",
     name: "Respiratory Protection Supplier Answers",
     url: "https://www.hulidun.com/answers/",
-    dateModified: "2026-07-30",
+    dateModified: "2026-08-03",
     about: [
       "respiratory protection manufacturer",
       "full face respirator supplier",
