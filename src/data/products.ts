@@ -246,7 +246,7 @@ const productSeeds: ProductSeed[] = [
   { model: "No.3 Filter Canister", name: "Filter Canister Series", category: "Filters & Cartridges", image: "27_Item_57.jpg", featured: true },
   {
     model: "A2B2E2K2KP100", name: "Combined Filter Canister", category: "Filters & Cartridges", image: "28_Item_61.jpg", featured: true,
-    updatedAt: "2026-07-29",
+    updatedAt: "2026-08-03",
     detail: "Combined filter canister for compatible threaded respirator systems; hazard labeling, connector compatibility and target-market documents should be confirmed before ordering.",
     hazards: ["Organic vapor classification subject to quoted documentation", "Inorganic gas classification subject to quoted documentation", "Acid gas classification subject to quoted documentation", "Ammonia classification subject to quoted documentation", "Particle filtration classification subject to quoted documentation"],
     procurementChecks: [
@@ -260,8 +260,8 @@ const productSeeds: ProductSeed[] = [
   { model: "Filter Cartridge", name: "No.1 / No.4 / No.7 Filter Cartridge", category: "Filters & Cartridges", image: "31_filter_cartridge.jpg", featured: true },
   {
     model: "A1B1E1K1", name: "Filter Cartridge", category: "Filters & Cartridges", image: "32_Item_69.jpg",
-    updatedAt: "2026-07-22",
-    detail: "A1B1E1K1-labeled filter cartridge for compatible respirator configurations, subject to exact-model documentation and destination-market review.",
+    updatedAt: "2026-08-03",
+    detail: "A1B1E1K1-labeled replacement cartridge for compatible respirator programs requiring connector, shelf-life, packaging and exact-model document review.",
     procurementChecks: [
       "Confirm the substances, concentrations and workplace conditions before using the A1B1E1K1 label as a selection input.",
       "Request the exact cartridge interface, compatible facepiece models, shelf life, storage conditions and available test documents.",
@@ -270,8 +270,8 @@ const productSeeds: ProductSeed[] = [
   },
   {
     model: "60926", name: "Filter Cartridge", category: "Filters & Cartridges", image: "33_60926_filter_cartridge_aluminum_plastic_vacuum_packaging.jpg",
-    updatedAt: "2026-07-22",
-    detail: "60926-labeled replacement cartridge option for compatible reusable respirator kits and distributor replenishment programs.",
+    updatedAt: "2026-08-03",
+    detail: "60926-labeled replacement cartridge option with aluminum-plastic vacuum packaging for compatible reusable respirator kits and distributor replenishment programs.",
     procurementChecks: [
       "Do not assume compatibility from the 60926 model reference alone; confirm the exact facepiece interface and quoted cartridge configuration.",
       "Request applicable hazard labeling, shelf life, storage instructions, lot identification and destination-market documents before approval.",
