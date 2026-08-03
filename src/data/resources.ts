@@ -748,5 +748,91 @@ export const resources: Resource[] = [
         publisher: "U.S. OSHA"
       }
     ]
+  },
+  {
+    id: "res-respirator-filter-cartridge-oem-checklist",
+    slug: "respirator-filter-cartridge-oem-compatibility-moq-packaging-checklist",
+    title: "Respirator Filter Cartridge OEM: Compatibility, MOQ and Packaging Checklist",
+    excerpt: "A model-specific RFQ checklist for buyers comparing respirator cartridges and canisters, connector compatibility, shelf life, documents, packaging and replenishment supply.",
+    category: "OEM Buyer Guide",
+    readTime: "10 min read",
+    metaDescription: "Respirator filter cartridge OEM checklist covering compatibility, hazards, MOQ, shelf life, documents, packaging, samples, change schedules and replenishment.",
+    publishedAt: "2026-08-03",
+    updatedAt: "2026-08-03",
+    questions: [
+      {
+        question: "What should a respirator filter cartridge OEM RFQ include?",
+        answer: "Include the exact facepiece and connector, identified contaminants and workplace conditions, requested filter or canister classification, quantity, target market, shelf-life requirement, documents, label and packaging scope, sample plan, destination and replenishment forecast."
+      },
+      {
+        question: "How can buyers confirm respirator cartridge compatibility?",
+        answer: "Request written compatibility for the exact facepiece, connector and cartridge code; test production-representative samples as a complete system; and compare the proposed configuration with the applicable manufacturer instructions and destination-market requirements. Similar appearance or a familiar model number is not sufficient."
+      },
+      {
+        question: "What shelf-life information should a filter cartridge supplier provide?",
+        answer: "Ask for the stated unopened shelf life, manufacture or expiry marking format, storage temperature and humidity conditions, packaging barrier, lot identification and any after-opening limitations supported by the exact product documentation."
+      },
+      {
+        question: "Can odor be used as the only respirator cartridge replacement signal?",
+        answer: "No. Gas and vapor cartridge replacement should follow an applicable end-of-service-life indicator or an objective-data-based change schedule established for the exact cartridge, contaminant, concentration and workplace conditions. Odor alone is not a change schedule."
+      }
+    ],
+    sections: [
+      {
+        heading: "Define the complete respirator system",
+        body: "Name the exact facepiece, connector, cartridge or canister, pre-filter, retainer and accessories in the RFQ. State whether the quotation is for replacement filters only or a complete mask-and-filter kit. A cartridge cannot be evaluated independently from the interface and facepiece instructions used in the proposed system."
+      },
+      {
+        heading: "Start with contaminants and workplace conditions",
+        body: "Provide the identified substances, physical form, expected concentration, work duration, temperature, humidity and oxygen conditions to the responsible safety professional. Product color, appearance or a generic A, B, E, K or P label should not replace the workplace hazard assessment or applicable selection rules."
+      },
+      {
+        heading: "Compare the same filter classification and capacity",
+        body: "Ask each supplier to quote the same requested classification, capacity, connector and packaging configuration. Record the exact product code and label wording. Do not assume that similarly named A1B1E1K1, A2B2E2K2 or multi-gas products have identical performance, approval scope or compatibility."
+      },
+      {
+        heading: "Verify documents against the exact cartridge",
+        body: "Request the datasheet, compatible-facepiece information, user instructions, storage and shelf-life details, label artwork, packing specification and available test or conformity evidence. Compare manufacturer, model, filter classification, connector, standard, configuration and document status before making market claims."
+      },
+      {
+        heading: "Approve samples, labels and packaging together",
+        body: "The sample should represent the proposed media housing, connector, markings, seals, instructions, unit packaging and carton. Check fit with the exact facepiece, label accuracy, lot and date coding, pack integrity and carton protection. For OEM orders, approve every artwork version before bulk printing."
+      },
+      {
+        heading: "Calculate MOQ for the finished replacement pack",
+        body: "Filter production, printed labels, individual barrier packaging, color boxes, instructions and cartons may have different minimums. Ask for one finished-pack MOQ and separately identify the minimum for custom artwork. Hulidun Safety uses 200 pcs as a general reference MOQ, while the final requirement remains model- and packaging-specific."
+      },
+      {
+        heading: "Plan change schedules and customer information",
+        body: "For gas and vapor cartridges, the workplace program should use an applicable end-of-service-life indicator or an objective-data-based change schedule. Ask the supplier for exact-product information that supports the buyer's evaluation, but do not substitute a generic supplier estimate for the employer's documented workplace program."
+      },
+      {
+        heading: "Secure shelf life and replenishment supply",
+        body: "Record unopened shelf life, storage conditions, date-code format, packaging barrier, carton quantity and expected recurring lead time. Ask whether future lots will preserve the sampled connector, media specification, markings and pack configuration. Distributors should forecast replacement demand before launching the first facepiece-and-filter program."
+      }
+    ],
+    relatedProductCategories: ["Filters & Cartridges", "Full Face Respirators", "Half Face Respirators"],
+    relatedProductSlugs: [
+      "a2b2e2k2kp100-combined-filter-canister",
+      "a1b1e1k1-filter-cartridge",
+      "60926-filter-cartridge"
+    ],
+    sources: [
+      {
+        title: "Respirator Selection and Use",
+        url: "https://www.cdc.gov/niosh/ppe/respirators/selection.html",
+        publisher: "CDC/NIOSH"
+      },
+      {
+        title: "Respiratory Protection Standard — 29 CFR 1910.134",
+        url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134",
+        publisher: "U.S. OSHA"
+      },
+      {
+        title: "Air-Purifying Respirator Cartridge and Canister Service Life",
+        url: "https://www.cdc.gov/niosh/npptl/topics/respirators/disp_part/respsource3service.html",
+        publisher: "CDC/NIOSH"
+      }
+    ]
   }
 ];
