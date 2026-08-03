@@ -29,6 +29,11 @@ export function ProductCategoryLanding({ landing }: ProductCategoryLandingProps)
     : landing.category === "Filters & Cartridges"
       ? [
           {
+            href: "/resources/respirator-filter-cartridge-oem-compatibility-moq-packaging-checklist/",
+            title: "Filter Cartridge OEM Checklist",
+            text: "Define compatibility, MOQ, shelf life, packaging, documents and recurring replacement supply."
+          },
+          {
             href: "/resources/how-to-select-respirator-filter-cartridges/",
             title: "Filter Cartridge Selection Guide",
             text: "Match the filter family to the identified contaminant, facepiece and connector."
