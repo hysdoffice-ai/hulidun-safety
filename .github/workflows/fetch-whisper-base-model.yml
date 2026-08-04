@@ -1,22 +1,27 @@
-name: Fetch Whisper Base Model
+name: Fetch Chinese ASR Runtime
 
 on:
   pull_request:
     branches: [ main ]
 
 jobs:
-  fetch-model:
+  fetch-runtime:
     runs-on: ubuntu-latest
     steps:
-      - name: Download public multilingual Whisper model
+      - name: Download public sherpa-onnx wheels and Chinese model
         run: |
-          curl -L --fail --retry 3 -o ggml-base-q5_1.bin \
-            https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base-q5_1.bin
-          ls -lh ggml-base-q5_1.bin
-          sha256sum ggml-base-q5_1.bin
-      - name: Upload model artifact
+          set -eux
+          mkdir -p chinese-asr-runtime
+          cd chinese-asr-runtime
+          curl -L --fail --retry 3 -O https://huggingface.co/csukuangfj2/sherpa-onnx-wheels/resolve/main/cpu/1.13.4/sherpa_onnx-1.13.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+          curl -L --fail --retry 3 -O https://huggingface.co/csukuangfj2/sherpa-onnx-wheels/resolve/main/cpu/1.13.4/sherpa_onnx_core-1.13.4-py3-none-manylinux2014_x86_64.whl
+          curl -L --fail --retry 3 -O https://huggingface.co/csukuangfj2/sherpa-onnx-wheels/resolve/main/cpu/1.13.4/sherpa_onnx_bin-1.13.4-py3-none-manylinux2014_x86_64.whl
+          curl -L --fail --retry 3 -O https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2024-07-17.tar.bz2
+          ls -lh
+      - name: Upload runtime artifact
         uses: actions/upload-artifact@v4
         with:
-          name: whisper-base-q5_1-model
-          path: ggml-base-q5_1.bin
+          name: chinese-asr-runtime
+          path: chinese-asr-runtime
+          compression-level: 0
           retention-days: 1
