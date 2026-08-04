@@ -834,5 +834,91 @@ export const resources: Resource[] = [
         publisher: "CDC/NIOSH"
       }
     ]
+  },
+  {
+    id: "res-respirator-sample-approval-checklist",
+    slug: "respirator-sample-approval-checklist-before-bulk-order",
+    title: "Respirator Sample Approval Checklist Before a Bulk Order",
+    excerpt: "A practical pre-production sample review for importers comparing respirator models, filters, markings, documents, packaging and bulk-order consistency.",
+    category: "Procurement Checklist",
+    readTime: "9 min read",
+    metaDescription: "Respirator sample approval checklist for importers reviewing exact models, filters, fit, markings, documents, packaging and production before a bulk order.",
+    publishedAt: "2026-08-04",
+    updatedAt: "2026-08-04",
+    questions: [
+      {
+        question: "What should a buyer check on a respirator sample before a bulk order?",
+        answer: "Check the exact model and configuration, facepiece condition, straps, valves, lens where applicable, connector and filter fit, markings, instructions, documents, unit packaging and carton protection against the written RFQ. Record the approved sample and artwork versions before production."
+      },
+      {
+        question: "Should the approved respirator sample include filters and packaging?",
+        answer: "Yes when the bulk order is a complete kit. The sample should represent the proposed facepiece, compatible filters or canisters, accessories, labels, instructions, unit packaging and carton configuration so the buyer approves one complete commercial scope."
+      },
+      {
+        question: "Does supplier sample approval replace respirator fit testing?",
+        answer: "No. Commercial sample approval confirms the quoted product and packaging scope. Employer medical evaluation, model- and size-specific fit testing, user training and workplace selection responsibilities remain separate."
+      },
+      {
+        question: "How can importers make bulk respirator production match the approved sample?",
+        answer: "Give the sample, product specification, bill of materials or agreed configuration, artwork files, packing specification and inspection criteria controlled revision numbers. Put change notification and approval requirements in the purchase agreement."
+      }
+    ],
+    sections: [
+      {
+        heading: "Freeze the exact quoted configuration",
+        body: "Record the model, material, size, harness, connector type and quantity, valves, lens specification, filters, retainers, accessories and kit contents. The quotation, sample label, documents and purchase order should describe the same configuration rather than a product family or appearance-only reference."
+      },
+      {
+        heading: "Inspect the facepiece and components",
+        body: "Review sealing surfaces, straps, buckles, inhalation and exhalation valves, connectors and component retention for visible condition and assembly. For a full face respirator, also review lens clarity, field of view, seal condition and any anti-fog claim against the exact supplied information. Record observations with dated photos."
+      },
+      {
+        heading: "Test filter and accessory compatibility",
+        body: "Fit the exact quoted cartridge, canister, pre-filter, retainer and accessories to the sample. Confirm written compatibility and instructions for the complete system. A familiar connector shape, color or model shorthand is not enough to approve compatibility or workplace protection."
+      },
+      {
+        heading: "Match markings and documents to the sample",
+        body: "Compare manufacturer name, brand, exact model, product and filter markings, lot or date code, instructions, datasheet, packing list and available conformity evidence. Confirm the destination-market language and claim scope. Do not approve a document that describes a different model or configuration."
+      },
+      {
+        heading: "Review OEM artwork before printing",
+        body: "Approve logo position, label text, color box, instructions, barcode, country-of-origin marking and carton marks using revision-controlled proofs. Check that safety information remains readable and that private-label claims do not exceed the evidence available for the exact product."
+      },
+      {
+        heading: "Approve unit and export packaging",
+        body: "Confirm the unit pack, seals where applicable, accessories, instruction placement, inner quantity, carton quantity, carton dimensions and transport protection. Filter cartridges and canisters also need agreed shelf-life marking, storage information, lot traceability and packaging barrier."
+      },
+      {
+        heading: "Separate commercial approval from workplace approval",
+        body: "The supplier sample can confirm commercial scope, visible workmanship and documentation. The buyer or employer must separately complete the applicable hazard assessment, medical evaluation, fit testing, user training and program approval before workplace use. One sample size does not establish fit for every user."
+      },
+      {
+        heading: "Create a production reference and inspection plan",
+        body: "Sign or otherwise identify the approved sample and save the final specification, artwork and packing revisions. Define inspection timing, sampling level or agreed checks, critical defects, photo evidence and change-control rules in writing. Require written approval before the supplier changes materials, connector, filter, markings or packaging."
+      }
+    ],
+    relatedProductCategories: ["Full Face Respirators", "Half Face Respirators", "Filters & Cartridges"],
+    relatedProductSlugs: [
+      "mf15-dual-connector-full-face-respirator",
+      "cf6800-full-face-respirator",
+      "cf3300-plus-3301-half-face-respirator-with-cartridge"
+    ],
+    sources: [
+      {
+        title: "Respiratory Protection Standard — 29 CFR 1910.134",
+        url: "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134",
+        publisher: "U.S. OSHA"
+      },
+      {
+        title: "Fit Testing",
+        url: "https://www.osha.gov/respiratory-protection/fit-testing",
+        publisher: "U.S. OSHA"
+      },
+      {
+        title: "Respirator Selection and Use",
+        url: "https://www.cdc.gov/niosh/ppe/respirators/selection.html",
+        publisher: "CDC/NIOSH"
+      }
+    ]
   }
 ];
