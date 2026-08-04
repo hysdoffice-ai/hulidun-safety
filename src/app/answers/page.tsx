@@ -103,6 +103,11 @@ const answerGroups = [
         question: "What information should buyers include in an RFQ?",
         answer:
           "Buyers should include target product model, quantity, target market, workplace application, hazard type, required documents, packaging or logo needs and delivery destination."
+      },
+      {
+        question: "What should buyers approve on a respirator sample before bulk production?",
+        answer:
+          "Approve the exact model and configuration, facepiece components, connector and filter fit, markings, instructions, available documents, artwork, unit packaging and carton specification against the written RFQ. Keep controlled versions of the approved sample, specification and artwork, while treating workplace fit testing as a separate employer responsibility."
       }
     ]
   }
@@ -138,7 +143,7 @@ export default function AnswersPage() {
     "@type": "WebPage",
     name: "Respiratory Protection Supplier Answers",
     url: "https://www.hulidun.com/answers/",
-    dateModified: "2026-08-03",
+    dateModified: "2026-08-04",
     about: [
       "respiratory protection manufacturer",
       "full face respirator supplier",
