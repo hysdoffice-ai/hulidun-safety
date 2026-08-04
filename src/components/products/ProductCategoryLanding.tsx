@@ -24,6 +24,11 @@ export function ProductCategoryLanding({ landing }: ProductCategoryLandingProps)
           href: "/resources/respirator-fit-testing-procurement-checklist/",
           title: "Fit Testing Procurement Checklist",
           text: "Plan sample sizes, workplace approval and fit-testing responsibilities before deployment."
+        },
+        {
+          href: "/resources/respirator-sample-approval-checklist-before-bulk-order/",
+          title: "Respirator Sample Approval Checklist",
+          text: "Review the exact mask, filters, documents, artwork and packaging before bulk production."
         }
       ]
     : landing.category === "Filters & Cartridges"
@@ -54,6 +59,11 @@ export function ProductCategoryLanding({ landing }: ProductCategoryLandingProps)
             href: "/resources/full-face-respirator-oem-moq-packaging-documents-sample-checklist/",
             title: "OEM, MOQ and Sample Checklist",
             text: "Prepare a complete private-label RFQ covering product marking, packaging, documents and sample approval."
+          },
+          {
+            href: "/resources/respirator-sample-approval-checklist-before-bulk-order/",
+            title: "Respirator Sample Approval Checklist",
+            text: "Freeze the approved model, filters, artwork, documents and packaging before bulk production."
           }
         ];
   const baseUrl = `https://www.hulidun.com/${landing.slug}/`;

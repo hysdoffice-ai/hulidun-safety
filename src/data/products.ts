@@ -178,7 +178,16 @@ const productSeeds: ProductSeed[] = [
   },
   { model: "MF14 Yellow Edge", name: "TPE Full Face Respirator", category: "Full Face Respirators", image: "06_yellow_edge.jpg", detail: "Yellow-edge TPE full face mask for painting, chemical handling and dust protection." },
   { model: "MF14 Black Edge", name: "TPE Full Face Respirator", category: "Full Face Respirators", image: "07_black_edge.jpg", detail: "Black-edge TPE full face mask for industrial safety and distributor product bundles." },
-  { model: "MF15", name: "Dual-Connector Full Face Respirator", category: "Full Face Respirators", image: "08_MF15.jpg", featured: true, detail: "Standard dual-connector mask with left or right connector customization options." },
+  {
+    model: "MF15", name: "Dual-Connector Full Face Respirator", category: "Full Face Respirators", image: "08_MF15.jpg", featured: true,
+    updatedAt: "2026-08-04",
+    detail: "Dual-connector full face respirator platform with left- or right-side configuration options for project samples and OEM quotations.",
+    procurementChecks: [
+      "State whether the sample and quotation require one or two connectors and identify the intended filters or canisters.",
+      "Review the lens, face seal, harness, valves, connectors and filter fit on the exact production-representative sample.",
+      "Approve the model marking, documents, artwork and complete pack configuration before bulk production."
+    ]
+  },
   {
     model: "MF19", name: "RD40 Full Face Respirator", category: "Full Face Respirators", image: "09_MF19.jpg", featured: true, slug: "mf19-full-face-respirator",
     updatedAt: "2026-07-29",
@@ -190,7 +199,16 @@ const productSeeds: ProductSeed[] = [
       "Request filter documentation for the exact hazard, target market and quoted canister model."
     ]
   },
-  { model: "CF-6800", name: "Full Face Respirator", category: "Full Face Respirators", image: "10_CF_6800.jpg", featured: true, slug: "cf6800-full-face-respirator", detail: "6800 style full face mask with grey or black anti-fog lens customization options." },
+  {
+    model: "CF-6800", name: "Full Face Respirator", category: "Full Face Respirators", image: "10_CF_6800.jpg", featured: true, slug: "cf6800-full-face-respirator",
+    updatedAt: "2026-08-04",
+    detail: "CF-6800 full face respirator option with grey or black lens configurations for distributor sampling and private-label review.",
+    procurementChecks: [
+      "Identify the requested lens configuration, facepiece material, connector and compatible filters in the RFQ.",
+      "Use the exact sample to review seal condition, lens clarity, straps, valves, filter fit and available documents.",
+      "Approve anti-fog wording, labels, instructions and packaging only for the exact documented configuration."
+    ]
+  },
   { model: "6800A", name: "Full Face Respirator", category: "Full Face Respirators", image: "11_6800A.jpg", detail: "6800A full face mask with anti-fog lens customization options." },
   {
     model: "CF01", name: "Full Face Respirator", category: "Full Face Respirators", image: "12_CF01.jpg",
@@ -224,7 +242,16 @@ const productSeeds: ProductSeed[] = [
       "Approve production-representative samples through the employer's medical evaluation and fit-testing process before workplace deployment."
     ]
   },
-  { model: "CF3300 + 3301", name: "Half Face Respirator with Cartridge", category: "Half Face Respirators", image: "17_CF3300_filter_cartridge3301.jpg", featured: true },
+  {
+    model: "CF3300 + 3301", name: "Half Face Respirator with Cartridge", category: "Half Face Respirators", image: "17_CF3300_filter_cartridge3301.jpg", featured: true,
+    updatedAt: "2026-08-04",
+    detail: "CF3300 half face respirator and 3301-labeled cartridge kit for exact-system sampling, distributor packs and recurring filter quotations.",
+    procurementChecks: [
+      "Confirm the CF3300 facepiece and exact 3301-labeled cartridge configuration, hazard scope and connector compatibility in writing.",
+      "Approve a complete sample kit including retainers or accessories, instructions, markings and unit packaging.",
+      "Record filter shelf life, storage, replacement planning and replenishment lead time before launching the kit."
+    ]
+  },
   {
     model: "3200", name: "Half Face Respirator", category: "Half Face Respirators", image: "18_3200.jpg", slug: "3200-half-face-respirator",
     updatedAt: "2026-08-01",

@@ -30,6 +30,7 @@ Hulidun Safety is the PPE brand of Shanxi Hongyu Times Technology Co., Ltd., a C
 - Full face respirator manufacturer buyer checklist: https://www.hulidun.com/resources/how-to-choose-full-face-respirator-manufacturer-china/
 - Half face respirator manufacturer buyer checklist: https://www.hulidun.com/resources/how-to-choose-half-face-respirator-manufacturer-china/
 - Respirator filter cartridge OEM and compatibility checklist: https://www.hulidun.com/resources/respirator-filter-cartridge-oem-compatibility-moq-packaging-checklist/
+- Respirator sample approval checklist before bulk order: https://www.hulidun.com/resources/respirator-sample-approval-checklist-before-bulk-order/
 - Full face respirator OEM, MOQ, packaging and sample checklist: https://www.hulidun.com/resources/full-face-respirator-oem-moq-packaging-documents-sample-checklist/
 - Cartridge change schedule procurement guide: https://www.hulidun.com/resources/respirator-cartridge-change-schedule-procurement-guide/
 - Biopharmaceutical respirator filter selection guide: https://www.hulidun.com/resources/biopharmaceutical-respirator-filter-selection-guide/
@@ -93,6 +94,7 @@ Hulidun Safety is the PPE brand of Shanxi Hongyu Times Technology Co., Ltd., a C
 - What should an industrial PAPR ODM inquiry include? Specify the hazard, headtop or facepiece, protection level, filter, blower airflow, battery runtime, alarms, charger, cleaning method, spare parts, target market and required documents; verify the complete approved system before discussing private-label artwork.
 - How should a buyer compare full face respirator manufacturers in China? Verify the legal company and factory, compare the same exact-model configuration, match documents to the quoted model and destination market, test samples with compatible filters, and put OEM, quality and delivery requirements in writing.
 - What should a full face respirator OEM RFQ include? State the exact facepiece and filters, target market, quantity, documents, logo and artwork scope, packaging languages, sample plan, inspection requirements, destination and requested date; approve one production-representative configuration before bulk production.
+- What should buyers approve on a respirator sample before bulk production? Approve the exact model and configuration, components, connector and filter fit, markings, instructions, documents, artwork, unit packaging and carton specification against the written RFQ; workplace fit testing remains a separate employer responsibility.
 
 ## Procurement Facts
 
