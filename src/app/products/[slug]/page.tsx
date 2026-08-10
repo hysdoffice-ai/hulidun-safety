@@ -182,7 +182,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productPageSchema) }}
       />
       <script
         type="application/ld+json"
