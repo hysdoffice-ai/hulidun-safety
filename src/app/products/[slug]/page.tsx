@@ -47,6 +47,14 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
           type: "website",
           images: [product.image]
         }
+      : undefined,
+    twitter: product
+      ? {
+          card: "summary_large_image",
+          title: `${product.model} ${product.name} | ${brandName}`,
+          description,
+          images: [product.image]
+        }
       : undefined
   };
 }
@@ -83,6 +91,32 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   const productFaqs = getProductFaqs(product);
   const quoteHref = `/contact/?model=${encodeURIComponent(product.model)}&product=${encodeURIComponent(product.name)}`;
   const productUrl = `https://www.hulidun.com/products/${product.slug}/`;
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${productUrl}#product`,
+    name: `${product.model} ${product.name}`,
+    description: product.longDescription,
+    image: `https://www.hulidun.com${product.image}`,
+    url: productUrl,
+    sku: product.model,
+    model: product.model,
+    category: product.category,
+    brand: { "@type": "Brand", name: brandName },
+    manufacturer: { "@id": "https://www.hulidun.com/#organization" },
+    identifier: { "@type": "PropertyValue", propertyID: "Model", value: product.model },
+    material: product.materials,
+    additionalProperty: product.specifications.map((specification) => ({
+      "@type": "PropertyValue",
+      name: specification.label,
+      value: specification.value
+    })),
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Distributors, wholesalers, project buyers and OEM/ODM customers"
+    }
+  };
+
   const productPageSchema = {
     "@context": "https://schema.org",
     "@type": "ItemPage",
@@ -96,28 +130,8 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       url: `https://www.hulidun.com${product.image}`,
       caption: `${product.model} ${product.name}`
     },
-    about: {
-      "@type": "Product",
-      "@id": `${productUrl}#product`,
-      name: `${product.model} ${product.name}`,
-      description: product.longDescription,
-      image: `https://www.hulidun.com${product.image}`,
-      sku: product.model,
-      model: product.model,
-      category: product.category,
-      brand: {
-        "@type": "Brand",
-        name: brandName
-      },
-      manufacturer: {
-        "@id": "https://www.hulidun.com/#organization"
-      },
-      identifier: {
-        "@type": "PropertyValue",
-        propertyID: "Model",
-        value: product.model
-      }
-    },
+    about: { "@id": `${productUrl}#product` },
+    mainEntity: { "@id": `${productUrl}#product` },
     audience: {
       "@type": "BusinessAudience",
       audienceType: "Distributors, wholesalers, project buyers and OEM/ODM customers"
@@ -166,6 +180,10 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productPageSchema) }}
