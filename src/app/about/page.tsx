@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Factory, Globe2, ShieldCheck, Target } from "lucide-react";
+import Link from "next/link";
+import { Factory, FileCheck2, Globe2, Mail, ShieldCheck, Target } from "lucide-react";
 import { ImageWithFallback } from "@/components/common/ImageWithFallback";
 import { Section } from "@/components/section";
 import { factoryImages } from "@/data/quality";
@@ -13,6 +14,9 @@ import {
   companyName,
   companyPositioning,
   companyStrengths,
+  contactEmail,
+  contactPerson,
+  contactWhatsApp,
   exportMarkets,
   hulidunStatement,
   tradeHighlights
@@ -51,8 +55,23 @@ const timeline = [
 ];
 
 export default function AboutPage() {
+  const pageUrl = "https://www.hulidun.com/about/";
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: `About ${companyName}`,
+    description: companyIntro,
+    dateModified: "2026-08-10",
+    mainEntity: { "@id": "https://www.hulidun.com/#organization" },
+    isPartOf: { "@id": "https://www.hulidun.com/#website" },
+    publisher: { "@id": "https://www.hulidun.com/#organization" }
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }} />
       <section className="bg-slate-950 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.28em] text-orange">About Us</p>
@@ -126,6 +145,31 @@ export default function AboutPage() {
               <p className="mt-2 text-sm leading-6 text-slate-300">{item.description}</p>
             </article>
           ))}
+        </div>
+      </Section>
+      <Section title="Verify Hulidun Safety" eyebrow="Buyer Due Diligence" className="bg-slate-950/60">
+        <p className="max-w-3xl text-sm leading-7 text-slate-300">
+          Buyers should verify the legal company, exact product model, manufacturing information and document scope before placing a bulk order. Hulidun Safety provides available company, product and quality documents for model-specific review rather than treating one document as evidence for every product.
+        </p>
+        <div className="mt-7 grid gap-4 md:grid-cols-3">
+          <article className="rounded-md border border-white/10 bg-navy p-5">
+            <FileCheck2 className="h-7 w-7 text-orange" />
+            <h2 className="mt-4 text-lg font-bold text-white">Review documents</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">Check document title, issuing body, referenced model and target-market scope.</p>
+            <Link className="mt-4 inline-block text-sm font-bold text-orange" href="/quality/">View quality information</Link>
+          </article>
+          <article className="rounded-md border border-white/10 bg-navy p-5">
+            <Mail className="h-7 w-7 text-orange" />
+            <h2 className="mt-4 text-lg font-bold text-white">Confirm the supplier</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">Contact {contactPerson} at {contactEmail} or WhatsApp {contactWhatsApp} and request model-specific information.</p>
+            <Link className="mt-4 inline-block text-sm font-bold text-orange" href="/contact/">Contact the company</Link>
+          </article>
+          <article className="rounded-md border border-white/10 bg-navy p-5">
+            <ShieldCheck className="h-7 w-7 text-orange" />
+            <h2 className="mt-4 text-lg font-bold text-white">Approve an exact sample</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">Match the sample, filters, markings, instructions, documents and packaging to the written RFQ.</p>
+            <Link className="mt-4 inline-block text-sm font-bold text-orange" href="/resources/respirator-sample-approval-checklist-before-bulk-order/">Use the sample checklist</Link>
+          </article>
         </div>
       </Section>
       <Section title="Why choose us">

@@ -15,7 +15,8 @@ const staticRouteUpdates: Record<string, string> = {
   "/resources": "2026-08-04",
   "/answers": "2026-08-04",
   "/oem-private-label": "2026-07-30",
-  "/editorial-policy": "2026-07-20"
+  "/editorial-policy": "2026-08-10",
+  "/about": "2026-08-10"
 };
 
 const staticRoutes = [

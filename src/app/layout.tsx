@@ -53,6 +53,13 @@ export const metadata: Metadata = {
     description:
       "Self-owned China PPE factory supplying full face respirators, half masks, cartridges, filters, supplied-air systems and chemical protective products.",
     images: [brandLogo]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hulidun Safety | Industrial Respiratory Protection & Chemical Safety PPE",
+    description:
+      "Self-owned China PPE factory supplying respirators, filters, supplied-air systems and chemical protective products.",
+    images: [brandLogo]
   }
 };
 
@@ -62,9 +69,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "Organization",
     "@id": "https://www.hulidun.com/#organization",
     name: companyName,
+    legalName: companyName,
     alternateName: brandName,
     url: "https://www.hulidun.com",
     logo: `https://www.hulidun.com${brandLogo}`,
+    image: `https://www.hulidun.com${brandLogo}`,
+    email: contactEmail,
+    telephone: contactWhatsApp,
     description: companyPositioning,
     foundingDate: "2019",
     address: {

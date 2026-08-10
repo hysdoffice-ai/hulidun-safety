@@ -19,7 +19,7 @@ export default function EditorialPolicyPage() {
     name: "Hulidun Safety Editorial and Technical Review Policy",
     url: pageUrl,
     datePublished: "2026-07-20",
-    dateModified: "2026-07-20",
+    dateModified: "2026-08-10",
     publisher: { "@id": "https://www.hulidun.com/#organization", name: companyName },
     isPartOf: { "@id": "https://www.hulidun.com/#website" }
   };
@@ -53,7 +53,7 @@ export default function EditorialPolicyPage() {
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
             How {brandName} publishes accurate, useful and appropriately qualified product information for respiratory protection and chemical safety PPE buyers.
           </p>
-          <p className="mt-5 text-sm text-slate-500">Published and last reviewed: July 20, 2026</p>
+          <p className="mt-5 text-sm text-slate-500">Published July 20, 2026 · Last reviewed August 10, 2026</p>
         </div>
       </section>
 
