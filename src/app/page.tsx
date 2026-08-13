@@ -65,7 +65,7 @@ export default function HomePage() {
       <HeroSection />
       <ProductMatrix />
       <HazardSelector />
-      <ApplicationGrid applications={applications.slice(0, 6)} />
+      <ApplicationGrid applications={applications} />
       <FeaturedProducts products={products} />
       <OemSupport />
       <QualityPreview />
