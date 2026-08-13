@@ -97,7 +97,7 @@ export default function OemPage() {
           <h1 className="text-balance text-4xl font-black text-white sm:text-6xl">OEM Respirator Manufacturer & Private Label Gas Masks</h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">Factory support for importers, PPE distributors and safety brands sourcing private label full face respirators, half masks, filters and configured kits with custom packaging, instructions and buyer-specific documentation.</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href="/contact/?product=OEM%20Private%20Label%20Respirator">Discuss OEM Project</ButtonLink>
+            <ButtonLink href="/contact/?product=OEM%20Private%20Label%20Respirator" rel="nofollow">Discuss OEM Project</ButtonLink>
             <ButtonLink href="/products/" variant="secondary">Compare Products</ButtonLink>
           </div>
         </div>
@@ -180,7 +180,7 @@ export default function OemPage() {
             <Link key={item.href} href={item.href} className="rounded-md border border-white/10 bg-navy p-5 font-bold text-white transition hover:border-orange/50 hover:text-orange">{item.title}</Link>
           ))}
         </div>
-        <div className="mt-8"><ButtonLink href="/contact/?product=OEM%20Private%20Label%20Respirator">Send Model-Specific RFQ</ButtonLink></div>
+        <div className="mt-8"><ButtonLink href="/contact/?product=OEM%20Private%20Label%20Respirator" rel="nofollow">Send Model-Specific RFQ</ButtonLink></div>
       </Section>
     </>
   );

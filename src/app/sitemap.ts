@@ -9,7 +9,7 @@ const baseUrl = "https://www.hulidun.com";
 const defaultContentUpdate = "2026-08-04";
 
 const staticRouteUpdates: Record<string, string> = {
-  "": "2026-07-25",
+  "": "2026-08-13",
   "/products": "2026-07-29",
   "/industries": "2026-07-25",
   "/resources": "2026-08-04",
